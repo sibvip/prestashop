@@ -51,7 +51,8 @@ a {cursor:pointer}
 		generic style
 ************************************************************************************************ */
 body{
-	font:normal 11px/14px Arial, Verdana, sans-serif;
+	/* font:normal 11px/14px Arial, Verdana, sans-serif; */
+        font: normal 11px/14px Verdana,Arial,Helvetica,sans-serif;
 	color:#222;
 	background:#fff
 }
@@ -68,8 +69,8 @@ p.center {text-align:center}
 /* title *************************************************************************************** */
 h1 {
 	margin-bottom:20px;
-	font-size:24px;
-	line-height: 22px
+	font-size:22px;
+	line-height: 24px
 }
 h2 {
 	padding-bottom:20px;
@@ -290,14 +291,14 @@ table.table_block  td {
 	.block .title_block, .block h4 {
 		padding:6px 11px;
 		font-size:12px;
-		color:#fff;
-		text-shadow:0 1px 0 #000;
-		text-transform:uppercase;
-		background:#383838;
+		color:#990000;
+		/* text-shadow:0 0px 0 #000; 
+		text-transform:uppercase; */
+		background:#c6c6c6;
 		text-align:left;
-		font-weight: bold;
+		font-weight: normal;
 	}
-		.block .title_block a, .block h4 a {color:#fff}
+		.block .title_block a, .block h4 a {color:#990000;}
 	.block ul {list-style-type:none}
 		.block li.last {	border:none}
 			.block li a {
@@ -540,7 +541,7 @@ div.star_hover a, div.star a:hover { background-position: 0 -32px }
 #header_logo {
 	float:left;
 	display:block;
-	margin-top:30px;
+	margin:20px 0 -4px 0;
 }
 
 #header_right {

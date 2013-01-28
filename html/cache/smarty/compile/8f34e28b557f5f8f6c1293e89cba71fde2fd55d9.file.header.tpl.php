@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-25 17:07:00
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-28 17:41:42
          compiled from "/home/oborja/public_html/gitSHEWEB/prestashopweb/html/themes/default/header.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:20710768651030204a0a0e4-00980708%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:18814591245106fea68b4e82-66277946%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '8f34e28b557f5f8f6c1293e89cba71fde2fd55d9' => 
     array (
       0 => '/home/oborja/public_html/gitSHEWEB/prestashopweb/html/themes/default/header.tpl',
-      1 => 1356985156,
+      1 => 1359411062,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '20710768651030204a0a0e4-00980708',
+  'nocache_hash' => '18814591245106fea68b4e82-66277946',
   'function' => 
   array (
   ),
@@ -56,9 +56,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_51030204ac9083_05380384',
+  'unifunc' => 'content_5106fea6971755_62851790',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_51030204ac9083_05380384')) {function content_51030204ac9083_05380384($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_escape')) include '/home/oborja/public_html/gitSHEWEB/prestashopweb/html/tools/smarty/plugins/modifier.escape.php';
+<?php if ($_valid && !is_callable('content_5106fea6971755_62851790')) {function content_5106fea6971755_62851790($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_escape')) include '/home/oborja/public_html/gitSHEWEB/prestashopweb/html/tools/smarty/plugins/modifier.escape.php';
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
@@ -156,12 +156,27 @@ $_smarty_tpl->tpl_vars['js_uri']->_loop = true;
 "<?php }?> <?php if ($_smarty_tpl->tpl_vars['logo_image_height']->value){?>height="<?php echo $_smarty_tpl->tpl_vars['logo_image_height']->value;?>
 " <?php }?> />
 				</a>
+                                
 				<div id="header_right" class="grid_6 omega">
+                                     
 					<?php echo $_smarty_tpl->tpl_vars['HOOK_TOP']->value;?>
 
+                                       
 				</div>
-			</div>
 
+                               
+
+                                
+                               
+                                        
+                                        
+			</div>
+                                        
+                        
+                                
+                       
+                                
+                                
 			<div id="columns" class="grid_9 alpha omega clearfix">
 				<!-- Left -->
 				<div id="left_column" class="column grid_2 alpha">

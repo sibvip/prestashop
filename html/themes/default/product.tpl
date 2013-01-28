@@ -219,14 +219,14 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 	<!-- left infos-->
 	<div id="pb-left-column">
 		<h1>{$product->name|escape:'htmlall':'UTF-8'}</h1>
-
+               
 		{if $product->description_short OR $packItems|@count > 0}
-		<div id="short_description_block">
+		 <h2 class="subtitulo">
 			{if $product->description_short}
 				<div id="short_description_content" class="rte align_justify">{$product->description_short}</div>
 			{/if}
 			{if $product->description}
-			<p class="buttons_bottom_block"><a href="javascript:{ldelim}{rdelim}" class="button">{l s='More details'}</a></p>
+<!--			<p class="buttons_bottom_block"><a href="javascript:{ldelim}{rdelim}" class="button">{l s='More details'}</a></p> -->
 			{/if}
 			{if $packItems|@count > 0}
 			<div class="short_description_pack">
@@ -239,9 +239,24 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 				{/foreach}
 			</div>
 			{/if}
-		</div>
+		</h2>
 		{/if}
+                
 
+                <div class="atributostitulo">
+                   {if $product->author}
+                       {l s='Author'}:
+                       {foreach $product->author as $row }
+                           {$row['nombre']}, 
+                       {/foreach}
+                   {else}
+                       
+                   {/if}
+                 
+                </div>
+                <div class="atributostitulo">   
+                    Editorial: qui la editorial
+                </div>
 		{*{if isset($colors) && $colors}
 		<!-- colors -->
 		<div id="color_picker">
@@ -267,7 +282,7 @@ var fieldRequired = '{l s='Please fill in all required fields, then save the cus
 				<input type="hidden" name="add" value="1" />
 				<input type="hidden" name="id_product_attribute" id="idCombination" value="" />
 			</p>
-
+                          
 			<div class="product_attributes">
 				{if isset($groups)}
 				<!-- attributes -->

@@ -25,7 +25,7 @@
 */
 
 /* Debug only */
-define('_PS_MODE_DEV_', false);
+define('_PS_MODE_DEV_', true);
 if (_PS_MODE_DEV_)
 {
 	@ini_set('display_errors', 'on');	
@@ -38,10 +38,10 @@ else
 	@ini_set('display_errors', 'off');
 	define('_PS_DEBUG_SQL_', false);
 	/* Compatibility warning */
-	define('_PS_DISPLAY_COMPATIBILITY_WARNING_', false);
+	define('_PS_DISPLAY_COMPATIBILITY_WARNING_', true);
 }
 
-define('_PS_DEBUG_PROFILING_', false);
+define('_PS_DEBUG_PROFILING_', true);
 define('_PS_MODE_DEMO_', false);
 
 $currentDir = dirname(__FILE__);

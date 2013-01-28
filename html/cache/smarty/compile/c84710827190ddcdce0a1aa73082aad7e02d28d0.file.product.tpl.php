@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-25 17:06:59
+<?php /* Smarty version Smarty-3.1.8, created on 2013-01-28 17:20:23
          compiled from "/home/oborja/public_html/gitSHEWEB/prestashopweb/html/themes/default/product.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:213941130651030203e42458-76338632%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:15898744165106f9a73b1b07-37854774%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'c84710827190ddcdce0a1aa73082aad7e02d28d0' => 
     array (
       0 => '/home/oborja/public_html/gitSHEWEB/prestashopweb/html/themes/default/product.tpl',
-      1 => 1356985156,
+      1 => 1359405339,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '213941130651030203e42458-76338632',
+  'nocache_hash' => '15898744165106f9a73b1b07-37854774',
   'function' => 
   array (
   ),
@@ -72,6 +72,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'HOOK_EXTRA_LEFT' => 0,
     'packItems' => 0,
     'packItem' => 0,
+    'row' => 0,
     'HOOK_PRODUCT_ACTIONS' => 0,
     'static_token' => 0,
     'group' => 0,
@@ -111,9 +112,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_510302048c9c88_11916609',
+  'unifunc' => 'content_5106f9a7da2e66_10162296',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_510302048c9c88_11916609')) {function content_510302048c9c88_11916609($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_escape')) include '/home/oborja/public_html/gitSHEWEB/prestashopweb/html/tools/smarty/plugins/modifier.escape.php';
+<?php if ($_valid && !is_callable('content_5106f9a7da2e66_10162296')) {function content_5106f9a7da2e66_10162296($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_escape')) include '/home/oborja/public_html/gitSHEWEB/prestashopweb/html/tools/smarty/plugins/modifier.escape.php';
 if (!is_callable('smarty_modifier_date_format')) include '/home/oborja/public_html/gitSHEWEB/prestashopweb/html/tools/smarty/plugins/modifier.date_format.php';
 if (!is_callable('smarty_function_math')) include '/home/oborja/public_html/gitSHEWEB/prestashopweb/html/tools/smarty/plugins/function.math.php';
 if (!is_callable('smarty_function_counter')) include '/home/oborja/public_html/gitSHEWEB/prestashopweb/html/tools/smarty/plugins/function.counter.php';
@@ -477,16 +478,16 @@ icon/cancel_11x13.gif" alt="<?php echo smartyTranslate(array('s'=>'Cancel'),$_sm
 	<div id="pb-left-column">
 		<h1><?php echo smarty_modifier_escape($_smarty_tpl->tpl_vars['product']->value->name, 'htmlall', 'UTF-8');?>
 </h1>
-
+               
 		<?php if ($_smarty_tpl->tpl_vars['product']->value->description_short||count($_smarty_tpl->tpl_vars['packItems']->value)>0){?>
-		<div id="short_description_block">
+		 <h2 class="subtitulo">
 			<?php if ($_smarty_tpl->tpl_vars['product']->value->description_short){?>
 				<div id="short_description_content" class="rte align_justify"><?php echo $_smarty_tpl->tpl_vars['product']->value->description_short;?>
 </div>
 			<?php }?>
 			<?php if ($_smarty_tpl->tpl_vars['product']->value->description){?>
-			<p class="buttons_bottom_block"><a href="javascript:{}" class="button"><?php echo smartyTranslate(array('s'=>'More details'),$_smarty_tpl);?>
-</a></p>
+<!--			<p class="buttons_bottom_block"><a href="javascript:{}" class="button"><?php echo smartyTranslate(array('s'=>'More details'),$_smarty_tpl);?>
+</a></p> -->
 			<?php }?>
 			<?php if (count($_smarty_tpl->tpl_vars['packItems']->value)>0){?>
 			<div class="short_description_pack">
@@ -508,9 +509,30 @@ $_smarty_tpl->tpl_vars['packItem']->_loop = true;
 				<?php } ?>
 			</div>
 			<?php }?>
-		</div>
+		</h2>
 		<?php }?>
+                
 
+                <div class="atributostitulo">
+                   <?php if ($_smarty_tpl->tpl_vars['product']->value->author){?>
+                       <?php echo smartyTranslate(array('s'=>'Author'),$_smarty_tpl);?>
+:
+                       <?php  $_smarty_tpl->tpl_vars['row'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['row']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['product']->value->author; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['row']->key => $_smarty_tpl->tpl_vars['row']->value){
+$_smarty_tpl->tpl_vars['row']->_loop = true;
+?>
+                           <?php echo $_smarty_tpl->tpl_vars['row']->value['nombre'];?>
+, 
+                       <?php } ?>
+                   <?php }else{ ?>
+                       
+                   <?php }?>
+                 
+                </div>
+                <div class="atributostitulo">   
+                    Editorial: qui la editorial
+                </div>
 		
 
 		<?php if (($_smarty_tpl->tpl_vars['product']->value->show_price&&!isset($_smarty_tpl->tpl_vars['restricted_country_mode']->value))||isset($_smarty_tpl->tpl_vars['groups']->value)||$_smarty_tpl->tpl_vars['product']->value->reference||(isset($_smarty_tpl->tpl_vars['HOOK_PRODUCT_ACTIONS']->value)&&$_smarty_tpl->tpl_vars['HOOK_PRODUCT_ACTIONS']->value)){?>
@@ -527,7 +549,7 @@ $_smarty_tpl->tpl_vars['packItem']->_loop = true;
 				<input type="hidden" name="add" value="1" />
 				<input type="hidden" name="id_product_attribute" id="idCombination" value="" />
 			</p>
-
+                          
 			<div class="product_attributes">
 				<?php if (isset($_smarty_tpl->tpl_vars['groups']->value)){?>
 				<!-- attributes -->

@@ -1,8 +1,11 @@
 {if $MENU != ''}
 	</div>
-
+        
+        <div style="background:#CE141D; width:100%;height:3px; float: left; margin:0;"></div>
+        
 	<!-- Menu -->
 	<div class="sf-contener clearfix">
+                
 		<ul class="sf-menu clearfix">
 			{$MENU}
 			{if $MENU_SEARCH}
