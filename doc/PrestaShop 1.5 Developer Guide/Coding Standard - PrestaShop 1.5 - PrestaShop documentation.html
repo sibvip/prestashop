@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html class="splitter-invoked"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Coding Standard - PrestaShop 1.5 - PrestaShop documentation</title>
+
+        
+
+                        
+    
+                        
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE,chrome=IE7">
+<meta charset="UTF-8">
+<!-- Deprecated since 3.4. To be removed in a future version of Confluence; use AJS.Confluence.getContextPath() -->
+<meta id="confluence-context-path" name="confluence-context-path" content="">
+<meta id="confluence-base-url" name="confluence-base-url" content="http://doc.prestashop.com">
+
+<meta id="atlassian-token" name="atlassian-token" content="280b65ed321bc5561543eeba29d064ffe8d1a509">
+
+<meta id="confluence-space-key" name="confluence-space-key" content="PS15">
+<script src="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript">
+    // Deprecated global variables. To be removed in a future version of Confluence.
+    var contextPath = '';
+</script>
+
+    
+
+<!-- include system css resources -->
+
+
+    <!--[if lt IE 9]>
+<link data-atlassian-webresource-contents="confluence.web.resources:userlink[1.0],confluence.web.resources:master-styles[1.0],com.atlassian.auiplugin:ajs-gadgets-base[3.6.5],confluence.web.resources:page-ordering-tree[1.0],confluence.web.resources:aui-forms[1.0],com.atlassian.auiplugin:ajs[3.6.5],confluence.web.resources:icons[1.0],confluence.macros.profile:profile-macro-styles[1.0],confluence.web.resources:page-permissions-editor[1.0]" type="text/css" rel="stylesheet" href="/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/29/_/download/superbatch/css/batch.css?conditionalComment=lt+IE+9" media="all">
+<![endif]-->
+<link data-atlassian-webresource-contents="confluence.web.resources:print-styles[1.0],confluence.macros.advanced:get-more[2.1.2]" type="text/css" rel="stylesheet" href="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/batch_004.css" media="print">
+<link data-atlassian-webresource-contents="confluence.web.resources:master-styles[1.0],confluence.web.resources:fancy-box[1.0],confluence.web.resources:content-styles[1.0],confluence.web.resources:page-move-resources[1.0],confluence.macros.advanced:get-more[2.1.2],confluence.web.resources:labels-editor[1.0],confluence.web.components:core[1.0],com.atlassian.auiplugin:ajs[3.6.5],com.atlassian.auiplugin:ajs-html5shim[3.6.5],confluence.macros.profile:network-resources-css[1.0],confluence.macros.profile:profile-macro-styles[1.0],com.atlassian.confluence.keyboardshortcuts:confluence-keyboard-shortcuts[4.3.3],confluence.web.resources:create-space[1.0],confluence.web.resources:panel-styles[1.0],com.atlassian.plugins.shortcuts.atlassian-shortcuts-module:shortcuts[1.0],confluence.web.resources:userlink[1.0],confluence.web.resources:view-content[1.0],confluence.web.resources:search-results-grid[1.0],confluence.web.resources:aui-forms[1.0],com.atlassian.confluence.plugins.gadgets:css[4.3.3],confluence.content.action.menu:linkpopup-resources[1.0],com.atlassian.auiplugin:ajs-gadgets-base[3.6.5],confluence.userstatus:userstatus-resources[1.0],confluence.web.resources:page-ordering-tree[1.0],confluence.web.resources:jquery-autocomplete[1.0],confluence.web.components:property-panel-css[1.0],confluence.web.resources:tooltip[1.0],confluence.web.resources:ajs[1.0],confluence.macros.advanced:recently-updated-sidebar-resources[2.1.2],confluence.web.resources:icons[1.0],com.atlassian.confluence.whatsnew:whats-new-resources[4.3.3],confluence.web.resources:dashboard-resources[1.0],confluence.web.resources:page-permissions-editor[1.0]" type="text/css" rel="stylesheet" href="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/batch_005.css" media="all">
+<!--[if lte IE 9]>
+<link data-atlassian-webresource-contents="com.atlassian.auiplugin:ajs[3.6.5]" type="text/css" rel="stylesheet" href="/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/29/_/download/superbatch/css/batch.css?conditionalComment=lte+IE+9" media="all">
+<![endif]-->
+<!--[if IE 9]>
+<link data-atlassian-webresource-contents="com.atlassian.auiplugin:ajs-gadgets-base[3.6.5]" type="text/css" rel="stylesheet" href="/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/29/_/download/superbatch/css/batch.css?conditionalComment=IE+9" media="all">
+<![endif]-->
+<link data-atlassian-webresource-contents="com.atlassian.confluence.plugins.view-source:view-source-menu-resources[4.3.3],com.atlassian.confluence.plugins.view-storage-format:view-storage-menu-resources[4.3.3],com.atlassian.confluence.plugins.share-page:mail-page-resources[1.23],confluence.macros.core:flash-autosize[4.3.3]" data-atlassian-webresource-contexts="page" type="text/css" rel="stylesheet" href="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/batch.css" media="all">
+<!--[if lt IE 9]>
+<link data-atlassian-webresource-contents="com.atlassian.confluence.plugins.confluence-like:content-like-resources[4.3.3],com.atlassian.confluence.plugins.confluence-inline-tasks:inline-tasks-resources[4.3.3],com.atlassian.confluence.plugins.drag-and-drop:drag-and-drop-for-view-content[4.3.3],com.atlassian.confluence.plugins.view-storage-format:view-comment-storage-resources[4.3.3],com.atlassian.confluence.plugins.jira.jira-connector:help-dialog-extension[1.4.2],com.atlassian.confluence.plugins.confluence-sortable-tables:sortable-table-resources[4.3.3],com.atlassian.confluence.plugins.drag-and-drop:support[4.3.3],confluence.web.resources:view-comment[1.0],com.atlassian.auiplugin:jquery-ui-other[3.6.5],com.atlassian.confluence.plugins.confluence-mentions-plugin:help-dialog-extension[1.5.9]" data-atlassian-webresource-contexts="viewcontent" type="text/css" rel="stylesheet" href="/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/a0d307f1a098bbba9e4f9c3de0a52283/_/download/contextbatch/css/viewcontent/batch.css?conditionalComment=lt+IE+9" media="all">
+<![endif]-->
+<link data-atlassian-webresource-contents="com.atlassian.confluence.plugins.confluence-like:content-like-resources[4.3.3],com.atlassian.confluence.plugins.confluence-inline-tasks:inline-tasks-resources[4.3.3],com.atlassian.confluence.plugins.drag-and-drop:drag-and-drop-for-view-content[4.3.3],com.atlassian.confluence.plugins.view-storage-format:view-comment-storage-resources[4.3.3],com.atlassian.confluence.plugins.jira.jira-connector:help-dialog-extension[1.4.2],com.atlassian.confluence.plugins.confluence-sortable-tables:sortable-table-resources[4.3.3],com.atlassian.confluence.plugins.drag-and-drop:support[4.3.3],confluence.web.resources:view-comment[1.0],com.atlassian.auiplugin:jquery-ui-other[3.6.5],com.atlassian.confluence.plugins.confluence-mentions-plugin:help-dialog-extension[1.5.9]" data-atlassian-webresource-contexts="viewcontent" type="text/css" rel="stylesheet" href="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/batch_002.css" media="all">
+<link data-atlassian-webresource-contents="com.atlassian.confluence.plugins.jira.jira-connector:help-dialog-extension[1.4.2],com.atlassian.confluence.plugins.share-page:share-keyboard-shortcut-js-resources[1.23],com.atlassian.confluence.plugins.doctheme:splitter[4.3.3],com.atlassian.confluence.plugins.confluence-mentions-plugin:help-dialog-extension[1.5.9],com.atlassian.confluence.plugins.confluence-inline-tasks:inline-tasks-styles[4.3.3]" data-atlassian-webresource-contexts="main" type="text/css" rel="stylesheet" href="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/batch_003.css" media="all">
+<link data-atlassian-webresource-contents="com.atlassian.confluence.ext.newcode-macro-plugin:syntaxhighlighter[2.0.15]" type="text/css" rel="stylesheet" href="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/com_004.css" media="all">
+<link data-atlassian-webresource-contents="com.atlassian.confluence.ext.newcode-macro-plugin:sh-theme-confluence[2.0.15]" type="text/css" rel="stylesheet" href="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/com.css" media="all">
+<link data-atlassian-webresource-contents="confluence.extra.information:information-plugin-styles[2.0.8]" type="text/css" rel="stylesheet" href="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/confluence_002.css" media="all">
+<link data-atlassian-webresource-contents="confluence.extra.information:information-plugin-styles[2.0.8]" type="text/css" rel="stylesheet" href="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/confluence.css" media="print">
+<link data-atlassian-webresource-contents="com.atlassian.confluence.plugins.pagetree:pagetree-resources[2.0.2]" type="text/css" rel="stylesheet" href="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/com_002.css" media="all">
+<link data-atlassian-webresource-contents="com.atlassian.mywork.mywork-confluence-host-plugin:mw-header-anchor[1.1.1]" type="text/css" rel="stylesheet" href="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/com_003.css" media="all">
+<link type="text/css" rel="stylesheet" href="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/colors.css" media="all">
+<link type="text/css" rel="stylesheet" href="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/default-theme.css" media="all">
+<link type="text/css" rel="stylesheet" href="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/splitter.css" media="all">
+
+<!-- end system css resources -->
+
+    <meta name="confluence-request-time" content="1359118604840">
+<!-- Deprecated since 3.4. To be removed in a future version of Confluence; use atl.header -->
+        
+            <script type="text/x-template" title="share-content-popup">
+    <form action="#" method="post" class="aui share-content-popup">
+        <fieldset>
+            <label for="users">User name or email</label>
+            <div class="autocomplete-user-target">
+                <input class="text autocomplete-sharepage" id="users" data-max="10" data-dropdown-target=".autocomplete-user-target" data-none-message="No matching user or email found"/>
+            </div>
+            <ol class="recipients">
+            </ol>
+            <div><label for="note">Note</label></div>
+            <textarea class="textarea" id="note" placeholder="Add an optional note"/>
+        </fieldset>
+        <div class="button-panel">
+            <div class="progress-messages-icon"></div>
+            <div class="progress-messages">
+            </div>
+            <input class="button submit" type="submit" value="Share" disabled/>
+            <a class="close-dialog" href="#">Cancel</a>
+        </div>
+    </form>
+</script>
+
+<script type="text/x-template" title="share-content-popup-recipient-username">
+    <li data-username="{username}" style="display: none">
+        <span>
+            <img src="{thumbnailLink.href}" title="{title}">
+            <span>{title}</span>
+            <span class="remove-recipient"/>
+        </span>
+    </li>
+</script>
+
+<script type="text/x-template" title="share-content-popup-recipient-email">
+    <li data-email="{email}" style="display: none">
+        <span>
+            <img src="{icon}" title="{email}">
+            <span>{email}</span>
+            <span class="remove-recipient"/>
+        </span>
+    </li>
+</script>
+    
+        
+            <meta name="ajs-keyboardshortcut-hash" content="6f1da977c352e879e8e53af041269c62">
+            <meta name="ajs-use-keyboard-shortcuts" content="true">
+            
+    
+            
+    
+    
+            <meta name="ajs-page-id" content="9404443">
+            <meta name="ajs-page-title" content="Coding Standard">
+            <meta name="ajs-parent-page-title" content="Developer Guide">
+            <meta name="ajs-parent-page-id" content="9076768">
+            <meta name="ajs-space-key" content="PS15">
+            <meta name="ajs-space-name" content="PrestaShop 1.5">
+            <meta name="ajs-from-page-title" content="">
+            <meta name="ajs-context-path" content="">
+            <meta name="ajs-base-url" content="http://doc.prestashop.com">
+            <meta name="ajs-version-number" content="4.3.3">
+            <meta name="ajs-build-number" content="3393">
+            <meta name="ajs-remote-user" content="">
+            <meta name="ajs-static-resource-url-prefix" content="/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/_">
+            <meta name="ajs-global-settings-attachment-max-size" content="50485760">
+            <meta name="ajs-user-locale" content="en_GB">
+            <meta name="ajs-enabled-dark-features" content="">
+            <meta name="ajs-atl-token" content="280b65ed321bc5561543eeba29d064ffe8d1a509">
+            <meta name="ajs-confluence-flavour" content="VANILLA">
+            <meta name="ajs-editor.loader.resources" content="&lt;!--[if lt IE 9]&gt;
+&lt;link data-atlassian-webresource-excluded-contexts=&quot;viewcontent&quot; data-atlassian-webresource-contents=&quot;com.atlassian.confluence.tinymceplugin:editor-resources[4.3.3],com.atlassian.confluence.plugins.confluence-templates:template-editor-variables-resources[4.3.3],com.atlassian.confluence.plugins.profile-picture:profile-picture-editor_resources[1.6],confluence.web.resources:page-editor-css[1.0],com.atlassian.plugins.editor:atlassian-rte-javascript-translations[4.3.3],com.atlassian.confluence.plugins.status-macro:editor_status[1.14],com.atlassian.applinks.applinks-plugin:applinks-util-js[3.8.0],com.atlassian.auiplugin:jquery-autocomplete[3.6.5],com.atlassian.confluence.extra.officeconnector:macro-browser-smart-fields[2.1.10],com.atlassian.confluence.plugins.gadgets:macro-browser-for-gadgetsplugin[4.3.3],com.atlassian.plugins.editor:atlassian-rte-javascript-tinymce-core[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-youtu.be-rewrite[4.3.3],com.atlassian.confluence.plugins.jira.jira-connector:proxy-js[1.4.2],com.atlassian.gadgets.embedded:gadget-core-resources[3.2.0-m3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-cloudapp[4.3.3],com.atlassian.confluence.plugins.confluence-sortable-tables:ConfluenceSortableTablesEditorPlugin[4.3.3],com.atlassian.confluence.plugins.confluence-mentions-plugin:editor-autocomplete-mentions-no-dependencies[1.5.9],com.atlassian.confluence.plugins.confluence-templates:template-editor-variables-template-resources[4.3.3],com.atlassian.applinks.applinks-plugin:applinks-oauth-ui[3.8.0],com.atlassian.confluence.ext.newcode-macro-plugin:editor-scripts[2.0.15],confluence.web.resources:page-editor-js[1.0],com.atlassian.confluence.image.effects.ImageEffectsPlugin:propertiespanel[1.0.1],com.atlassian.confluence.plugins.confluence-paste:autoconvert-openphoto[4.3.3],confluence.web.resources:draft-changes-js[1.0],com.atlassian.confluence.tinymceplugin:editor-javascript-resources[4.3.3],com.atlassian.plugins.editor:atlassian-rte-css[4.3.3],confluence.macros.advanced:editor_includemacro[2.1.2],com.atlassian.confluence.tinymceplugin:editor-autocomplete-resources-only[4.3.3],com.atlassian.plugins.editor:atlassian-rte-javascript[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-core[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-google-redirect[4.3.3],com.atlassian.confluence.tinymceplugin:editor-css-resources[4.3.3],confluence.web.components:editor-notifications[1.0],confluence.web.resources:jira-controls[1.0],com.atlassian.confluence.tinymceplugin:editor-autocomplete-resources[4.3.3],com.atlassian.plugins.editor:atlassian-rte-resources[4.3.3],confluence.web.resources:draft-changes[1.0],com.atlassian.confluence.plugins.confluence-paste:paste-resources[4.3.3],confluence.macros.core:macro-browser-smart-fields[4.3.3],com.atlassian.confluence.plugins.drag-and-drop:drag-and-drop-for-editor[4.3.3],com.atlassian.confluence.plugins.drag-and-drop:drop-zone-for-image-dialog[4.3.3],com.atlassian.confluence.keyboardshortcuts:confluence-tinymce-keyboard-shortcuts[4.3.3],com.atlassian.confluence.plugins.jira.jira-connector:dialogsJs[1.4.2],confluence.web.resources:draft-changes-css[1.0],confluence.web.resources:page-editor[1.0],com.atlassian.confluence.plugins.confluence-paste:autoconvert-jira[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-widget-connector[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-skitch[4.3.3],confluence.extra.jira:macro-browser-resources[4.0.17],com.atlassian.confluence.plugins.confluence-mentions-plugin:editor-autocomplete-mentions[1.5.9],com.atlassian.confluence.plugins.confluence-paste:autoconvert-shortcut-links[4.3.3],com.atlassian.confluence.extra.officeconnector:officeconnector-editor-resources[2.1.10],confluence.editor.actions:editor-macro-browser[1.0],com.atlassian.confluence.plugins.confluence-paste:autoconvert-confluence[4.3.3],com.atlassian.plugins.editor:atlassian-rte-javascript-tinymce-extensions[4.3.3]&quot; data-atlassian-webresource-contexts=&quot;editor,macro-browser&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/1e53be25efac82032cdc96f3256115c5/_/download/contextbatch/css/editor,macro-browser,-viewcontent/batch.css?conditionalComment=lt+IE+9&quot; media=&quot;all&quot;&gt;
+&lt;![endif]--&gt;
+&lt;link data-atlassian-webresource-excluded-contexts=&quot;viewcontent&quot; data-atlassian-webresource-contents=&quot;com.atlassian.confluence.tinymceplugin:editor-resources[4.3.3],com.atlassian.confluence.plugins.confluence-templates:template-editor-variables-resources[4.3.3],com.atlassian.confluence.plugins.profile-picture:profile-picture-editor_resources[1.6],confluence.web.resources:page-editor-css[1.0],com.atlassian.plugins.editor:atlassian-rte-javascript-translations[4.3.3],com.atlassian.confluence.plugins.status-macro:editor_status[1.14],com.atlassian.applinks.applinks-plugin:applinks-util-js[3.8.0],com.atlassian.auiplugin:jquery-autocomplete[3.6.5],com.atlassian.confluence.extra.officeconnector:macro-browser-smart-fields[2.1.10],com.atlassian.confluence.plugins.gadgets:macro-browser-for-gadgetsplugin[4.3.3],com.atlassian.plugins.editor:atlassian-rte-javascript-tinymce-core[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-youtu.be-rewrite[4.3.3],com.atlassian.confluence.plugins.jira.jira-connector:proxy-js[1.4.2],com.atlassian.gadgets.embedded:gadget-core-resources[3.2.0-m3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-cloudapp[4.3.3],com.atlassian.confluence.plugins.confluence-sortable-tables:ConfluenceSortableTablesEditorPlugin[4.3.3],com.atlassian.confluence.plugins.confluence-mentions-plugin:editor-autocomplete-mentions-no-dependencies[1.5.9],com.atlassian.confluence.plugins.confluence-templates:template-editor-variables-template-resources[4.3.3],com.atlassian.applinks.applinks-plugin:applinks-oauth-ui[3.8.0],com.atlassian.confluence.ext.newcode-macro-plugin:editor-scripts[2.0.15],confluence.web.resources:page-editor-js[1.0],com.atlassian.confluence.image.effects.ImageEffectsPlugin:propertiespanel[1.0.1],com.atlassian.confluence.plugins.confluence-paste:autoconvert-openphoto[4.3.3],confluence.web.resources:draft-changes-js[1.0],com.atlassian.confluence.tinymceplugin:editor-javascript-resources[4.3.3],com.atlassian.plugins.editor:atlassian-rte-css[4.3.3],confluence.macros.advanced:editor_includemacro[2.1.2],com.atlassian.confluence.tinymceplugin:editor-autocomplete-resources-only[4.3.3],com.atlassian.plugins.editor:atlassian-rte-javascript[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-core[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-google-redirect[4.3.3],com.atlassian.confluence.tinymceplugin:editor-css-resources[4.3.3],confluence.web.components:editor-notifications[1.0],confluence.web.resources:jira-controls[1.0],com.atlassian.confluence.tinymceplugin:editor-autocomplete-resources[4.3.3],com.atlassian.plugins.editor:atlassian-rte-resources[4.3.3],confluence.web.resources:draft-changes[1.0],com.atlassian.confluence.plugins.confluence-paste:paste-resources[4.3.3],confluence.macros.core:macro-browser-smart-fields[4.3.3],com.atlassian.confluence.plugins.drag-and-drop:drag-and-drop-for-editor[4.3.3],com.atlassian.confluence.plugins.drag-and-drop:drop-zone-for-image-dialog[4.3.3],com.atlassian.confluence.keyboardshortcuts:confluence-tinymce-keyboard-shortcuts[4.3.3],com.atlassian.confluence.plugins.jira.jira-connector:dialogsJs[1.4.2],confluence.web.resources:draft-changes-css[1.0],confluence.web.resources:page-editor[1.0],com.atlassian.confluence.plugins.confluence-paste:autoconvert-jira[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-widget-connector[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-skitch[4.3.3],confluence.extra.jira:macro-browser-resources[4.0.17],com.atlassian.confluence.plugins.confluence-mentions-plugin:editor-autocomplete-mentions[1.5.9],com.atlassian.confluence.plugins.confluence-paste:autoconvert-shortcut-links[4.3.3],com.atlassian.confluence.extra.officeconnector:officeconnector-editor-resources[2.1.10],confluence.editor.actions:editor-macro-browser[1.0],com.atlassian.confluence.plugins.confluence-paste:autoconvert-confluence[4.3.3],com.atlassian.plugins.editor:atlassian-rte-javascript-tinymce-extensions[4.3.3]&quot; data-atlassian-webresource-contexts=&quot;editor,macro-browser&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/1e53be25efac82032cdc96f3256115c5/_/download/contextbatch/css/editor,macro-browser,-viewcontent/batch.css&quot; media=&quot;all&quot;&gt;
+&lt;script data-atlassian-webresource-excluded-contexts=&quot;viewcontent&quot; data-atlassian-webresource-contents=&quot;com.atlassian.confluence.tinymceplugin:editor-resources[4.3.3],com.atlassian.confluence.plugins.confluence-templates:template-editor-variables-resources[4.3.3],com.atlassian.confluence.plugins.profile-picture:profile-picture-editor_resources[1.6],confluence.web.resources:page-editor-css[1.0],com.atlassian.plugins.editor:atlassian-rte-javascript-translations[4.3.3],com.atlassian.confluence.plugins.status-macro:editor_status[1.14],com.atlassian.applinks.applinks-plugin:applinks-util-js[3.8.0],com.atlassian.auiplugin:jquery-autocomplete[3.6.5],com.atlassian.confluence.extra.officeconnector:macro-browser-smart-fields[2.1.10],com.atlassian.confluence.plugins.gadgets:macro-browser-for-gadgetsplugin[4.3.3],com.atlassian.plugins.editor:atlassian-rte-javascript-tinymce-core[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-youtu.be-rewrite[4.3.3],com.atlassian.confluence.plugins.jira.jira-connector:proxy-js[1.4.2],com.atlassian.gadgets.embedded:gadget-core-resources[3.2.0-m3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-cloudapp[4.3.3],com.atlassian.confluence.plugins.confluence-sortable-tables:ConfluenceSortableTablesEditorPlugin[4.3.3],com.atlassian.confluence.plugins.confluence-mentions-plugin:editor-autocomplete-mentions-no-dependencies[1.5.9],com.atlassian.confluence.plugins.confluence-templates:template-editor-variables-template-resources[4.3.3],com.atlassian.applinks.applinks-plugin:applinks-oauth-ui[3.8.0],com.atlassian.confluence.ext.newcode-macro-plugin:editor-scripts[2.0.15],confluence.web.resources:page-editor-js[1.0],com.atlassian.confluence.image.effects.ImageEffectsPlugin:propertiespanel[1.0.1],com.atlassian.confluence.plugins.confluence-paste:autoconvert-openphoto[4.3.3],confluence.web.resources:draft-changes-js[1.0],com.atlassian.confluence.tinymceplugin:editor-javascript-resources[4.3.3],com.atlassian.plugins.editor:atlassian-rte-css[4.3.3],confluence.macros.advanced:editor_includemacro[2.1.2],com.atlassian.confluence.tinymceplugin:editor-autocomplete-resources-only[4.3.3],com.atlassian.plugins.editor:atlassian-rte-javascript[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-core[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-google-redirect[4.3.3],com.atlassian.confluence.tinymceplugin:editor-css-resources[4.3.3],confluence.web.components:editor-notifications[1.0],confluence.web.resources:jira-controls[1.0],com.atlassian.confluence.tinymceplugin:editor-autocomplete-resources[4.3.3],com.atlassian.plugins.editor:atlassian-rte-resources[4.3.3],confluence.web.resources:draft-changes[1.0],com.atlassian.confluence.plugins.confluence-paste:paste-resources[4.3.3],confluence.macros.core:macro-browser-smart-fields[4.3.3],com.atlassian.confluence.plugins.drag-and-drop:drag-and-drop-for-editor[4.3.3],com.atlassian.confluence.plugins.drag-and-drop:drop-zone-for-image-dialog[4.3.3],com.atlassian.confluence.keyboardshortcuts:confluence-tinymce-keyboard-shortcuts[4.3.3],com.atlassian.confluence.plugins.jira.jira-connector:dialogsJs[1.4.2],confluence.web.resources:draft-changes-css[1.0],confluence.web.resources:page-editor[1.0],com.atlassian.confluence.plugins.confluence-paste:autoconvert-jira[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-widget-connector[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-skitch[4.3.3],confluence.extra.jira:macro-browser-resources[4.0.17],com.atlassian.confluence.plugins.confluence-mentions-plugin:editor-autocomplete-mentions[1.5.9],com.atlassian.confluence.plugins.confluence-paste:autoconvert-shortcut-links[4.3.3],com.atlassian.confluence.extra.officeconnector:officeconnector-editor-resources[2.1.10],confluence.editor.actions:editor-macro-browser[1.0],com.atlassian.confluence.plugins.confluence-paste:autoconvert-confluence[4.3.3],com.atlassian.plugins.editor:atlassian-rte-javascript-tinymce-extensions[4.3.3]&quot; data-atlassian-webresource-contexts=&quot;editor,macro-browser&quot; type=&quot;text/javascript&quot; src=&quot;/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/1e53be25efac82032cdc96f3256115c5/_/download/contextbatch/js/editor,macro-browser,-viewcontent/batch.js&quot; &gt;&lt;/script&gt;
+">
+            <meta name="ajs-date.format" content="MMM dd, yyyy">
+    
+    <link rel="shortcut icon" href="http://doc.prestashop.com/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="http://doc.prestashop.com/favicon.ico">
+
+<link rel="search" type="application/opensearchdescription+xml" href="http://doc.prestashop.com/opensearch/osd.action" title="PrestaShop documentation">
+
+        <!-- include system javascript resources -->
+                        
+    
+    <!--[if lt IE 9]>
+<script data-atlassian-webresource-contents="com.atlassian.auiplugin:ajs-html5shim[3.6.5]" type="text/javascript" src="/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/29/_/download/superbatch/js/batch.js?conditionalComment=lt+IE+9" ></script>
+<![endif]-->
+<script data-atlassian-webresource-contents="confluence.web.resources:contentnamesearch[1.0],confluence.web.resources:fancy-box[1.0],confluence.web.resources:page-move-resources[1.0],confluence.macros.advanced:get-more[2.1.2],confluence.web.resources:labels-editor[1.0],confluence.web.resources:atlassian-effects[1.0],confluence.aui.staging:meta[4.3.3],confluence.web.components:core[1.0],com.atlassian.auiplugin:ajs[3.6.5],confluence.web.resources:safe-ajax[1.0],confluence.macros.profile:profile-macro-styles[1.0],com.atlassian.auiplugin:jquery-compatibility[3.6.5],confluence.web.resources:animation[1.0],confluence.aui.staging:dark-features[4.3.3],confluence.web.resources:create-personal-space[1.0],com.atlassian.soy.soy-template-plugin:soy-deps[1.1.5],confluence.macros.advanced:get-more-helper[2.1.2],com.atlassian.confluence.keyboardshortcuts:confluence-keyboard-shortcuts[4.3.3],com.atlassian.confluence.restplugin:confluence-rest[4.3.3],confluence.web.resources:create-space[1.0],com.atlassian.plugins.shortcuts.atlassian-shortcuts-module:shortcuts[1.0],confluence.web.resources:userlink[1.0],confluence.web.resources:keygen[1.0],com.atlassian.confluence.extra.officeconnector:editinoffice[2.1.10],confluence.web.resources:view-content[1.0],confluence.web.components:property-panel-js[1.0],confluence.web.resources:search-results-grid[1.0],com.atlassian.auiplugin:jquery-lib[3.6.5],confluence.web.resources:jquery-json[1.0],confluence.web.resources:raphael[1.0],confluence.content.action.menu:linkpopup-resources[1.0],com.atlassian.auiplugin:ajs-gadgets-base[3.6.5],confluence.userstatus:userstatus-resources[1.0],confluence.web.resources:page-ordering-tree[1.0],confluence.aui.staging:storage-manager[4.3.3],confluence.web.resources:master-scripts[1.0],confluence.web.resources:breadcrumbs[1.0],confluence.web.resources:tooltip[1.0],com.atlassian.confluence.plugins.gadgets:gadget-directory-resources[4.3.3],confluence.web.resources:ajs[1.0],com.atlassian.confluence.whatsnew:whats-new-resources[4.3.3],com.atlassian.auiplugin:aui-core[3.6.5],confluence.web.resources:page-permissions-editor[1.0]" type="text/javascript" src="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/batch.js"></script>
+<!--[if lte IE 8]>
+<script data-atlassian-webresource-contents="com.atlassian.auiplugin:ajs[3.6.5]" type="text/javascript" src="/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/29/_/download/superbatch/js/batch.js?conditionalComment=lte+IE+8" ></script>
+<![endif]-->
+<script data-atlassian-webresource-contents="com.atlassian.confluence.plugins.view-source:view-source-menu-resources[4.3.3],com.atlassian.confluence.plugins.view-storage-format:view-storage-menu-resources[4.3.3],com.atlassian.confluence.plugins.share-page:mail-page-resources[1.23],confluence.macros.core:flash-autosize[4.3.3]" data-atlassian-webresource-contexts="page" type="text/javascript" src="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/batch_005.js"></script>
+<script data-atlassian-webresource-contents="com.atlassian.confluence.plugins.confluence-like:content-like-resources[4.3.3],com.atlassian.confluence.plugins.confluence-inline-tasks:inline-tasks-resources[4.3.3],com.atlassian.confluence.plugins.drag-and-drop:drag-and-drop-for-view-content[4.3.3],com.atlassian.confluence.plugins.doctheme:splitter[4.3.3],com.atlassian.confluence.plugins.view-storage-format:view-comment-storage-resources[4.3.3],com.atlassian.confluence.plugins.jira.jira-connector:help-dialog-extension[1.4.2],com.atlassian.confluence.plugins.confluence-sortable-tables:sortable-table-resources[4.3.3],com.atlassian.confluence.plugins.share-page:share-keyboard-shortcut-js-resources[1.23],com.atlassian.confluence.plugins.drag-and-drop:support[4.3.3],confluence.web.resources:view-comment[1.0],com.atlassian.auiplugin:jquery-ui-other[3.6.5],com.atlassian.confluence.plugins.confluence-mentions-plugin:help-dialog-extension[1.5.9],com.atlassian.confluence.plugins.confluence-inline-tasks:inline-tasks-styles[4.3.3]" data-atlassian-webresource-contexts="viewcontent,main" type="text/javascript" src="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/batch_002.js"></script>
+<script data-atlassian-webresource-contents="com.atlassian.confluence.plugins.quickcomments:quick-comment-hide-traditional[4.3.3]" data-atlassian-webresource-contexts="atl.comments" type="text/javascript" src="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/batch_004.js"></script>
+<script data-atlassian-webresource-contents="com.atlassian.plugins.navigation-link-plugin:rotp-menu[1.2]" data-atlassian-webresource-contexts="atl.general" type="text/javascript" src="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/batch_003.js"></script>
+<script data-atlassian-webresource-contents="com.atlassian.confluence.ext.newcode-macro-plugin:syntaxhighlighter[2.0.15]" type="text/javascript" src="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/com_004.js"></script>
+<script data-atlassian-webresource-contents="com.atlassian.confluence.ext.newcode-macro-plugin:syntaxhighlighter-brushes[2.0.15]" type="text/javascript" src="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/com_002.js"></script>
+<script data-atlassian-webresource-contents="com.atlassian.confluence.plugins.pagetree:pagetree-resources[2.0.2]" type="text/javascript" src="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/com_003.js"></script>
+<script data-atlassian-webresource-contents="com.atlassian.mywork.mywork-confluence-host-plugin:mw-header-anchor[1.1.1]" type="text/javascript" src="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/com.js"></script>
+
+    
+    <!-- end system javascript resources -->
+    <script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2753771-19']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
+
+
+
+    
+    <link rel="canonical" href="http://doc.prestashop.com/display/PS15/Coding+Standard">
+    <link rel="shortlink" href="http://doc.prestashop.com/x/G4CP">
+    <meta name="wikilink" content="[PS15:Coding Standard]">
+    <meta name="page-version" content="18">
+
+</head>
+
+<body onload="placeFocus()" id="com-atlassian-confluence" class="theme-documentation  splitter-invoked">
+
+        
+    <div id="full-height-container">
+    <div id="header-precursor">
+        
+                </div>
+
+<div id="header" class="sectionbottom ">
+        <form id="quick-search" class="quick-search" method="get" action="/dosearchsite.action">
+                <fieldset>
+            <input name="spaceSearch" value="false" type="hidden">
+        </fieldset>
+        <fieldset>
+            <legend>Quick Search</legend>
+            <input value="Search Confluence" title=" ( Type '/' )" class="quick-search-query placeholded" id="quick-search-query" accesskey="search-pages-action.accesskey" autocomplete="off" name="queryString" size="25" type="text">
+            <input class="quick-search-submit" id="quick-search-submit" value="Search Confluence" type="submit">
+            <div class="aui-dd-parent quick-nav-drop-down"><!-- Quick nav appears here --></div>
+        </fieldset>
+        <fieldset class="hidden parameters">
+            <input id="quickNavEnabled" value="true" type="hidden">
+                    </fieldset>
+    </form>
+
+    <ul id="header-menu-bar" class="ajs-menu-bar">
+                    
+            
+            <li class="normal ajs-menu-item">
+        <a id="browse-menu-link" class="browse trigger ajs-menu-title" href="#"><span><span>Browse</span></span></a>         <div style="" class="ajs-drop-down assistive" hidden="">
+                        <ul id="browse-menu-link-leading" class="section-leading first">
+                                        <li>
+    
+        
+    
+    <a id="space-pages-link" href="http://doc.prestashop.com/pages/listpages.action?key=PS15" class="" title="Browse pages in the PrestaShop 1.5 space ( Type 'g' then 's' )">
+                   <span>Pages</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-blogposts-link" href="http://doc.prestashop.com/pages/viewrecentblogposts.action?key=PS15" class="" title="Browse blogs in the PrestaShop 1.5 space">
+                   <span>Blog</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-templates-link" href="http://doc.prestashop.com/pages/templates2/listpagetemplates.action?key=PS15" class="" title="Browse and edit templates in the PrestaShop 1.5 space">
+                   <span>Templates</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-labels-link" href="http://doc.prestashop.com/labels/listlabels-heatmap.action?key=PS15" class="" title="Browse labels in the PrestaShop 1.5 space">
+                   <span>Labels</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-attachments-link" href="http://doc.prestashop.com/spaces/listattachmentsforspace.action?key=PS15" class="" title="Browse attachments in the PrestaShop 1.5 space">
+                   <span>Attachments</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-mail-link" href="http://doc.prestashop.com/mail/archive/viewmailarchive.action?key=PS15" class="" title="Browse mail in the PrestaShop 1.5 space">
+                   <span>Mail</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-advanced-link" href="http://doc.prestashop.com/spaces/viewspacesummary.action?key=PS15" class="" title="Browse additional space functions in the PrestaShop 1.5 space">
+                   <span>Advanced</span></a>        </li>
+                            </ul>
+                        <ul id="browse-menu-link-global" class="section-global">
+                                        <li>
+    
+        
+    
+    <a id="whats-new-menu-link" href="http://docs.atlassian.com/confluence/docs-43/whatsnew/iframe" class="" title="">
+                   <span>What’s New</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-directory-link" href="http://doc.prestashop.com/spacedirectory/view.action" class="" title="Browse the Confluence space directory">
+                   <span>Space Directory</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="feed-builder-link" href="http://doc.prestashop.com/dashboard/configurerssfeed.action" class="" title="Create your custom RSS feed.">
+                   <span>Feed Builder</span></a>        </li>
+                                        <li>
+    
+            
+    
+    <a id="keyboard-shortcuts-link" href="#" class="" title="View available keyboard shortcuts ( Type '?' )">
+                   <span>Keyboard Shortcuts</span></a>        </li>
+                                        <li>
+    
+            
+    
+    <a id="gadget-directory-link" href="#" class="user-item administration-link" title="Browse gadgets provided by Confluence">
+                   <span>Confluence Gadgets</span></a>        </li>
+                            </ul>
+                    </div>
+    </li>
+            
+                                                         <li class="ajs-menu-item normal">
+        
+        
+    
+    <a id="login-link" href="http://doc.prestashop.com/login.action?os_destination=%2Fdisplay%2FPS15%2FCoding%2BStandard" class="user-item login-link" title="">
+                   <span>Log In</span></a>        </li>
+                                <li class="normal ajs-menu-item">
+            <div id="splitter-button" class="" title="Show or hide sidebar ( Type '[' )"></div>
+        </li>
+
+    </ul>
+    
+    
+    <ol id="breadcrumbs">
+                    
+                        
+        <li class="first">
+                                    <span><a href="http://doc.prestashop.com/dashboard.action" title="Go to Dashboard ( Type 'g' then 'd' )">Dashboard</a></span>
+                </li>
+                    
+                
+        <li>
+                                    <span><a href="http://doc.prestashop.com/display/PS15">PrestaShop 1.5</a></span>
+                </li>
+                                        <li id="ellipsis" title="Show all breadcrumbs"><span><strong>…</strong></span></li>
+                                    
+                
+        <li class="hidden-crumb">
+                                    <span><a href="http://doc.prestashop.com/display/PS15/Home">Home</a></span>
+                </li>
+                                
+                
+        <li class="hidden-crumb">
+                                    <span><a href="http://doc.prestashop.com/display/PS15/English+documentation">English documentation</a></span>
+                </li>
+                                
+                
+        <li class="hidden-crumb">
+                                    <span><a href="http://doc.prestashop.com/display/PS15/Developer+Guide">Developer Guide</a></span>
+                </li>
+                    
+                
+        <li>
+                                    <span><a href="http://doc.prestashop.com/display/PS15/Coding+Standard">Coding Standard</a></span>
+                </li>
+        </ol>
+
+</div>
+
+    <div style="position: relative; height: 837.333px;" id="splitter">
+    <div style="position: absolute; left: 0px; width: 300px; height: 837px;" id="splitter-sidebar">
+        
+
+                    
+        
+    
+
+<div class="plugin_pagetree">
+
+                <div id="pagetreesearch">
+            <form method="POST" action="/plugins/pagetreesearch/pagetreesearch.action" name="pagetreesearchform">
+                                    <input name="ancestorId" value="5373996" type="hidden">
+                                <input name="spaceKey" value="PS15" type="hidden">
+                <input size="20" name="queryString" type="text">
+                <input value="Search" type="submit">
+            </form>
+        </div>
+    
+        
+    <ul class="plugin_pagetree_children_list plugin_pagetree_children_list_noleftspace">
+        <div id="children5373996-0" class="plugin_pagetree_children">
+<ul class="plugin_pagetree_children_list" id="child_ul5373996-0">
+            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                                             <a id="plusminus5374130-0" class="plugin_pagetree_childtoggle icon icon-minus" href="#">
+            </a>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan5374130-0">                        <a href="http://doc.prestashop.com/display/PS15/English+documentation">English documentation</a>
+        </span>            </div>
+
+        <div id="children5374130-0" class="plugin_pagetree_children_container">
+                                                        <ul class="plugin_pagetree_children_list" id="child_ul5374130-0">
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                                             <a id="plusminus5374139-0" class="plugin_pagetree_childtoggle icon icon-plus" href="#">
+            </a>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan5374139-0">                        <a href="http://doc.prestashop.com/display/PS15/Getting+Started">Getting Started</a>
+        </span>            </div>
+
+        <div id="children5374139-0" class="plugin_pagetree_children_container">
+                                                            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                                             <a id="plusminus5374291-0" class="plugin_pagetree_childtoggle icon icon-plus" href="#">
+            </a>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan5374291-0">                        <a href="http://doc.prestashop.com/display/PS15/Updating+PrestaShop">Updating PrestaShop</a>
+        </span>            </div>
+
+        <div id="children5374291-0" class="plugin_pagetree_children_container">
+                                                            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                                             <a id="plusminus5374303-0" class="plugin_pagetree_childtoggle icon icon-plus" href="#">
+            </a>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan5374303-0">                        <a href="http://doc.prestashop.com/display/PS15/User+Guide">User Guide</a>
+        </span>            </div>
+
+        <div id="children5374303-0" class="plugin_pagetree_children_container">
+                                                            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                                             <a id="plusminus9076768-0" class="plugin_pagetree_childtoggle icon icon-minus" href="#">
+            </a>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan9076768-0">                        <a href="http://doc.prestashop.com/display/PS15/Developer+Guide">Developer Guide</a>
+        </span>            </div>
+
+        <div id="children9076768-0" class="plugin_pagetree_children_container">
+                                                        <ul class="plugin_pagetree_children_list" id="child_ul9076768-0">
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                    <span class="no-children icon icon-square"></span>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan9404440-0">                        <a href="http://doc.prestashop.com/display/PS15/Fundamentals">Fundamentals</a>
+        </span>            </div>
+
+        <div id="children9404440-0" class="plugin_pagetree_children_container">
+            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                    <span class="no-children icon icon-square"></span>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span style="font-weight: bold;" class="plugin_pagetree_children_span" id="childrenspan9404443-0">                        <a href="http://doc.prestashop.com/display/PS15/Coding+Standard">Coding Standard</a>
+        </span>            </div>
+
+        <div id="children9404443-0" class="plugin_pagetree_children_container">
+            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                    <span class="no-children icon icon-square"></span>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan13533746-0">                        <a href="http://doc.prestashop.com/display/PS15/Setting+up+your+local+development+environment">Setting up your local development environment</a>
+        </span>            </div>
+
+        <div id="children13533746-0" class="plugin_pagetree_children_container">
+            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                    <span class="no-children icon icon-square"></span>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan9076773-0">                        <a href="http://doc.prestashop.com/display/PS15/Creating+a+PrestaShop+module">Creating a PrestaShop module</a>
+        </span>            </div>
+
+        <div id="children9076773-0" class="plugin_pagetree_children_container">
+            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                    <span class="no-children icon icon-square"></span>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan13533747-0">                        <a href="http://doc.prestashop.com/display/PS15/Diving+into+PrestaShop+Core+development">Diving into PrestaShop Core development</a>
+        </span>            </div>
+
+        <div id="children13533747-0" class="plugin_pagetree_children_container">
+            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                    <span class="no-children icon icon-square"></span>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan13533769-0">                        <a href="http://doc.prestashop.com/display/PS15/Creating+a+module+with+both+front-end+and+back-end+controllers">Creating a module with both front-end and back-end controllers</a>
+        </span>            </div>
+
+        <div id="children13533769-0" class="plugin_pagetree_children_container">
+            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                    <span class="no-children icon icon-square"></span>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan11272205-0">                        <a href="http://doc.prestashop.com/display/PS15/Hooks+in+PrestaShop+1.5">Hooks in PrestaShop 1.5</a>
+        </span>            </div>
+
+        <div id="children11272205-0" class="plugin_pagetree_children_container">
+            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                    <span class="no-children icon icon-square"></span>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan13533724-0">                        <a href="http://doc.prestashop.com/display/PS15/Translations+in+PrestaShop+1.5">Translations in PrestaShop 1.5</a>
+        </span>            </div>
+
+        <div id="children13533724-0" class="plugin_pagetree_children_container">
+            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                                             <a id="plusminus10977291-0" class="plugin_pagetree_childtoggle icon icon-plus" href="#">
+            </a>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan10977291-0">                        <a href="http://doc.prestashop.com/display/PS15/Developer+tutorials">Developer tutorials</a>
+        </span>            </div>
+
+        <div id="children10977291-0" class="plugin_pagetree_children_container">
+                                                            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                    <span class="no-children icon icon-square"></span>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan12124169-0">                        <a href="http://doc.prestashop.com/display/PS15/How+to+use+the+forge+to+contribute+to+PrestaShop">How to use the forge to contribute to PrestaShop</a>
+        </span>            </div>
+
+        <div id="children12124169-0" class="plugin_pagetree_children_container">
+            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                    <span class="no-children icon icon-square"></span>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan12943407-0">                        <a href="http://doc.prestashop.com/display/PS15/How+to+write+a+commit+message">How to write a commit message</a>
+        </span>            </div>
+
+        <div id="children12943407-0" class="plugin_pagetree_children_container">
+            </div>
+    </li>
+                                        </ul>
+                                        </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                                             <a id="plusminus14123012-0" class="plugin_pagetree_childtoggle icon icon-plus" href="#">
+            </a>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan14123012-0">                        <a href="http://doc.prestashop.com/display/PS15/Designer+guide">Designer guide</a>
+        </span>            </div>
+
+        <div id="children14123012-0" class="plugin_pagetree_children_container">
+                                                            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                    <span class="no-children icon icon-square"></span>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan12943369-0">                        <a href="http://doc.prestashop.com/display/PS15/System+Administrator+Guide">System Administrator Guide</a>
+        </span>            </div>
+
+        <div id="children12943369-0" class="plugin_pagetree_children_container">
+            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                    <span class="no-children icon icon-square"></span>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan13238294-0">                        <a href="http://doc.prestashop.com/display/PS15/Merchant%27s+Guide">Merchant's Guide</a>
+        </span>            </div>
+
+        <div id="children13238294-0" class="plugin_pagetree_children_container">
+            </div>
+    </li>
+                                        </ul>
+                                        </div>
+    </li>
+            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                                             <a id="plusminus11272318-0" class="plugin_pagetree_childtoggle icon icon-plus" href="#">
+            </a>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan11272318-0">                        <a href="http://doc.prestashop.com/pages/viewpage.action?pageId=11272318">Documentation française</a>
+        </span>            </div>
+
+        <div id="children11272318-0" class="plugin_pagetree_children_container">
+                                                            </div>
+    </li>
+            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                    <span class="no-children icon icon-square"></span>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan13533693-0">                        <a href="http://doc.prestashop.com/display/PS15/Contributing+to+the+documentation">Contributing to the documentation</a>
+        </span>            </div>
+
+        <div id="children13533693-0" class="plugin_pagetree_children_container">
+            </div>
+    </li>
+    </ul>
+</div>
+    </ul>
+
+    <fieldset class="hidden">
+        <input name="treeId" value="" type="hidden">
+        <input name="treeRequestId" value="/plugins/pagetree/naturalchildren.action?decorator=none&amp;excerpt=false&amp;sort=position&amp;reverse=false&amp;disableLinks=false" type="hidden">
+        <input name="treePageId" value="9404443" type="hidden">
+
+        <input name="noRoot" value="false" type="hidden">
+        <input name="rootPageId" value="5373996" type="hidden">
+
+        <input name="rootPage" value="" type="hidden">
+        <input name="startDepth" value="0" type="hidden">
+        <input name="spaceKey" value="PS15" type="hidden">
+
+        <input name="i18n-pagetree.loading" value="Loading..." type="hidden">
+        <input name="i18n-pagetree.error.permission" value="Unable to load page tree. It seems that you do not have permission to view the root page." type="hidden">
+        <input name="i18n-pagetree.eeror.general" value="There was a problem retrieving the page tree. Please check the server log file for more information." type="hidden">
+        <input name="loginUrl" value="/login.action?os_destination=%2Fdisplay%2FPS15%2FCoding%2BStandard" type="hidden">
+
+                <fieldset class="hidden">
+                                                <input name="ancestorId" value="9076768" type="hidden">
+                                    <input name="ancestorId" value="5374130" type="hidden">
+                                    <input name="ancestorId" value="5373996" type="hidden">
+                                    </fieldset>
+    </fieldset>
+</div>
+
+
+
+            </div><div unselectable="on" class="vsplitbar" style="z-index: 4; position: absolute; -moz-user-select: none; cursor: ew-resize; left: 300px; height: 837px;"><a title="vsplitbar" tabindex="0" accesskey="L" href="javascript:void(0)"></a></div>
+    <div style="position: absolute; left: 305px; width: 1581px; height: 837px;" id="splitter-content">
+
+                    <script type="text/javascript" src="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/doc-theme.js"></script>
+    
+                        
+            
+<div id="main">
+    <div id="main-header">
+        
+        
+    <div id="navigation" class="content-navigation view">
+                    <ul class="ajs-menu-bar">
+                                
+                        
+            <li class="normal ajs-menu-item">
+        <a id="action-menu-link" class="action trigger ajs-menu-title" href="#"><span><span>Tools</span></span></a>         <div class="ajs-drop-down most-right-menu-item assistive" hidden="">
+                        <ul id="action-menu-link-primary" class="section-primary first">
+                                        <li>
+    
+        
+    
+    <a id="view-attachments-link" href="http://doc.prestashop.com/pages/viewpageattachments.action?pageId=9404443" class="action-view-attachments" accesskey="a" title="View Attachments ( Type 't' )">
+                   <span><u>A</u>ttachments (0)</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="action-view-history-link" href="http://doc.prestashop.com/pages/viewpreviousversions.action?pageId=9404443" class="action-view-history" title="">
+                   <span>Page History</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="action-page-permissions-link" href="http://doc.prestashop.com/pages/viewinfo.action?pageId=9404443" class="action-page-permissions" title="Edit restrictions">
+                   <span>Restrictions</span></a>        </li>
+                            </ul>
+                        <ul id="action-menu-link-secondary" class="section-secondary">
+                                        <li>
+    
+        
+    
+    <a id="view-page-info-link" href="http://doc.prestashop.com/pages/viewinfo.action?pageId=9404443" class="action-view-info" title="">
+                   <span>Info</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="link-to-page-link" href="http://doc.prestashop.com/pages/viewinfo.action?pageId=9404443" class="" title="Link to this Page ( Type 'k' )">
+                   <span>Link to this Page…</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="view-in-hierarchy-link" href="http://doc.prestashop.com/pages/listpages-dirview.action?key=PS15&amp;openId=9404443#selectedPageInHierarchy" class="" title="">
+                   <span>View in Hierarchy</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="action-view-source-link" href="http://doc.prestashop.com/plugins/viewsource/viewpagesrc.action?pageId=9404443" class="action-view-source popup-link" title="">
+                   <span>View Source</span></a>        </li>
+                            </ul>
+                    </div>
+    </li>
+            </ul>
+    </div>
+
+        
+        <h1 id="title-heading" class="pagetitle">
+                            <a href="http://doc.prestashop.com/display/PS15"><img class="logo global custom" src="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/global.png" alt=""></a>                
+            <span id="title-text">
+                                        <a href="http://doc.prestashop.com/display/PS15/Coding+Standard">Coding Standard</a>
+                            </span>
+        </h1>
+    </div>
+
+    
+
+    
+    
+    
+    
+    
+
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                      
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+        
+    
+    
+                    
+    
+
+    
+
+
+<div id="content" class="page view">
+    
+
+<div id="action-messages">
+                        </div>
+
+
+
+    
+<script type="text/x-template" title="movePageDialog">
+    <div class="row information">
+        <div class="inner">
+            <div class="element">
+                Specify the new parent page for this page and its children by space and title.
+            </div>
+        </div>
+    </div>
+    <div class="form">
+        <fieldset>
+                
+
+    <legend class="assistive"><span>Change the Parent Page to a Known Page</span></legend>
+            <div class="row">
+                <label for="new-space">New space:</label>
+                <div class="value new-space-value">
+                    <input id="new-space-key" name="new-space-key" type="hidden" value="PS15">
+                                            <span class="space-input">
+                            <input id="new-space" name="new-space" value="PrestaShop 1.5" disabled="disabled">
+                        </span>
+                        <span class="description warning">You cannot move this page to another space because you do not have permission to remove it from this space.</span>
+                                        <div class="new-space-dropdown aui-dd-parent autocomplete"></div>
+                </div>
+            </div>
+            <div class="row">
+                <label for="new-parent-page">New parent page:</label>
+                <div class="value new-parent-page-value">
+                    <span class="page-input">
+                        <input id="new-parent-page" name="new-parent-page" value="Developer Guide">
+                    </span>
+                    <span class="description">Start typing a page title to see a list of suggestions.</span>
+                    <div class="new-parent-page-dropdown aui-dd-parent autocomplete"></div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="location-info">
+        <div class="row">
+            <label>Current location:</label>
+            <div class="value breadcrumbs-container">
+                <div class="breadcrumbs-line">
+                    <ul id="current-parent-breadcrumbs" class="breadcrumbs">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <label>New location:</label>
+            <div class="value breadcrumbs-container">
+                <div class="breadcrumbs-line">
+                    <ul id="new-parent-breadcrumbs" class="breadcrumbs">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/x-template" title="movePageSearchPanel">
+    <div class="row information">
+        <div class="inner">
+            <div class="element">
+                Search for and select the new parent page for this page and its children.
+            </div>
+        </div>
+    </div>
+    <div id="move-page-search-container" class="row">
+        <div class="search-form">
+            <fieldset>
+                    
+
+    <legend class="assistive"><span>Search for a New Parent Page</span></legend>
+                    
+
+    <label  for="move-page-search-query" class="assistive">Search keywords</label>
+                <input class="search-query" id="move-page-search-query">
+                    
+
+    <label  for="move-page-search-space" class="assistive">Search in space</label>
+                                    <select id="move-page-search-space" class="search-space" disabled="disabled">
+                        <option value="PS15" selected="selected">PrestaShop 1.5</option>
+                    </select>
+                                <input type="button" value="Search">
+                                    <div class="description warning">You cannot move this page to another space because you do not have permission to remove it from this space.</div>
+                            </fieldset>
+        </div>
+        <div class="search-results">
+        </div>
+    </div>
+</script>
+<script type="text/x-template" title="searchResultsGrid">
+    <table>
+        <thead>
+            <tr class="header">
+                <th class="search-result-title">Page Title</th>
+                <th class="search-result-space">Space</th>
+                <th class="search-result-date">Updated</th>
+            </tr>
+        </thead>
+    </table>
+</script>
+<script type="text/x-template" title="searchResultsGridCount">
+    <p class="search-result-count">{0}</p>
+</script>
+<script type="text/x-template" title="searchResultsGridRow">
+    <tr class="search-result">
+        <th class="search-result-title"><a href="{1}" class="content-type-{2}"><span>{0}</span></a></th>
+        <td class="search-result-space"><a class="space" href="/display/{4}/" title="{3}">{3}</a></td>
+        <td class="search-result-date"><span class="date" title="{6}">{5}</span></td>
+    </tr>
+</script><!-- Start restrictions section -->
+<script type="text/x-template" title="page-permissions-div">
+<div id="page-permissions-div">
+    <div id="page-permissions-editor-form">
+
+                <div id="page-permissions-error-div" class="hidden">
+            <a href="#" id="permissions-error-div-close">Ok</a>
+            <div></div>
+        </div>
+
+                <div id="page-permissions-type-radios" class="page-permissions-label-rows">
+            <div>
+                <input id="restrictViewRadio" type="radio" checked="checked" name="pagePermissionTypeRadio" value="view"/>
+                <label for="restrictViewRadio">Restrict viewing of this page</label>
+                <input id="restrictEditRadio" type="radio" name="pagePermissionTypeRadio" value="edit"/>
+                <label for="restrictEditRadio">Restrict editing of this page</label>
+            </div>
+        </div>
+        <div id="page-permissions-input" class="page-permissions-label-rows">
+            <div class="page-permissions-label">To:</div>
+            <div id="page-permissions-chooser-box">
+                                <span id="page-permissions-choose-user" class="ajs-button">
+                    
+
+
+
+    
+
+
+
+<a href="#" id='userpicker-popup-link-image' onClick="var picker = window.open('/spaces/openuserpicker.action?key=PS15&amp;startIndex=0&amp;onPopupSubmit=AJS.PagePermissions.addUserPermissions', 'EntitiesPicker', 'status=yes,resizable=yes,top=100,left=200,width=700,height=680,scrollbars=yes'); picker.focus(); return false;"><img src="/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/_/images/icons/user_16.gif" height=16 width=16 border=0 align="absmiddle"  title="Choose users" /></a>
+<a href="#" id='userpicker-popup-link-text' onClick="var picker = window.open('/spaces/openuserpicker.action?key=PS15&amp;startIndex=0&amp;onPopupSubmit=AJS.PagePermissions.addUserPermissions', 'EntitiesPicker', 'status=yes,resizable=yes,top=100,left=200,width=700,height=680,scrollbars=yes'); picker.focus(); return false;">Person...</a>
+
+
+                </span>
+                <span id="page-permissions-choose-group" class="ajs-button">
+                    
+
+
+
+    
+
+ 
+
+<a href="#" id='grouppicker-popup-link-image' onClick="var picker = window.open('/spaces/opengrouppicker.action?key=PS15&amp;startIndex=0&amp;actionName=dosearchgroups.action&amp;onPopupSubmit=AJS.PagePermissions.addGroupPermissions', 'EntitiesPicker', 'status=yes,resizable=yes,top=100,left=200,width=580,height=550,scrollbars=yes'); picker.focus(); return false;"><img src="/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/_/images/icons/group_16.gif" height=16 width=16 border=0 align="absmiddle"  title="Choose groups" /></a>
+<a href="#" id='grouppicker-popup-link-text' onClick="var picker = window.open('/spaces/opengrouppicker.action?key=PS15&amp;startIndex=0&amp;actionName=dosearchgroups.action&amp;onPopupSubmit=AJS.PagePermissions.addGroupPermissions', 'EntitiesPicker', 'status=yes,resizable=yes,top=100,left=200,width=580,height=550,scrollbars=yes'); picker.focus(); return false;">Group...</a>
+
+
+                </span>
+            </div>
+            <div id="page-permissions-input-box">
+                <input type="text" id="page-permissions-names-input" name="permissionNames"
+                    placeholder="Enter user or group name" class="autocomplete-user"
+                    data-max="10" data-none-message="No matches"
+                    data-target="#page-permissions-names-hidden" data-template="{username}"
+                    data-dropdown-target="#page-perms-name-dropdown-wrapper" data-resize-to-input="true"
+                    size="30"/>
+                <input
+    type="hidden"
+                            id="page-permissions-names-hidden"           />                <img height="16px" width="1px" src="/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/_/images/border/spacer.gif"/>
+                <input type="button" id="add-typed-names" value="Restrict">
+                <div id="page-perms-name-dropdown-wrapper" class="aui-dd-parent autocomplete"></div>
+            </div>
+        </div>
+    </div>
+    <div id="page-permissions-tables">
+        <div id="page-permissions-table-div">
+                        <table id="page-permissions-table" class="page-permissions-table">
+                <tr id="page-permissions-no-views" class="marker-row">
+                    <td colspan="3" class="page-permissions-marker-cell"><span>No view restrictions are defined for this page</span></td>
+                </tr>
+                <tr id="page-permissions-no-edits" class="marker-row">
+                    <td colspan="3" class="page-permissions-marker-cell"><span>No edit restrictions are defined for this page</span></td>
+                </tr>
+            </table>
+        </div>
+        <div id="page-inherited-permissions-table-div" class="hidden">
+            <span id="page-inherited-permissions-table-desc">
+                <a class="icon twisty-closed">Show/Hide</a>
+                <a id="toggle-inherited-permissions" title="Click to see inherited restrictions">This page has restricted parent pages. It can only be seen by users who can see those parent pages.</a>
+            </span>
+            <div id="page-inherited-permissions-tables" class="hidden page-inheritance-togglable"></div>
+        </div>
+    </div>
+</div>
+</script>
+
+<!-- End restrictions section -->
+
+        
+    
+    
+        <fieldset class="hidden parameters">
+            <input title="parentPageId" value="9076768" type="hidden">
+        </fieldset>
+
+        
+                            
+    
+
+                    
+
+        
+        <a href="#page-metadata-end" class="assistive">Skip to end of metadata</a>
+<div id="page-metadata-start" class="assistive"></div>
+
+    <div class="page-metadata">
+        <ul>
+                            <li class="page-metadata-item noprint">
+    
+            
+    
+    <a id="content-metadata-page-restrictions" href="#" class="page-metadata-icon page-restrictions hidden" title="Page restrictions apply. Click the lock icon to view or edit the restriction.">
+                   <span>Page restrictions apply</span></a>        </li>
+                        <li class="page-metadata-modification-info">
+                                    Added by <a href="http://doc.prestashop.com/display/%7Eprestaforge" class="url fn">Documentation Team</a>, last edited by <a href="http://doc.prestashop.com/display/%7Eprestaforge" class="url fn">Documentation Team</a> on Jan 16, 2013
+                                                                <span class="noprint">&nbsp;(<a id="view-change-link" href="http://doc.prestashop.com/pages/diffpages.action?pageId=9404443&amp;originalId=14418046">view change</a>)</span>
+                                                </li>
+                    </ul>
+                </div>
+
+
+<a href="#page-metadata-start" class="assistive">Go to start of metadata</a>
+<div id="page-metadata-end" class="assistive"></div>
+        
+        <fieldset class="hidden parameters">
+                        <input title="browsePageTreeMode" value="view" type="hidden">
+        </fieldset>
+
+        <div class="wiki-content">
+                           <p><strong>Table of content</strong></p><p></p><div>
+<ul>
+    <li><a href="#CodingStandard-CodingStandard">Coding Standard</a></li>
+<ul>
+    <li><a href="#CodingStandard-Summary">Summary</a></li>
+    <li><a href="#CodingStandard-PHP">PHP</a></li>
+    <li><a href="#CodingStandard-SQL">SQL</a></li>
+    <li><a href="#CodingStandard-Installingthecodevalidator">Installing the code validator</a></li>
+</ul>
+</ul></div><p></p><h1 id="CodingStandard-CodingStandard">Coding Standard</h1><p>Consistency
+ is important, even more so when writing open-source code, since the 
+code belongs to millions on eyeballs, and bug-fixing relies on this 
+teeming millions to actually locate bugs and understand how to solve it.</p><p>This
+ is when, when writing anything for PrestaShop, be it a theme, a module 
+or a core patch, you should strive to follow the following guidelines. 
+They are the ones that the PrestaShop developers adhere to, and 
+following theme is the surest way to have you code be elegantly 
+integrated in PrestaShop.</p><p>In short, having code consistency helps keeping the code readable and maintainable.</p><p>If use an IDE, you can use the CodeSniffer code validator to help you write better code.</p><h2 id="CodingStandard-Summary">Summary</h2><div class="table-wrap"><table class="confluenceTable tablesorter"><thead><tr class="sortableHeader"><th data-column="0" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner"><p><a href="#CodingStandard-PHP">PHP</a></p></div></th><th data-column="1" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner"><p><a href="#CodingStandard-PHP">PHP</a></p></div></th><th data-column="2" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner"><p><a href="#CodingStandard-SQL">SQL</a></p></div></th></tr></thead><tbody><tr><td class="confluenceTd"><p><a href="#CodingStandard-Variablenames">Variable names</a></p></td><td class="confluenceTd"><p><a href="#CodingStandard-Strings">Strings</a></p></td><td class="confluenceTd"><p><a href="#CodingStandard-Tablenames">Table names</a></p></td></tr><tr><td class="confluenceTd"><p><a href="#CodingStandard-Assignments">Assignments</a></p></td><td class="confluenceTd"><p><a href="#CodingStandard-Comments">Comments</a></p></td><td class="confluenceTd"><p><a href="#CodingStandard-SQLquery">SQL query</a></p></td></tr><tr><td class="confluenceTd"><p><a href="#CodingStandard-Operators">Operators</a></p></td><td class="confluenceTd"><p><a href="#CodingStandard-Returnvalues">Return values</a></p></td></tr><tr><td class="confluenceTd"><p><a href="#CodingStandard-Statements">Statements</a></p></td><td class="confluenceTd"><p><a href="#CodingStandard-Call">Call</a></p></td></tr><tr><td class="confluenceTd"><p><a href="#CodingStandard-Visibility">Visibility</a></p></td><td class="confluenceTd"><p><a href="#CodingStandard-Tags">Tags</a></p></td></tr><tr><td class="confluenceTd"><p><a href="#CodingStandard-Method/Functionnames">Method / Function names</a></p></td><td class="confluenceTd"><p><a href="#CodingStandard-Indentation">Indentation</a></p></td></tr><tr><td class="confluenceTd"><p><a href="#CodingStandard-Enumeration">Enumeration</a></p></td><td class="confluenceTd"><p><a href="#CodingStandard-Array">Array</a></p></td></tr><tr><td class="confluenceTd"><p><a href="#CodingStandard-Objects/Classes">Objects / Classes</a></p></td><td class="confluenceTd"><p><a href="#CodingStandard-Bloc">Bloc</a></p></td></tr><tr><td class="confluenceTd"><p><a href="#CodingStandard-Defines">Defines</a></p></td><td class="confluenceTd"><p><a href="#CodingStandard-Security">Security</a></p></td></tr><tr><td class="confluenceTd"><p><a href="#CodingStandard-Keywords">Keywords</a></p></td><td class="confluenceTd"><p><a href="#CodingStandard-Limitations">Limitations</a></p></td></tr><tr><td class="confluenceTd"><p><a href="#CodingStandard-Constants">Constants</a></p></td><td class="confluenceTd"><p><a href="#CodingStandard-Other">Other</a></p></td></tr><tr><td class="confluenceTd"><p><a href="#CodingStandard-Configurationvariables">Configuration variables</a></p></td></tr></tbody></table></div><h2 id="CodingStandard-PHP">PHP</h2><h3 id="CodingStandard-Variablenames">Variable names</h3><ol><li>Corresponding to data from databases: <code>$my_var</code>.</li><li>Corresponding to algorithm: <code>$my_var</code>.</li><li>The visibility of a member variable does not affect its name: <code>private $my_var</code>.</li></ol><h3 id="CodingStandard-Assignments">Assignments</h3><ol><li>There should be a space between variable and operators:</li></ol><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_737798" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java plain">$my_var = </code><code class="java value">17</code><code class="java plain">;</code></div><div class="line number2 index1 alt1"><code class="java plain">$a = $b;</code></div></div></td></tr></tbody></table></div></div>
+</div></div><h3 id="CodingStandard-Operators">Operators</h3><ol><li><p>"<code>+</code>", "<code>-</code>", "<code>*</code>", "<code>/</code>", "<code>=</code>" and any combination of them (e.g. "<code>/=</code>") need a space between their left and right members.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_466982" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java plain">$a + </code><code class="java value">17</code><code class="java plain">;</code></div><div class="line number2 index1 alt1"><code class="java plain">$result = $b / </code><code class="java value">2</code><code class="java plain">;</code></div><div class="line number3 index2 alt2"><code class="java plain">$i += </code><code class="java value">34</code><code class="java plain">;</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li><p>"<code>.</code>" does not have a space between its left and right members.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_714917" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java plain">echo $a.$b;</code></div><div class="line number2 index1 alt1"><code class="java plain">$c = $d.$</code><code class="java keyword">this</code><code class="java plain">-&gt;foo();</code></div></div></td></tr></tbody></table></div></div>
+</div></div><div class="panelMacro"><table class="noteMacro"><colgroup><col width="24"><col></colgroup><tbody><tr><td valign="top"><img src="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/warning.png" alt="" border="0" height="16" width="16" align="absmiddle"></td><td><b>Recommendation</b><br><p>For performance reasons, please do not overuse concatenation.</p></td></tr></tbody></table></div></li><li><p>"<code>.=</code>" needs a space between its left and right members.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_993951" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java plain">$a .= </code><code class="java string">'Debug'</code><code class="java plain">;</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li><p>When testing a boolean variable, do not use a 
+comparison operator, but directly use the value itself, or the value 
+prefixed with an exclamation mark:</p><div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_274115" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java comments">// do not use this</code></div><div class="line number2 index1 alt1"><code class="java keyword">if</code> <code class="java plain">($var == </code><code class="java keyword">true</code><code class="java plain">)</code></div><div class="line number3 index2 alt2"><code class="java comments">// ...nor this</code></div><div class="line number4 index3 alt1"><code class="java keyword">if</code> <code class="java plain">($var == </code><code class="java keyword">false</code><code class="java plain">)</code></div><div class="line number5 index4 alt2">&nbsp;</div><div class="line number6 index5 alt1"><code class="java comments">// use this</code></div><div class="line number7 index6 alt2"><code class="java keyword">if</code> <code class="java plain">($var)</code></div><div class="line number8 index7 alt1"><code class="java comments">// ...or this</code></div><div class="line number9 index8 alt2"><code class="java keyword">if</code> <code class="java plain">(!$var)</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li></ol><h3 id="CodingStandard-Statements">Statements</h3><ol><li><p><code>if</code>, <code>elseif</code>, <code>while</code>, <code>for</code>: need a space between the <code>if</code> keyword and the parentheses <code>()</code>.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_888372" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java keyword">if</code> <code class="java plain">(&lt;condition&gt;)</code></div><div class="line number2 index1 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">...</code></div><div class="line number3 index2 alt2"><code class="java keyword">while</code> <code class="java plain">(&lt;condition&gt;)</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li><p>When a combination of <code>if</code> and <code>else</code> is used and both can return a value, the <code>else</code> has to be omitted.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_819457" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java keyword">if</code> <code class="java plain">(&lt;condition&gt;)</code></div><div class="line number2 index1 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">return</code> <code class="java keyword">false</code><code class="java plain">;</code></div><div class="line number3 index2 alt2"><code class="java keyword">return</code> <code class="java keyword">true</code><code class="java plain">;</code></div></div></td></tr></tbody></table></div></div>
+</div></div><div class="panelMacro"><table class="noteMacro"><colgroup><col width="24"><col></colgroup><tbody><tr><td valign="top"><img src="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/warning.png" alt="" border="0" height="16" width="16" align="absmiddle"></td><td><b>Recommendation</b><br><p>We recommend one return per method/function.</p></td></tr></tbody></table></div></li><li><p>When a method/function returns a boolean and the current method/function's returned value depends on it, the <code>if</code> statement has to be avoided.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_325920" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java keyword">public</code> <code class="java plain">aFirstMethod()</code></div><div class="line number2 index1 alt1"><code class="java plain">{</code></div><div class="line number3 index2 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">return</code> <code class="java plain">$</code><code class="java keyword">this</code><code class="java plain">-&gt;aSecondMethod();</code></div><div class="line number4 index3 alt1"><code class="java plain">}</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li><p>Tests must be grouped by entity.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_691082" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java keyword">if</code> <code class="java plain">($price AND !empty($price))</code></div><div class="line number2 index1 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">...</code></div><div class="line number3 index2 alt2"><code class="java keyword">if</code> <code class="java plain">(!Validate::$myObject OR $myObject-&gt;id === NULL)</code></div><div class="line number4 index3 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">...</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li></ol><h3 id="CodingStandard-Visibility">Visibility</h3><ol><li>The visibility must be defined every time, even when it is a public method.</li><li><p>The order of the method properties should be: <code>visibility static function functionName()</code>.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_16477" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java keyword">private</code> <code class="java keyword">static</code> <code class="java plain">function foo()</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li></ol><h3 id="CodingStandard-Method/Functionnames">Method / Function names</h3><ol><li><p>Method
+ and function names always use CamelCase: begin with a lowercase 
+character and each following words must begin with an uppercase 
+character.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_769574" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java keyword">public</code> <code class="java plain">function myExampleMethodWithALotOfWordsInItsName()</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li><p>Braces introducing method code have to be preceded by a carriage return.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_402656" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java keyword">public</code> <code class="java plain">function myMethod($arg1, $arg2)</code></div><div class="line number2 index1 alt1"><code class="java plain">{</code></div><div class="line number3 index2 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">...</code></div><div class="line number4 index3 alt1"><code class="java plain">}</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li><p>Method and function names must be explicit, so function names such as <code>b()</code> or <code>ef()</code>are completely forbidden.</p><div class="panelMacro"><table class="infoMacro"><colgroup><col width="24"><col></colgroup><tbody><tr><td valign="top"><img src="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/information.png" alt="" border="0" height="16" width="16" align="absmiddle"></td><td><b>Exceptions</b><br><p>The only exceptions are the translation function (called <code>l()</code>) and the debug functions (named <code>p()</code> and <code>d()</code>).</p></td></tr></tbody></table></div></li></ol><h3 id="CodingStandard-Enumeration">Enumeration</h3><p>Commas have to be followed (and not preceded) by a space.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_214374" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java keyword">protected</code> <code class="java plain">function myProtectedMethod($arg1, $arg2, $arg3 = </code><code class="java keyword">null</code><code class="java plain">)</code></div></div></td></tr></tbody></table></div></div>
+</div></div><h3 id="CodingStandard-Objects/Classes">Objects / Classes</h3><ol><li><p>Object name must be singular.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_695708" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java keyword">class</code> <code class="java plain">Customer</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li><p>Class name must follow the CamelCase practice, except that the first letter is uppercase.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_186058" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java keyword">class</code> <code class="java plain">MyBeautifulClass</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li></ol><h3 id="CodingStandard-Defines">Defines</h3><ol><li>Define names must be written in uppercase.</li><li><p>Define names have to be prefixed with "<code>PS_</code>" inside the core and module.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_7418" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java plain">define(</code><code class="java string">'PS_DEBUG'</code><code class="java plain">, </code><code class="java value">1</code><code class="java plain">);</code></div><div class="line number2 index1 alt1"><code class="java plain">define(</code><code class="java string">'PS_MODULE_NAME_DEBUG'</code><code class="java plain">, </code><code class="java value">1</code><code class="java plain">);</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li>Define names does not allow none alphabetical characters. Except "_".</li></ol><h3 id="CodingStandard-Keywords">Keywords</h3><p>All keywords have to be lowercase: <code>as, case, if, echo, null</code>.</p><h3 id="CodingStandard-Constants">Constants</h3><p>Constants must be uppercase, except for "true", "false" and "null" which must be lowercase: <code>ENT_NOQUOTE</code>, <code>true</code>.</p><h3 id="CodingStandard-Configurationvariables">Configuration variables</h3><p>Configuration variables follow the same rules as defined above.</p><h3 id="CodingStandard-Strings">Strings</h3><p>Strings have to be surrounded by simple quotes, never double ones.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_202415" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java plain">echo </code><code class="java string">'Debug'</code><code class="java plain">;</code></div><div class="line number2 index1 alt1"><code class="java plain">$myObj-&gt;name = </code><code class="java string">'Hello '</code><code class="java plain">.$name;</code></div></div></td></tr></tbody></table></div></div>
+</div></div><h3 id="CodingStandard-Comments">Comments</h3><ol><li>Inside functions and methods, only the "<code>//</code>" comment tag is allowed.</li><li><p>After the "<code>//</code>" comment marker, a space is required: <code>// Comment</code>.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_139518" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java comments">// My great comment</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li><p>The "<code>//</code>" comment marker is tolerated at the end of a code line.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_144826" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java plain">$a = </code><code class="java value">17</code> <code class="java plain">+ </code><code class="java value">23</code><code class="java plain">; </code><code class="java comments">// A comment inside my example function</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li><p>Outside of functions and methods, only the "<code>/</code>" and "<code>/</code>" comment markers are allowed.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_530444" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java comments">/* This method is required for compatibility issues */</code></div><div class="line number2 index1 alt1"><code class="java keyword">public</code> <code class="java plain">function foo()</code></div><div class="line number3 index2 alt2"><code class="java plain">{</code></div><div class="line number4 index3 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java comments">// Some code explanation right here</code></div><div class="line number5 index4 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">...</code></div><div class="line number6 index5 alt1"><code class="java plain">}</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li><p>PHP Doc comment block is required before the declaration of the method.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_412358" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java preprocessor">/**</code></div><div class="line number2 index1 alt1"><code class="java spaces">&nbsp;</code><code class="java preprocessor">* Return field value if possible (both classical and multilingual fields)</code></div><div class="line number3 index2 alt2"><code class="java spaces">&nbsp;</code><code class="java preprocessor">*</code></div><div class="line number4 index3 alt1"><code class="java spaces">&nbsp;</code><code class="java preprocessor">* Case 1: Return value if present in $_POST / $_GET</code></div><div class="line number5 index4 alt2"><code class="java spaces">&nbsp;</code><code class="java preprocessor">* Case 2: Return object value</code></div><div class="line number6 index5 alt1"><code class="java spaces">&nbsp;</code><code class="java preprocessor">*</code></div><div class="line number7 index6 alt2"><code class="java spaces">&nbsp;</code><code class="java preprocessor">* @param object $obj Object</code></div><div class="line number8 index7 alt1"><code class="java spaces">&nbsp;</code><code class="java preprocessor">* @param string $key Field name</code></div><div class="line number9 index8 alt2"><code class="java spaces">&nbsp;</code><code class="java preprocessor">* @param integer $id_lang Language id (optional)</code></div><div class="line number10 index9 alt1"><code class="java spaces">&nbsp;</code><code class="java preprocessor">* @return string</code></div><div class="line number11 index10 alt2"><code class="java spaces">&nbsp;</code><code class="java preprocessor">*/</code></div><div class="line number12 index11 alt1"><code class="java keyword">protected</code> <code class="java plain">function getFieldValue($obj, $key, $id_lang = NULL)</code></div></div></td></tr></tbody></table></div></div>
+</div></div><div class="panelMacro"><table class="infoMacro"><colgroup><col width="24"><col></colgroup><tbody><tr><td valign="top"><img src="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/information.png" alt="" border="0" height="16" width="16" align="absmiddle"></td><td><b>For more informations</b><br><p>For more information about the PHP Doc syntax: <a href="http://manual.phpdoc.org/HTMLSmartyConverter/HandS/phpDocumentor/tutorial_tags.pkg.html" class="external-link" rel="nofollow">http://manual.phpdoc.org/HTMLSmartyConverter/HandS/phpDocumentor/tutorial_tags.pkg.html</a>.</p></td></tr></tbody></table></div></li></ol><h3 id="CodingStandard-Returnvalues">Return values</h3><ol><li><p>The <code>return</code> statement does not need brackets, except when it deals with a composed expression.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_457235" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java keyword">return</code> <code class="java plain">$result;</code></div><div class="line number2 index1 alt1"><code class="java keyword">return</code> <code class="java plain">($a + $b);</code></div><div class="line number3 index2 alt2"><code class="java keyword">return</code> <code class="java plain">(a() - b());</code></div><div class="line number4 index3 alt1"><code class="java keyword">return</code> <code class="java keyword">true</code><code class="java plain">;</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li><p>The <code>return</code> statement can be used to break out of a function.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_379682" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java keyword">return</code><code class="java plain">;</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li></ol><h3 id="CodingStandard-Call">Call</h3><p>Performing a function call preceded by a "<code>@</code>" is forbidden, but beware of function/method call with login/password or path arguments.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_13149" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java plain">myfunction();</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="java comments">// In the following example, we put a @ for security reasons</code></div><div class="line number4 index3 alt1"><code class="java color1">@mysql_connect</code><code class="java plain">(...);</code></div></div></td></tr></tbody></table></div></div>
+</div></div><h3 id="CodingStandard-Tags">Tags</h3><ol><li><p>There must be an empty line after the PHP opening tag.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_980509" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java plain">&lt;?php</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="java plain">require_once(</code><code class="java string">'my_file.inc.php'</code><code class="java plain">);</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li>The PHP closing tag is forbidden.</li></ol><h3 id="CodingStandard-Indentation">Indentation</h3><ol><li>The tabulation character ("<code>\t</code>") is the only indentation character allowed.</li><li><p>Each indentation level must be represented by a single tabulation character.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_184756" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java plain">function foo($a)</code></div><div class="line number2 index1 alt1"><code class="java plain">{</code></div><div class="line number3 index2 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">if</code> <code class="java plain">($a == </code><code class="java keyword">null</code><code class="java plain">)</code></div><div class="line number4 index3 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">return</code> <code class="java keyword">false</code><code class="java plain">;</code></div><div class="line number5 index4 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">...</code></div><div class="line number6 index5 alt1"><code class="java plain">}</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li></ol><h3 id="CodingStandard-Array">Array</h3><ol><li><p>The <code>array </code>keyword must not be followed by a space.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_755451" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java plain">array(</code><code class="java value">17</code><code class="java plain">, </code><code class="java value">23</code><code class="java plain">, </code><code class="java value">42</code><code class="java plain">);</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li><p>When too much data is inside an array, the indentation has to be as follows:</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_732205" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java plain">$a = array(</code></div><div class="line number2 index1 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java value">36</code> <code class="java plain">=&gt; $b,</code></div><div class="line number3 index2 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">$c =&gt; </code><code class="java string">'foo'</code><code class="java plain">,</code></div><div class="line number4 index3 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">$d =&gt; array(</code><code class="java value">17</code><code class="java plain">, </code><code class="java value">23</code><code class="java plain">, </code><code class="java value">42</code><code class="java plain">),</code></div><div class="line number5 index4 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">$e =&gt; array(</code></div><div class="line number6 index5 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java value">0</code> <code class="java plain">=&gt; </code><code class="java string">'zero'</code><code class="java plain">,</code></div><div class="line number7 index6 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java value">1</code> <code class="java plain">=&gt; $one</code></div><div class="line number8 index7 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">)</code></div><div class="line number9 index8 alt2"><code class="java plain">);</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li></ol><h3 id="CodingStandard-Block">Block</h3><p>Braces are prohibited when they only define one instruction or a combination of statements.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_182426" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java keyword">if</code> <code class="java plain">(!$result)</code></div><div class="line number2 index1 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">return</code> <code class="java keyword">false</code><code class="java plain">;</code></div><div class="line number3 index2 alt2">&nbsp;</div><div class="line number4 index3 alt1"><code class="java keyword">for</code> <code class="java plain">($i = </code><code class="java value">0</code><code class="java plain">; $i &lt; </code><code class="java value">17</code><code class="java plain">; $i++)</code></div><div class="line number5 index4 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">if</code> <code class="java plain">($myArray[$i] == $value)</code></div><div class="line number6 index5 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">$result[] = $myArray[$i];</code></div><div class="line number7 index6 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java keyword">else</code></div><div class="line number8 index7 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">$failed++;</code></div></div></td></tr></tbody></table></div></div>
+</div></div><h3 id="CodingStandard-Security">Security</h3><ol><li><p>All users' data (data entered by users) has to be cast.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_619893" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java plain">$data = Tools::getValue(</code><code class="java string">'name'</code><code class="java plain">);</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="java plain">$myObject-&gt;street_number = (</code><code class="java keyword">int</code><code class="java plain">)Tools::getValue(</code><code class="java string">'street_number'</code><code class="java plain">);</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li><p>All method/function's parameters must be typed (when Array or Object) when received.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_174838" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java keyword">public</code> <code class="java plain">myMethod(Array $var1, $var2, Object $var3)</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li><p>For all other parameters, they have to be cast each time they are used, except when they are sent to other methods/functions.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_679491" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java keyword">protected</code> <code class="java plain">myProtectedMethod($id, $text, $price)</code></div><div class="line number2 index1 alt1"><code class="java plain">{</code></div><div class="line number3 index2 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">$</code><code class="java keyword">this</code><code class="java plain">-&gt;id = (</code><code class="java keyword">int</code><code class="java plain">)$id;</code></div><div class="line number4 index3 alt1"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">$</code><code class="java keyword">this</code><code class="java plain">-&gt;price = (</code><code class="java keyword">float</code><code class="java plain">)$price;</code></div><div class="line number5 index4 alt2"><code class="java spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="java plain">$</code><code class="java keyword">this</code><code class="java plain">-&gt;callMethod($id, $price);</code></div><div class="line number6 index5 alt1"><code class="java plain">}</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li></ol><h3 id="CodingStandard-Limitations">Limitations</h3><ol><li>Source code lines are limited to 120 characters.</li><li>Functions
+ and methods lines are limited to 80 characters. Functions must have a 
+good reason to have an overly long name: keep it to the essential!</li></ol><h3 id="CodingStandard-Other">Other</h3><ol><li>It is forbidden to use a ternary into another ternary, such as <code>echo ((true ? 'true' : false) ? 't' : 'f');</code>.</li><li>We recommend the use of <code>&amp;&amp;</code> and <code>||</code> into your conditions: <code>echo ('X' == 0 &amp;&amp; 'X' == true)</code>.</li><li><p>Please refrain from using reference parameters, such as:</p><div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_679489" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java plain">function is_ref_to(&amp;$a, &amp;$b) { ... }</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li></ol><h2 id="CodingStandard-SQL">SQL</h2><h3 id="CodingStandard-Tablenames">Table names</h3><ol><li><p>Table names must begin with the PrestaShop "<code>_DB_PREFIX_</code>" prefix.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_631378" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java plain">... FROM `</code><code class="java string">'. _DB_PREFIX_.'</code><code class="java plain">customer` ...</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li>Table names must have the same name as the object they reflect: "<code>ps_cart</code>".</li><li>Table names have to stay singular: "<code>ps_order</code>".</li><li>Language data have to be stored in a table named exactly like the object's table, and with the "<code>_lang</code>" suffix "<code>ps_product_lang</code>".</li></ol><h3 id="CodingStandard-SQLquery">SQL query</h3><ol><li><p>Keywords must be written in uppercase.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_739619" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java plain">SELECT `firstname`</code></div><div class="line number2 index1 alt1"><code class="java plain">FROM `</code><code class="java string">'._DB_PREFIX_.'</code><code class="java plain">customer`</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li><p>Back quotes ("<code>`</code>") must be used around SQL field names and table names.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_802680" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java plain">SELECT p.`foo`, c.`bar`</code></div><div class="line number2 index1 alt1"><code class="java plain">FROM `</code><code class="java string">'._DB_PREFIX_.'</code><code class="java plain">product` p, `</code><code class="java string">'._DB_PREFIX_.'</code><code class="java plain">customer` c</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li><p>Table aliases have to be named by taking the first letter of each word, and must be lowercase.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_881630" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java plain">SELECT p.`id_product`, pl.`name`</code></div><div class="line number2 index1 alt1"><code class="java plain">FROM `</code><code class="java string">'._DB_PREFIX_.'</code><code class="java plain">product` p</code></div><div class="line number3 index2 alt2"><code class="java plain">NATURAL JOIN `</code><code class="java string">'._DB_PREFIX_.'</code><code class="java plain">product_lang` pl</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li><p>When conflicts between table aliases occur, the second character has to be also used in the name.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_9883" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java plain">SELECT ca.`id_product`, cu.`firstname`</code></div><div class="line number2 index1 alt1"><code class="java plain">FROM `</code><code class="java string">'._DB_PREFIX_.'</code><code class="java plain">cart` ca, `</code><code class="java string">'._DB_PREFIX_.'</code><code class="java plain">customer` cu</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li><p>Indentation has to be done for each clause.</p><div class="code panel" style="border-style: solid;border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_425200" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java plain">$query = 'SELECT pl.`name`</code></div><div class="line number2 index1 alt1"><code class="java plain">FROM `</code><code class="java string">'._DB_PREFIX_.'</code><code class="java plain">product_lang` pl</code></div><div class="line number3 index2 alt2"><code class="java plain">WHERE pl.`id_product` = </code><code class="java value">17</code><code class="java plain">';</code></div></div></td></tr></tbody></table></div></div>
+</div></div></li><li>It is forbidden to make a <code>JOIN</code> in a <code>WHERE</code> clause.</li></ol><h2 id="CodingStandard-Installingthecodevalidator">Installing the code validator</h2><p>This
+ is a brief tutorial on how to install a code validator on your PC and 
+use it to validate your files. The code validator uses PHP CodeSniffer, 
+which is a PEAR package (<a href="http://pear.php.net/package/PHP_CodeSniffer/" class="external-link" rel="nofollow">http://pear.php.net/package/PHP_CodeSniffer/</a>).
+ The PrestaShop code standard was created specifically for CodeSniffer, 
+using many rules taken from existing standards, with added customized 
+rules in order to better fit our project.</p><p>You can download the PrestaShop code standard using SVN: <a href="http://svn.prestashop.com/branches/norm/" class="external-link" rel="nofollow">http://svn.prestashop.com/branches/norm/</a> (you must perform this step before going any further with this tutorial).</p><h3 id="CodingStandard-Eclipseintegration">Eclipse integration</h3><p>Quick links:</p><ul><li>Official installation guide: <a href="http://www.phpsrc.org/projects/pti/wiki/Installation" class="external-link" rel="nofollow">http://www.phpsrc.org/projects/pti/wiki/Installation</a></li><li>Official configuration guide: <a href="http://www.phpsrc.org/projects/pti-php-codesniffer/wiki/Configuration" class="external-link" rel="nofollow">http://www.phpsrc.org/projects/pti-php-codesniffer/wiki/Configuration</a></li></ul><p>If you use Eclipse, you can integrate code validation within the text editor using a plugin, which is very easy to install: <a href="http://www.phpsrc.org/projects/pti/wiki/Installation" class="external-link" rel="nofollow">http://www.phpsrc.org/projects/pti/wiki/Installation</a>.</p><p>The configuration of the plugin is also very simple: <a href="http://www.phpsrc.org/projects/pti-php-codesniffer/wiki/Configuration" class="external-link" rel="nofollow">http://www.phpsrc.org/projects/pti-php-codesniffer/wiki/Configuration</a>. In the list of available packages, only choose PHP CodeSniffer and PEAR if you do not yet have them.</p><p>You
+ will then have to add the PrestaShop code standard to the Eclipse 
+preferences: go to "PHP Tools" and choose the PS standard that you 
+downloaded earlier (see link above).</p><div class="panelMacro"><table class="tipMacro"><colgroup><col width="24"><col></colgroup><tbody><tr><td valign="top"><img src="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/check.png" alt="" border="0" height="16" width="16" align="absmiddle"></td><td><p>If
+ the file does not automatically validate, as it should, you can 
+configure this in the "Preferences" menu, "Validation" option. 
+Otherwise, just right-click on the folder/file in the file-tree, and 
+choose "PHP Tools" in the contextual menu (which you can also be set as a
+ shortcut).</p></td></tr></tbody></table></div><h3 id="CodingStandard-Commandline(Linux)">Command line (Linux)</h3><p>You do not have to use Eclipse to use PHP CodeSniffer, you can also install it so that it can be called from the command line.</p><ol><li>Install PEAR: <a href="http://pear.php.net/" class="external-link" rel="nofollow">http://pear.php.net/</a><br> <code>$&gt; apt-get install php-pear</code></li><li>Install PHP CodeSniffer in PEAR: <a href="http://pear.php.net/package/PHP_CodeSniffer" class="external-link" rel="nofollow">http://pear.php.net/package/PHP_CodeSniffer</a><br> <code>$&gt; pear install PHP_CodeSniffer</code></li><li>Add the PrestaShop standard that you downloaded from SVN earlier, and place it in PHP CodeSniffer's "Standards" folder.<br> <code>$&gt; svn co</code> <code>http://svn.prestashop.com/branches/norm/</code> <code>/usr/share/php/PHP/CodeSniffer/Standards/Prestashop</code></li><li>Launch PHP CodeSniffer<br> <code>$&gt; phpcs --config-set default_standard Prestashop</code></li></ol><h3 id="CodingStandard-Usingtheprogram">Using the program</h3><p>The various options for this command are well explained in its documentation. For now, here is the easy way to launch it:</p><div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_411291" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java plain">$&gt; phpcs --standard=/path/to/norm/Prestashop /folder/or/fileToCheck</code></div></div></td></tr></tbody></table></div></div>
+</div></div><p>In order to only display errors, not warnings:</p><div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_259976" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java plain">$&gt; phpcs --standard=/path/to/norm/Prestashop --warning-severity=</code><code class="java value">99</code> <code class="java plain">/folder/or/fileToCheck</code></div></div></td></tr></tbody></table></div></div>
+</div></div><p>If you have already manually installed PHP CodeSniffer, the program should be in PEAR's "scripts" folder.</p><div class="panelMacro"><table class="noteMacro"><colgroup><col width="24"><col></colgroup><tbody><tr><td valign="top"><img src="Coding%20Standard%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/warning.png" alt="" border="0" height="16" width="16" align="absmiddle"></td><td><p>Windows users: although the <code>phpcs.bat</code> file should be in that <code>/scripts</code> folder, you might have to edit it in order for it to work properly (replace the paths with yours):</p><div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div><div id="highlighter_360137" class="syntaxhighlighter nogutter  java"><div class="toolbar"><span><a href="#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="code"><div class="container" title="Hint: double-click to select code"><div class="line number1 index0 alt2"><code class="java plain">path/to/php.exe -d auto_apprend_file=</code><code class="java string">""</code> <code class="java plain">-d auto_prepend_file -d include_path=</code><code class="java string">"path/to/PEAR/"</code> <code class="java plain">path/to/pear/scripts/phpcs</code></div></div></td></tr></tbody></table></div></div>
+</div></div></td></tr></tbody></table></div><h3 id="CodingStandard-IntegratingtheprogramtoEclipse'sconsole(optional)">Integrating the program to Eclipse's console (optional)</h3><ol><li>Click on the "External tools" button in the icon bar (a green arrow pointing at a small red folder).</li><li>Click on the "External tools configuration" tab.</li><li>Double-click on "Program" in order to create a configuration:<ol><li>Location: path to the <code>phpcs</code> program (or <code>phpcs.bat</code> for Windows users).</li><li>Arguments: the arguments for the command line, for instance <code>--standard=Prestashop</code>.</li></ol></li></ol>
+    
+        </div>
+
+        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="http://doc.prestashop.com/display/PS15/Coding+Standard"
+    dc:identifier="http://doc.prestashop.com/display/PS15/Coding+Standard"
+    dc:title="Coding Standard"
+    trackback:ping="http://doc.prestashop.com/rpc/trackback/9404443"/>
+</rdf:RDF>
+-->
+
+        <script type="text/x-template" title="labels-dialog-div">
+        <div id="labels-dialog">
+        <div class="labels-editor">
+            <form method="GET" action="" id="add-labels-form">
+                <div id="labelOperationErrorContainer">
+                    <span class="error"><span class="errorMessage" id="labelOperationErrorMessage"></span></span>
+                </div>
+    
+                <div id="label-input-fields">
+                    <input autocomplete="off" id="labelsString" name="labelsString" value="">
+                    <input id="add-labels-editor-button" type="submit" class="add-labels" value="Add">
+                </div>
+                <div id="labelsAutocompleteList" class="aui-dd-parent resize-to-input" style="width: 417px"></div>
+                <div id="dialog-label-list">
+                    <!-- DIV placeholder for labels list, is copied into in labels-dialog.js -->
+                </div>
+                <div id="waitImageAndStatus">
+                    <img class="waiting" alt="Please wait" src="/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/_/images/icons/wait.gif">&nbsp;
+                    <span id="labelOperationStatus" class="smalltext"></span>
+                </div>
+                <div class="labels-tip"></div>
+            </form>
+        </div>
+        <div style="display: none;">
+            <div class="labels-section-content content-column"
+    	    		entityid="9404443" entitytype="Page"
+    		>
+	<div class="labels-content">
+		
+
+<ul class="label-list">
+    <li class="no-labels-message-container">
+        <span id="labels-section-title-none" class="no-labels-message">
+            None
+        </span>
+    </li>
+        </ul>
+    </div>
+</div>        </div>
+    </div>
+</script>
+            
+    
+
+
+<div id="likes-and-labels-container"><div style="display: none;" id="likes-section"><span class="like-summary"></span></div><div id="labels-section" class="pageSection group">
+    <div class="labels-editor">
+        <span id="labels-section-title" class="label-title">Labels</span>
+        <div class="labels-section-content content-column" entityid="9404443" entitytype="Page">
+	<div class="labels-content">
+		
+
+<ul class="label-list">
+    <li class="no-labels-message-container">
+        <span id="labels-section-title-none" class="no-labels-message">
+            None
+        </span>
+    </li>
+        </ul>
+    </div>
+</div>    </div>
+</div></div>
+
+            
+            
+
+
+
+
+            
+    
+
+
+
+
+
+
+
+
+                    
+    
+<div id="comments-section" class="pageSection group">
+    
+    
+    
+    
+            <div class="bottom-comment-panels comment-panels">
+                
+            </div>
+    
+    </div>
+
+
+            
+</div>
+
+
+    
+
+
+
+    
+    
+
+    
+    
+    
+
+
+            
+    
+
+
+    <br class="clear">
+</div>
+  
+    </div>
+</div>
+
+
+        
+            <div id="footer">
+                                                <p class="license license-opensource">
+                  Powered by a free <b>Atlassian Confluence Open Source Project License</b> granted to Prestashop SA. <a href="http://www.atlassian.com/c/conf/11461">Evaluate Confluence today</a>.<br>
+                </p>
+                        
+    <ul id="poweredby">
+        <li class="noprint">Powered by <a href="http://www.atlassian.com/software/confluence" class="hover-footer-link">Atlassian Confluence</a> <span id="footer-build-information">4.3.3</span>, the <a href="http://www.atlassian.com/software/confluence/tour/enterprise-wiki.jsp" class="hover-footer-link">Enterprise Wiki</a></li>
+        <li class="print-only">Printed by Atlassian Confluence 4.3.3, the Enterprise Wiki.</li>        
+        <li class="noprint"> &nbsp;·&nbsp; <a href="http://jira.atlassian.com/secure/BrowseProject.jspa?id=10470" class="hover-footer-link">Report a bug</a></li>
+        <li class="noprint"> &nbsp;·&nbsp; <a href="http://www.atlassian.com/about/connected.jsp?s_kwcid=Confluence-stayintouch" class="hover-footer-link">Atlassian News</a></li>
+    </ul>
+
+            
+    </div>
+    </div>
+
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><div style="display: none;" id="content-hover-shadow"><div class="tl"></div><div class="tr"></div><div class="l"></div><div class="r"></div><div class="bl"></div><div class="br"></div><div class="b"></div></div><div style="position: relative; z-index: 0;" id="fileuploadShim"></div><div class="plupload html5" style="position: absolute; background: none repeat scroll 0% 0% transparent; width: 1871px; height: 0px; overflow: hidden; z-index: -1; opacity: 0; top: 897px; left: 0px;" id="p17hosgej9a2uj053ucqku1k280_html5_container"><input id="p17hosgej9a2uj053ucqku1k280_html5" style="font-size: 999px; position: absolute; width: 100%; height: 100%;" accept="" multiple="multiple" type="file"></div></body></html>

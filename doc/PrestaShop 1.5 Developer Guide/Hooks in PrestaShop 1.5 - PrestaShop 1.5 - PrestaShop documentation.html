@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html class="splitter-invoked"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Hooks in PrestaShop 1.5 - PrestaShop 1.5 - PrestaShop documentation</title>
+
+        
+
+                        
+    
+                        
+    
+
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE,chrome=IE7">
+<meta charset="UTF-8">
+<!-- Deprecated since 3.4. To be removed in a future version of Confluence; use AJS.Confluence.getContextPath() -->
+<meta id="confluence-context-path" name="confluence-context-path" content="">
+<meta id="confluence-base-url" name="confluence-base-url" content="http://doc.prestashop.com">
+
+<meta id="atlassian-token" name="atlassian-token" content="280b65ed321bc5561543eeba29d064ffe8d1a509">
+
+<meta id="confluence-space-key" name="confluence-space-key" content="PS15">
+<script src="Hooks%20in%20PrestaShop%201.5%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript">
+    // Deprecated global variables. To be removed in a future version of Confluence.
+    var contextPath = '';
+</script>
+
+    
+
+<!-- include system css resources -->
+
+
+    <!--[if lt IE 9]>
+<link data-atlassian-webresource-contents="confluence.web.resources:userlink[1.0],confluence.web.resources:master-styles[1.0],com.atlassian.auiplugin:ajs-gadgets-base[3.6.5],confluence.web.resources:page-ordering-tree[1.0],confluence.web.resources:aui-forms[1.0],com.atlassian.auiplugin:ajs[3.6.5],confluence.web.resources:icons[1.0],confluence.macros.profile:profile-macro-styles[1.0],confluence.web.resources:page-permissions-editor[1.0]" type="text/css" rel="stylesheet" href="/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/29/_/download/superbatch/css/batch.css?conditionalComment=lt+IE+9" media="all">
+<![endif]-->
+<link data-atlassian-webresource-contents="confluence.web.resources:print-styles[1.0],confluence.macros.advanced:get-more[2.1.2]" type="text/css" rel="stylesheet" href="Hooks%20in%20PrestaShop%201.5%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/batch_005.css" media="print">
+<link data-atlassian-webresource-contents="confluence.web.resources:master-styles[1.0],confluence.web.resources:fancy-box[1.0],confluence.web.resources:content-styles[1.0],confluence.web.resources:page-move-resources[1.0],confluence.macros.advanced:get-more[2.1.2],confluence.web.resources:labels-editor[1.0],confluence.web.components:core[1.0],com.atlassian.auiplugin:ajs[3.6.5],com.atlassian.auiplugin:ajs-html5shim[3.6.5],confluence.macros.profile:network-resources-css[1.0],confluence.macros.profile:profile-macro-styles[1.0],com.atlassian.confluence.keyboardshortcuts:confluence-keyboard-shortcuts[4.3.3],confluence.web.resources:create-space[1.0],confluence.web.resources:panel-styles[1.0],com.atlassian.plugins.shortcuts.atlassian-shortcuts-module:shortcuts[1.0],confluence.web.resources:userlink[1.0],confluence.web.resources:view-content[1.0],confluence.web.resources:search-results-grid[1.0],confluence.web.resources:aui-forms[1.0],com.atlassian.confluence.plugins.gadgets:css[4.3.3],confluence.content.action.menu:linkpopup-resources[1.0],com.atlassian.auiplugin:ajs-gadgets-base[3.6.5],confluence.userstatus:userstatus-resources[1.0],confluence.web.resources:page-ordering-tree[1.0],confluence.web.resources:jquery-autocomplete[1.0],confluence.web.components:property-panel-css[1.0],confluence.web.resources:tooltip[1.0],confluence.web.resources:ajs[1.0],confluence.macros.advanced:recently-updated-sidebar-resources[2.1.2],confluence.web.resources:icons[1.0],com.atlassian.confluence.whatsnew:whats-new-resources[4.3.3],confluence.web.resources:dashboard-resources[1.0],confluence.web.resources:page-permissions-editor[1.0]" type="text/css" rel="stylesheet" href="Hooks%20in%20PrestaShop%201.5%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/batch_002.css" media="all">
+<!--[if lte IE 9]>
+<link data-atlassian-webresource-contents="com.atlassian.auiplugin:ajs[3.6.5]" type="text/css" rel="stylesheet" href="/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/29/_/download/superbatch/css/batch.css?conditionalComment=lte+IE+9" media="all">
+<![endif]-->
+<!--[if IE 9]>
+<link data-atlassian-webresource-contents="com.atlassian.auiplugin:ajs-gadgets-base[3.6.5]" type="text/css" rel="stylesheet" href="/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/29/_/download/superbatch/css/batch.css?conditionalComment=IE+9" media="all">
+<![endif]-->
+<link data-atlassian-webresource-contents="com.atlassian.confluence.plugins.view-source:view-source-menu-resources[4.3.3],com.atlassian.confluence.plugins.view-storage-format:view-storage-menu-resources[4.3.3],com.atlassian.confluence.plugins.share-page:mail-page-resources[1.23],confluence.macros.core:flash-autosize[4.3.3]" data-atlassian-webresource-contexts="page" type="text/css" rel="stylesheet" href="Hooks%20in%20PrestaShop%201.5%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/batch.css" media="all">
+<!--[if lt IE 9]>
+<link data-atlassian-webresource-contents="com.atlassian.confluence.plugins.confluence-like:content-like-resources[4.3.3],com.atlassian.confluence.plugins.confluence-inline-tasks:inline-tasks-resources[4.3.3],com.atlassian.confluence.plugins.drag-and-drop:drag-and-drop-for-view-content[4.3.3],com.atlassian.confluence.plugins.view-storage-format:view-comment-storage-resources[4.3.3],com.atlassian.confluence.plugins.jira.jira-connector:help-dialog-extension[1.4.2],com.atlassian.confluence.plugins.confluence-sortable-tables:sortable-table-resources[4.3.3],com.atlassian.confluence.plugins.drag-and-drop:support[4.3.3],confluence.web.resources:view-comment[1.0],com.atlassian.auiplugin:jquery-ui-other[3.6.5],com.atlassian.confluence.plugins.confluence-mentions-plugin:help-dialog-extension[1.5.9]" data-atlassian-webresource-contexts="viewcontent" type="text/css" rel="stylesheet" href="/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/a0d307f1a098bbba9e4f9c3de0a52283/_/download/contextbatch/css/viewcontent/batch.css?conditionalComment=lt+IE+9" media="all">
+<![endif]-->
+<link data-atlassian-webresource-contents="com.atlassian.confluence.plugins.confluence-like:content-like-resources[4.3.3],com.atlassian.confluence.plugins.confluence-inline-tasks:inline-tasks-resources[4.3.3],com.atlassian.confluence.plugins.drag-and-drop:drag-and-drop-for-view-content[4.3.3],com.atlassian.confluence.plugins.view-storage-format:view-comment-storage-resources[4.3.3],com.atlassian.confluence.plugins.jira.jira-connector:help-dialog-extension[1.4.2],com.atlassian.confluence.plugins.confluence-sortable-tables:sortable-table-resources[4.3.3],com.atlassian.confluence.plugins.drag-and-drop:support[4.3.3],confluence.web.resources:view-comment[1.0],com.atlassian.auiplugin:jquery-ui-other[3.6.5],com.atlassian.confluence.plugins.confluence-mentions-plugin:help-dialog-extension[1.5.9]" data-atlassian-webresource-contexts="viewcontent" type="text/css" rel="stylesheet" href="Hooks%20in%20PrestaShop%201.5%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/batch_003.css" media="all">
+<link data-atlassian-webresource-contents="com.atlassian.confluence.plugins.jira.jira-connector:help-dialog-extension[1.4.2],com.atlassian.confluence.plugins.share-page:share-keyboard-shortcut-js-resources[1.23],com.atlassian.confluence.plugins.doctheme:splitter[4.3.3],com.atlassian.confluence.plugins.confluence-mentions-plugin:help-dialog-extension[1.5.9],com.atlassian.confluence.plugins.confluence-inline-tasks:inline-tasks-styles[4.3.3]" data-atlassian-webresource-contexts="main" type="text/css" rel="stylesheet" href="Hooks%20in%20PrestaShop%201.5%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/batch_004.css" media="all">
+<link data-atlassian-webresource-contents="confluence.extra.information:information-plugin-styles[2.0.8]" type="text/css" rel="stylesheet" href="Hooks%20in%20PrestaShop%201.5%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/confluence_002.css" media="all">
+<link data-atlassian-webresource-contents="confluence.extra.information:information-plugin-styles[2.0.8]" type="text/css" rel="stylesheet" href="Hooks%20in%20PrestaShop%201.5%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/confluence.css" media="print">
+<link data-atlassian-webresource-contents="com.atlassian.confluence.plugins.pagetree:pagetree-resources[2.0.2]" type="text/css" rel="stylesheet" href="Hooks%20in%20PrestaShop%201.5%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/com.css" media="all">
+<link data-atlassian-webresource-contents="com.atlassian.mywork.mywork-confluence-host-plugin:mw-header-anchor[1.1.1]" type="text/css" rel="stylesheet" href="Hooks%20in%20PrestaShop%201.5%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/com_002.css" media="all">
+<link type="text/css" rel="stylesheet" href="Hooks%20in%20PrestaShop%201.5%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/colors.css" media="all">
+<link type="text/css" rel="stylesheet" href="Hooks%20in%20PrestaShop%201.5%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/default-theme.css" media="all">
+<link type="text/css" rel="stylesheet" href="Hooks%20in%20PrestaShop%201.5%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/splitter.css" media="all">
+
+<!-- end system css resources -->
+
+    <meta name="confluence-request-time" content="1359118669754">
+<!-- Deprecated since 3.4. To be removed in a future version of Confluence; use atl.header -->
+        
+            <script type="text/x-template" title="share-content-popup">
+    <form action="#" method="post" class="aui share-content-popup">
+        <fieldset>
+            <label for="users">User name or email</label>
+            <div class="autocomplete-user-target">
+                <input class="text autocomplete-sharepage" id="users" data-max="10" data-dropdown-target=".autocomplete-user-target" data-none-message="No matching user or email found"/>
+            </div>
+            <ol class="recipients">
+            </ol>
+            <div><label for="note">Note</label></div>
+            <textarea class="textarea" id="note" placeholder="Add an optional note"/>
+        </fieldset>
+        <div class="button-panel">
+            <div class="progress-messages-icon"></div>
+            <div class="progress-messages">
+            </div>
+            <input class="button submit" type="submit" value="Share" disabled/>
+            <a class="close-dialog" href="#">Cancel</a>
+        </div>
+    </form>
+</script>
+
+<script type="text/x-template" title="share-content-popup-recipient-username">
+    <li data-username="{username}" style="display: none">
+        <span>
+            <img src="{thumbnailLink.href}" title="{title}">
+            <span>{title}</span>
+            <span class="remove-recipient"/>
+        </span>
+    </li>
+</script>
+
+<script type="text/x-template" title="share-content-popup-recipient-email">
+    <li data-email="{email}" style="display: none">
+        <span>
+            <img src="{icon}" title="{email}">
+            <span>{email}</span>
+            <span class="remove-recipient"/>
+        </span>
+    </li>
+</script>
+    
+        
+            <meta name="ajs-keyboardshortcut-hash" content="6f1da977c352e879e8e53af041269c62">
+            <meta name="ajs-use-keyboard-shortcuts" content="true">
+            
+    
+            
+    
+    
+            <meta name="ajs-page-id" content="11272205">
+            <meta name="ajs-page-title" content="Hooks in PrestaShop 1.5">
+            <meta name="ajs-parent-page-title" content="Developer Guide">
+            <meta name="ajs-parent-page-id" content="9076768">
+            <meta name="ajs-space-key" content="PS15">
+            <meta name="ajs-space-name" content="PrestaShop 1.5">
+            <meta name="ajs-from-page-title" content="">
+            <meta name="ajs-context-path" content="">
+            <meta name="ajs-base-url" content="http://doc.prestashop.com">
+            <meta name="ajs-version-number" content="4.3.3">
+            <meta name="ajs-build-number" content="3393">
+            <meta name="ajs-remote-user" content="">
+            <meta name="ajs-static-resource-url-prefix" content="/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/_">
+            <meta name="ajs-global-settings-attachment-max-size" content="50485760">
+            <meta name="ajs-user-locale" content="en_GB">
+            <meta name="ajs-enabled-dark-features" content="">
+            <meta name="ajs-atl-token" content="280b65ed321bc5561543eeba29d064ffe8d1a509">
+            <meta name="ajs-confluence-flavour" content="VANILLA">
+            <meta name="ajs-editor.loader.resources" content="&lt;!--[if lt IE 9]&gt;
+&lt;link data-atlassian-webresource-excluded-contexts=&quot;viewcontent&quot; data-atlassian-webresource-contents=&quot;com.atlassian.confluence.tinymceplugin:editor-resources[4.3.3],com.atlassian.confluence.plugins.confluence-templates:template-editor-variables-resources[4.3.3],com.atlassian.confluence.plugins.profile-picture:profile-picture-editor_resources[1.6],confluence.web.resources:page-editor-css[1.0],com.atlassian.plugins.editor:atlassian-rte-javascript-translations[4.3.3],com.atlassian.confluence.plugins.status-macro:editor_status[1.14],com.atlassian.applinks.applinks-plugin:applinks-util-js[3.8.0],com.atlassian.auiplugin:jquery-autocomplete[3.6.5],com.atlassian.confluence.extra.officeconnector:macro-browser-smart-fields[2.1.10],com.atlassian.confluence.plugins.gadgets:macro-browser-for-gadgetsplugin[4.3.3],com.atlassian.plugins.editor:atlassian-rte-javascript-tinymce-core[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-youtu.be-rewrite[4.3.3],com.atlassian.confluence.plugins.jira.jira-connector:proxy-js[1.4.2],com.atlassian.gadgets.embedded:gadget-core-resources[3.2.0-m3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-cloudapp[4.3.3],com.atlassian.confluence.plugins.confluence-sortable-tables:ConfluenceSortableTablesEditorPlugin[4.3.3],com.atlassian.confluence.plugins.confluence-mentions-plugin:editor-autocomplete-mentions-no-dependencies[1.5.9],com.atlassian.confluence.plugins.confluence-templates:template-editor-variables-template-resources[4.3.3],com.atlassian.applinks.applinks-plugin:applinks-oauth-ui[3.8.0],com.atlassian.confluence.ext.newcode-macro-plugin:editor-scripts[2.0.15],confluence.web.resources:page-editor-js[1.0],com.atlassian.confluence.image.effects.ImageEffectsPlugin:propertiespanel[1.0.1],com.atlassian.confluence.plugins.confluence-paste:autoconvert-openphoto[4.3.3],confluence.web.resources:draft-changes-js[1.0],com.atlassian.confluence.tinymceplugin:editor-javascript-resources[4.3.3],com.atlassian.plugins.editor:atlassian-rte-css[4.3.3],confluence.macros.advanced:editor_includemacro[2.1.2],com.atlassian.confluence.tinymceplugin:editor-autocomplete-resources-only[4.3.3],com.atlassian.plugins.editor:atlassian-rte-javascript[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-core[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-google-redirect[4.3.3],com.atlassian.confluence.tinymceplugin:editor-css-resources[4.3.3],confluence.web.components:editor-notifications[1.0],confluence.web.resources:jira-controls[1.0],com.atlassian.confluence.tinymceplugin:editor-autocomplete-resources[4.3.3],com.atlassian.plugins.editor:atlassian-rte-resources[4.3.3],confluence.web.resources:draft-changes[1.0],com.atlassian.confluence.plugins.confluence-paste:paste-resources[4.3.3],confluence.macros.core:macro-browser-smart-fields[4.3.3],com.atlassian.confluence.plugins.drag-and-drop:drag-and-drop-for-editor[4.3.3],com.atlassian.confluence.plugins.drag-and-drop:drop-zone-for-image-dialog[4.3.3],com.atlassian.confluence.keyboardshortcuts:confluence-tinymce-keyboard-shortcuts[4.3.3],com.atlassian.confluence.plugins.jira.jira-connector:dialogsJs[1.4.2],confluence.web.resources:draft-changes-css[1.0],confluence.web.resources:page-editor[1.0],com.atlassian.confluence.plugins.confluence-paste:autoconvert-jira[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-widget-connector[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-skitch[4.3.3],confluence.extra.jira:macro-browser-resources[4.0.17],com.atlassian.confluence.plugins.confluence-mentions-plugin:editor-autocomplete-mentions[1.5.9],com.atlassian.confluence.plugins.confluence-paste:autoconvert-shortcut-links[4.3.3],com.atlassian.confluence.extra.officeconnector:officeconnector-editor-resources[2.1.10],confluence.editor.actions:editor-macro-browser[1.0],com.atlassian.confluence.plugins.confluence-paste:autoconvert-confluence[4.3.3],com.atlassian.plugins.editor:atlassian-rte-javascript-tinymce-extensions[4.3.3]&quot; data-atlassian-webresource-contexts=&quot;editor,macro-browser&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/1e53be25efac82032cdc96f3256115c5/_/download/contextbatch/css/editor,macro-browser,-viewcontent/batch.css?conditionalComment=lt+IE+9&quot; media=&quot;all&quot;&gt;
+&lt;![endif]--&gt;
+&lt;link data-atlassian-webresource-excluded-contexts=&quot;viewcontent&quot; data-atlassian-webresource-contents=&quot;com.atlassian.confluence.tinymceplugin:editor-resources[4.3.3],com.atlassian.confluence.plugins.confluence-templates:template-editor-variables-resources[4.3.3],com.atlassian.confluence.plugins.profile-picture:profile-picture-editor_resources[1.6],confluence.web.resources:page-editor-css[1.0],com.atlassian.plugins.editor:atlassian-rte-javascript-translations[4.3.3],com.atlassian.confluence.plugins.status-macro:editor_status[1.14],com.atlassian.applinks.applinks-plugin:applinks-util-js[3.8.0],com.atlassian.auiplugin:jquery-autocomplete[3.6.5],com.atlassian.confluence.extra.officeconnector:macro-browser-smart-fields[2.1.10],com.atlassian.confluence.plugins.gadgets:macro-browser-for-gadgetsplugin[4.3.3],com.atlassian.plugins.editor:atlassian-rte-javascript-tinymce-core[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-youtu.be-rewrite[4.3.3],com.atlassian.confluence.plugins.jira.jira-connector:proxy-js[1.4.2],com.atlassian.gadgets.embedded:gadget-core-resources[3.2.0-m3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-cloudapp[4.3.3],com.atlassian.confluence.plugins.confluence-sortable-tables:ConfluenceSortableTablesEditorPlugin[4.3.3],com.atlassian.confluence.plugins.confluence-mentions-plugin:editor-autocomplete-mentions-no-dependencies[1.5.9],com.atlassian.confluence.plugins.confluence-templates:template-editor-variables-template-resources[4.3.3],com.atlassian.applinks.applinks-plugin:applinks-oauth-ui[3.8.0],com.atlassian.confluence.ext.newcode-macro-plugin:editor-scripts[2.0.15],confluence.web.resources:page-editor-js[1.0],com.atlassian.confluence.image.effects.ImageEffectsPlugin:propertiespanel[1.0.1],com.atlassian.confluence.plugins.confluence-paste:autoconvert-openphoto[4.3.3],confluence.web.resources:draft-changes-js[1.0],com.atlassian.confluence.tinymceplugin:editor-javascript-resources[4.3.3],com.atlassian.plugins.editor:atlassian-rte-css[4.3.3],confluence.macros.advanced:editor_includemacro[2.1.2],com.atlassian.confluence.tinymceplugin:editor-autocomplete-resources-only[4.3.3],com.atlassian.plugins.editor:atlassian-rte-javascript[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-core[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-google-redirect[4.3.3],com.atlassian.confluence.tinymceplugin:editor-css-resources[4.3.3],confluence.web.components:editor-notifications[1.0],confluence.web.resources:jira-controls[1.0],com.atlassian.confluence.tinymceplugin:editor-autocomplete-resources[4.3.3],com.atlassian.plugins.editor:atlassian-rte-resources[4.3.3],confluence.web.resources:draft-changes[1.0],com.atlassian.confluence.plugins.confluence-paste:paste-resources[4.3.3],confluence.macros.core:macro-browser-smart-fields[4.3.3],com.atlassian.confluence.plugins.drag-and-drop:drag-and-drop-for-editor[4.3.3],com.atlassian.confluence.plugins.drag-and-drop:drop-zone-for-image-dialog[4.3.3],com.atlassian.confluence.keyboardshortcuts:confluence-tinymce-keyboard-shortcuts[4.3.3],com.atlassian.confluence.plugins.jira.jira-connector:dialogsJs[1.4.2],confluence.web.resources:draft-changes-css[1.0],confluence.web.resources:page-editor[1.0],com.atlassian.confluence.plugins.confluence-paste:autoconvert-jira[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-widget-connector[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-skitch[4.3.3],confluence.extra.jira:macro-browser-resources[4.0.17],com.atlassian.confluence.plugins.confluence-mentions-plugin:editor-autocomplete-mentions[1.5.9],com.atlassian.confluence.plugins.confluence-paste:autoconvert-shortcut-links[4.3.3],com.atlassian.confluence.extra.officeconnector:officeconnector-editor-resources[2.1.10],confluence.editor.actions:editor-macro-browser[1.0],com.atlassian.confluence.plugins.confluence-paste:autoconvert-confluence[4.3.3],com.atlassian.plugins.editor:atlassian-rte-javascript-tinymce-extensions[4.3.3]&quot; data-atlassian-webresource-contexts=&quot;editor,macro-browser&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/1e53be25efac82032cdc96f3256115c5/_/download/contextbatch/css/editor,macro-browser,-viewcontent/batch.css&quot; media=&quot;all&quot;&gt;
+&lt;script data-atlassian-webresource-excluded-contexts=&quot;viewcontent&quot; data-atlassian-webresource-contents=&quot;com.atlassian.confluence.tinymceplugin:editor-resources[4.3.3],com.atlassian.confluence.plugins.confluence-templates:template-editor-variables-resources[4.3.3],com.atlassian.confluence.plugins.profile-picture:profile-picture-editor_resources[1.6],confluence.web.resources:page-editor-css[1.0],com.atlassian.plugins.editor:atlassian-rte-javascript-translations[4.3.3],com.atlassian.confluence.plugins.status-macro:editor_status[1.14],com.atlassian.applinks.applinks-plugin:applinks-util-js[3.8.0],com.atlassian.auiplugin:jquery-autocomplete[3.6.5],com.atlassian.confluence.extra.officeconnector:macro-browser-smart-fields[2.1.10],com.atlassian.confluence.plugins.gadgets:macro-browser-for-gadgetsplugin[4.3.3],com.atlassian.plugins.editor:atlassian-rte-javascript-tinymce-core[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-youtu.be-rewrite[4.3.3],com.atlassian.confluence.plugins.jira.jira-connector:proxy-js[1.4.2],com.atlassian.gadgets.embedded:gadget-core-resources[3.2.0-m3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-cloudapp[4.3.3],com.atlassian.confluence.plugins.confluence-sortable-tables:ConfluenceSortableTablesEditorPlugin[4.3.3],com.atlassian.confluence.plugins.confluence-mentions-plugin:editor-autocomplete-mentions-no-dependencies[1.5.9],com.atlassian.confluence.plugins.confluence-templates:template-editor-variables-template-resources[4.3.3],com.atlassian.applinks.applinks-plugin:applinks-oauth-ui[3.8.0],com.atlassian.confluence.ext.newcode-macro-plugin:editor-scripts[2.0.15],confluence.web.resources:page-editor-js[1.0],com.atlassian.confluence.image.effects.ImageEffectsPlugin:propertiespanel[1.0.1],com.atlassian.confluence.plugins.confluence-paste:autoconvert-openphoto[4.3.3],confluence.web.resources:draft-changes-js[1.0],com.atlassian.confluence.tinymceplugin:editor-javascript-resources[4.3.3],com.atlassian.plugins.editor:atlassian-rte-css[4.3.3],confluence.macros.advanced:editor_includemacro[2.1.2],com.atlassian.confluence.tinymceplugin:editor-autocomplete-resources-only[4.3.3],com.atlassian.plugins.editor:atlassian-rte-javascript[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-core[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-google-redirect[4.3.3],com.atlassian.confluence.tinymceplugin:editor-css-resources[4.3.3],confluence.web.components:editor-notifications[1.0],confluence.web.resources:jira-controls[1.0],com.atlassian.confluence.tinymceplugin:editor-autocomplete-resources[4.3.3],com.atlassian.plugins.editor:atlassian-rte-resources[4.3.3],confluence.web.resources:draft-changes[1.0],com.atlassian.confluence.plugins.confluence-paste:paste-resources[4.3.3],confluence.macros.core:macro-browser-smart-fields[4.3.3],com.atlassian.confluence.plugins.drag-and-drop:drag-and-drop-for-editor[4.3.3],com.atlassian.confluence.plugins.drag-and-drop:drop-zone-for-image-dialog[4.3.3],com.atlassian.confluence.keyboardshortcuts:confluence-tinymce-keyboard-shortcuts[4.3.3],com.atlassian.confluence.plugins.jira.jira-connector:dialogsJs[1.4.2],confluence.web.resources:draft-changes-css[1.0],confluence.web.resources:page-editor[1.0],com.atlassian.confluence.plugins.confluence-paste:autoconvert-jira[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-widget-connector[4.3.3],com.atlassian.confluence.plugins.confluence-paste:autoconvert-skitch[4.3.3],confluence.extra.jira:macro-browser-resources[4.0.17],com.atlassian.confluence.plugins.confluence-mentions-plugin:editor-autocomplete-mentions[1.5.9],com.atlassian.confluence.plugins.confluence-paste:autoconvert-shortcut-links[4.3.3],com.atlassian.confluence.extra.officeconnector:officeconnector-editor-resources[2.1.10],confluence.editor.actions:editor-macro-browser[1.0],com.atlassian.confluence.plugins.confluence-paste:autoconvert-confluence[4.3.3],com.atlassian.plugins.editor:atlassian-rte-javascript-tinymce-extensions[4.3.3]&quot; data-atlassian-webresource-contexts=&quot;editor,macro-browser&quot; type=&quot;text/javascript&quot; src=&quot;/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/1e53be25efac82032cdc96f3256115c5/_/download/contextbatch/js/editor,macro-browser,-viewcontent/batch.js&quot; &gt;&lt;/script&gt;
+">
+            <meta name="ajs-date.format" content="MMM dd, yyyy">
+    
+    <link rel="shortcut icon" href="http://doc.prestashop.com/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="http://doc.prestashop.com/favicon.ico">
+
+<link rel="search" type="application/opensearchdescription+xml" href="http://doc.prestashop.com/opensearch/osd.action" title="PrestaShop documentation">
+
+        <!-- include system javascript resources -->
+                        
+    
+    <!--[if lt IE 9]>
+<script data-atlassian-webresource-contents="com.atlassian.auiplugin:ajs-html5shim[3.6.5]" type="text/javascript" src="/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/29/_/download/superbatch/js/batch.js?conditionalComment=lt+IE+9" ></script>
+<![endif]-->
+<script data-atlassian-webresource-contents="confluence.web.resources:contentnamesearch[1.0],confluence.web.resources:fancy-box[1.0],confluence.web.resources:page-move-resources[1.0],confluence.macros.advanced:get-more[2.1.2],confluence.web.resources:labels-editor[1.0],confluence.web.resources:atlassian-effects[1.0],confluence.aui.staging:meta[4.3.3],confluence.web.components:core[1.0],com.atlassian.auiplugin:ajs[3.6.5],confluence.web.resources:safe-ajax[1.0],confluence.macros.profile:profile-macro-styles[1.0],com.atlassian.auiplugin:jquery-compatibility[3.6.5],confluence.web.resources:animation[1.0],confluence.aui.staging:dark-features[4.3.3],confluence.web.resources:create-personal-space[1.0],com.atlassian.soy.soy-template-plugin:soy-deps[1.1.5],confluence.macros.advanced:get-more-helper[2.1.2],com.atlassian.confluence.keyboardshortcuts:confluence-keyboard-shortcuts[4.3.3],com.atlassian.confluence.restplugin:confluence-rest[4.3.3],confluence.web.resources:create-space[1.0],com.atlassian.plugins.shortcuts.atlassian-shortcuts-module:shortcuts[1.0],confluence.web.resources:userlink[1.0],confluence.web.resources:keygen[1.0],com.atlassian.confluence.extra.officeconnector:editinoffice[2.1.10],confluence.web.resources:view-content[1.0],confluence.web.components:property-panel-js[1.0],confluence.web.resources:search-results-grid[1.0],com.atlassian.auiplugin:jquery-lib[3.6.5],confluence.web.resources:jquery-json[1.0],confluence.web.resources:raphael[1.0],confluence.content.action.menu:linkpopup-resources[1.0],com.atlassian.auiplugin:ajs-gadgets-base[3.6.5],confluence.userstatus:userstatus-resources[1.0],confluence.web.resources:page-ordering-tree[1.0],confluence.aui.staging:storage-manager[4.3.3],confluence.web.resources:master-scripts[1.0],confluence.web.resources:breadcrumbs[1.0],confluence.web.resources:tooltip[1.0],com.atlassian.confluence.plugins.gadgets:gadget-directory-resources[4.3.3],confluence.web.resources:ajs[1.0],com.atlassian.confluence.whatsnew:whats-new-resources[4.3.3],com.atlassian.auiplugin:aui-core[3.6.5],confluence.web.resources:page-permissions-editor[1.0]" type="text/javascript" src="Hooks%20in%20PrestaShop%201.5%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/batch.js"></script>
+<!--[if lte IE 8]>
+<script data-atlassian-webresource-contents="com.atlassian.auiplugin:ajs[3.6.5]" type="text/javascript" src="/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/29/_/download/superbatch/js/batch.js?conditionalComment=lte+IE+8" ></script>
+<![endif]-->
+<script data-atlassian-webresource-contents="com.atlassian.confluence.plugins.view-source:view-source-menu-resources[4.3.3],com.atlassian.confluence.plugins.view-storage-format:view-storage-menu-resources[4.3.3],com.atlassian.confluence.plugins.share-page:mail-page-resources[1.23],confluence.macros.core:flash-autosize[4.3.3]" data-atlassian-webresource-contexts="page" type="text/javascript" src="Hooks%20in%20PrestaShop%201.5%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/batch_004.js"></script>
+<script data-atlassian-webresource-contents="com.atlassian.confluence.plugins.confluence-like:content-like-resources[4.3.3],com.atlassian.confluence.plugins.confluence-inline-tasks:inline-tasks-resources[4.3.3],com.atlassian.confluence.plugins.drag-and-drop:drag-and-drop-for-view-content[4.3.3],com.atlassian.confluence.plugins.doctheme:splitter[4.3.3],com.atlassian.confluence.plugins.view-storage-format:view-comment-storage-resources[4.3.3],com.atlassian.confluence.plugins.jira.jira-connector:help-dialog-extension[1.4.2],com.atlassian.confluence.plugins.confluence-sortable-tables:sortable-table-resources[4.3.3],com.atlassian.confluence.plugins.share-page:share-keyboard-shortcut-js-resources[1.23],com.atlassian.confluence.plugins.drag-and-drop:support[4.3.3],confluence.web.resources:view-comment[1.0],com.atlassian.auiplugin:jquery-ui-other[3.6.5],com.atlassian.confluence.plugins.confluence-mentions-plugin:help-dialog-extension[1.5.9],com.atlassian.confluence.plugins.confluence-inline-tasks:inline-tasks-styles[4.3.3]" data-atlassian-webresource-contexts="viewcontent,main" type="text/javascript" src="Hooks%20in%20PrestaShop%201.5%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/batch_002.js"></script>
+<script data-atlassian-webresource-contents="com.atlassian.confluence.plugins.quickcomments:quick-comment-hide-traditional[4.3.3]" data-atlassian-webresource-contexts="atl.comments" type="text/javascript" src="Hooks%20in%20PrestaShop%201.5%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/batch_005.js"></script>
+<script data-atlassian-webresource-contents="com.atlassian.plugins.navigation-link-plugin:rotp-menu[1.2]" data-atlassian-webresource-contexts="atl.general" type="text/javascript" src="Hooks%20in%20PrestaShop%201.5%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/batch_003.js"></script>
+<script data-atlassian-webresource-contents="com.atlassian.confluence.plugins.pagetree:pagetree-resources[2.0.2]" type="text/javascript" src="Hooks%20in%20PrestaShop%201.5%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/com.js"></script>
+<script data-atlassian-webresource-contents="com.atlassian.mywork.mywork-confluence-host-plugin:mw-header-anchor[1.1.1]" type="text/javascript" src="Hooks%20in%20PrestaShop%201.5%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/com_002.js"></script>
+
+    
+    <!-- end system javascript resources -->
+    <script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2753771-19']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
+
+
+
+    
+    <link rel="canonical" href="http://doc.prestashop.com/display/PS15/Hooks+in+PrestaShop+1.5">
+    <link rel="shortlink" href="http://doc.prestashop.com/x/DQCs">
+    <meta name="wikilink" content="[PS15:Hooks in PrestaShop 1.5]">
+    <meta name="page-version" content="10">
+
+</head>
+
+<body onload="placeFocus()" id="com-atlassian-confluence" class="theme-documentation  splitter-invoked">
+
+        
+    <div id="full-height-container">
+    <div id="header-precursor">
+        
+                </div>
+
+<div id="header" class="sectionbottom ">
+        <form id="quick-search" class="quick-search" method="get" action="/dosearchsite.action">
+                <fieldset>
+            <input name="spaceSearch" value="false" type="hidden">
+        </fieldset>
+        <fieldset>
+            <legend>Quick Search</legend>
+            <input value="Search Confluence" title=" ( Type '/' )" class="quick-search-query placeholded" id="quick-search-query" accesskey="search-pages-action.accesskey" autocomplete="off" name="queryString" size="25" type="text">
+            <input class="quick-search-submit" id="quick-search-submit" value="Search Confluence" type="submit">
+            <div class="aui-dd-parent quick-nav-drop-down"><!-- Quick nav appears here --></div>
+        </fieldset>
+        <fieldset class="hidden parameters">
+            <input id="quickNavEnabled" value="true" type="hidden">
+                    </fieldset>
+    </form>
+
+    <ul id="header-menu-bar" class="ajs-menu-bar">
+                    
+            
+            <li class="normal ajs-menu-item">
+        <a id="browse-menu-link" class="browse trigger ajs-menu-title" href="#"><span><span>Browse</span></span></a>         <div style="" class="ajs-drop-down assistive" hidden="">
+                        <ul id="browse-menu-link-leading" class="section-leading first">
+                                        <li>
+    
+        
+    
+    <a id="space-pages-link" href="http://doc.prestashop.com/pages/listpages.action?key=PS15" class="" title="Browse pages in the PrestaShop 1.5 space ( Type 'g' then 's' )">
+                   <span>Pages</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-blogposts-link" href="http://doc.prestashop.com/pages/viewrecentblogposts.action?key=PS15" class="" title="Browse blogs in the PrestaShop 1.5 space">
+                   <span>Blog</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-templates-link" href="http://doc.prestashop.com/pages/templates2/listpagetemplates.action?key=PS15" class="" title="Browse and edit templates in the PrestaShop 1.5 space">
+                   <span>Templates</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-labels-link" href="http://doc.prestashop.com/labels/listlabels-heatmap.action?key=PS15" class="" title="Browse labels in the PrestaShop 1.5 space">
+                   <span>Labels</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-attachments-link" href="http://doc.prestashop.com/spaces/listattachmentsforspace.action?key=PS15" class="" title="Browse attachments in the PrestaShop 1.5 space">
+                   <span>Attachments</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-mail-link" href="http://doc.prestashop.com/mail/archive/viewmailarchive.action?key=PS15" class="" title="Browse mail in the PrestaShop 1.5 space">
+                   <span>Mail</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-advanced-link" href="http://doc.prestashop.com/spaces/viewspacesummary.action?key=PS15" class="" title="Browse additional space functions in the PrestaShop 1.5 space">
+                   <span>Advanced</span></a>        </li>
+                            </ul>
+                        <ul id="browse-menu-link-global" class="section-global">
+                                        <li>
+    
+        
+    
+    <a id="whats-new-menu-link" href="http://docs.atlassian.com/confluence/docs-43/whatsnew/iframe" class="" title="">
+                   <span>What’s New</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="space-directory-link" href="http://doc.prestashop.com/spacedirectory/view.action" class="" title="Browse the Confluence space directory">
+                   <span>Space Directory</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="feed-builder-link" href="http://doc.prestashop.com/dashboard/configurerssfeed.action" class="" title="Create your custom RSS feed.">
+                   <span>Feed Builder</span></a>        </li>
+                                        <li>
+    
+            
+    
+    <a id="keyboard-shortcuts-link" href="#" class="" title="View available keyboard shortcuts ( Type '?' )">
+                   <span>Keyboard Shortcuts</span></a>        </li>
+                                        <li>
+    
+            
+    
+    <a id="gadget-directory-link" href="#" class="user-item administration-link" title="Browse gadgets provided by Confluence">
+                   <span>Confluence Gadgets</span></a>        </li>
+                            </ul>
+                    </div>
+    </li>
+            
+                                                         <li class="ajs-menu-item normal">
+        
+        
+    
+    <a id="login-link" href="http://doc.prestashop.com/login.action?os_destination=%2Fdisplay%2FPS15%2FHooks%2Bin%2BPrestaShop%2B1.5" class="user-item login-link" title="">
+                   <span>Log In</span></a>        </li>
+                                <li class="normal ajs-menu-item">
+            <div id="splitter-button" class="" title="Show or hide sidebar ( Type '[' )"></div>
+        </li>
+
+    </ul>
+    
+    
+    <ol id="breadcrumbs">
+                    
+                        
+        <li class="first">
+                                    <span><a href="http://doc.prestashop.com/dashboard.action" title="Go to Dashboard ( Type 'g' then 'd' )">Dashboard</a></span>
+                </li>
+                    
+                
+        <li>
+                                    <span><a href="http://doc.prestashop.com/display/PS15">PrestaShop 1.5</a></span>
+                </li>
+                                        <li id="ellipsis" title="Show all breadcrumbs"><span><strong>…</strong></span></li>
+                                    
+                
+        <li class="hidden-crumb">
+                                    <span><a href="http://doc.prestashop.com/display/PS15/Home">Home</a></span>
+                </li>
+                                
+                
+        <li class="hidden-crumb">
+                                    <span><a href="http://doc.prestashop.com/display/PS15/English+documentation">English documentation</a></span>
+                </li>
+                                
+                
+        <li class="hidden-crumb">
+                                    <span><a href="http://doc.prestashop.com/display/PS15/Developer+Guide">Developer Guide</a></span>
+                </li>
+                    
+                
+        <li>
+                                    <span><a href="http://doc.prestashop.com/display/PS15/Hooks+in+PrestaShop+1.5">Hooks in PrestaShop 1.5</a></span>
+                </li>
+        </ol>
+
+</div>
+
+    <div style="position: relative; height: 837.333px;" id="splitter">
+    <div style="position: absolute; left: 0px; width: 300px; height: 837px;" id="splitter-sidebar">
+        
+
+                    
+        
+    
+
+<div class="plugin_pagetree">
+
+                <div id="pagetreesearch">
+            <form method="POST" action="/plugins/pagetreesearch/pagetreesearch.action" name="pagetreesearchform">
+                                    <input name="ancestorId" value="5373996" type="hidden">
+                                <input name="spaceKey" value="PS15" type="hidden">
+                <input size="20" name="queryString" type="text">
+                <input value="Search" type="submit">
+            </form>
+        </div>
+    
+        
+    <ul class="plugin_pagetree_children_list plugin_pagetree_children_list_noleftspace">
+        <div id="children5373996-0" class="plugin_pagetree_children">
+<ul class="plugin_pagetree_children_list" id="child_ul5373996-0">
+            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                                             <a id="plusminus5374130-0" class="plugin_pagetree_childtoggle icon icon-minus" href="#">
+            </a>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan5374130-0">                        <a href="http://doc.prestashop.com/display/PS15/English+documentation">English documentation</a>
+        </span>            </div>
+
+        <div id="children5374130-0" class="plugin_pagetree_children_container">
+                                                        <ul class="plugin_pagetree_children_list" id="child_ul5374130-0">
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                                             <a id="plusminus5374139-0" class="plugin_pagetree_childtoggle icon icon-plus" href="#">
+            </a>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan5374139-0">                        <a href="http://doc.prestashop.com/display/PS15/Getting+Started">Getting Started</a>
+        </span>            </div>
+
+        <div id="children5374139-0" class="plugin_pagetree_children_container">
+                                                            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                                             <a id="plusminus5374291-0" class="plugin_pagetree_childtoggle icon icon-plus" href="#">
+            </a>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan5374291-0">                        <a href="http://doc.prestashop.com/display/PS15/Updating+PrestaShop">Updating PrestaShop</a>
+        </span>            </div>
+
+        <div id="children5374291-0" class="plugin_pagetree_children_container">
+                                                            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                                             <a id="plusminus5374303-0" class="plugin_pagetree_childtoggle icon icon-plus" href="#">
+            </a>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan5374303-0">                        <a href="http://doc.prestashop.com/display/PS15/User+Guide">User Guide</a>
+        </span>            </div>
+
+        <div id="children5374303-0" class="plugin_pagetree_children_container">
+                                                            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                                             <a id="plusminus9076768-0" class="plugin_pagetree_childtoggle icon icon-minus" href="#">
+            </a>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan9076768-0">                        <a href="http://doc.prestashop.com/display/PS15/Developer+Guide">Developer Guide</a>
+        </span>            </div>
+
+        <div id="children9076768-0" class="plugin_pagetree_children_container">
+                                                        <ul class="plugin_pagetree_children_list" id="child_ul9076768-0">
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                    <span class="no-children icon icon-square"></span>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan9404440-0">                        <a href="http://doc.prestashop.com/display/PS15/Fundamentals">Fundamentals</a>
+        </span>            </div>
+
+        <div id="children9404440-0" class="plugin_pagetree_children_container">
+            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                    <span class="no-children icon icon-square"></span>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan9404443-0">                        <a href="http://doc.prestashop.com/display/PS15/Coding+Standard">Coding Standard</a>
+        </span>            </div>
+
+        <div id="children9404443-0" class="plugin_pagetree_children_container">
+            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                    <span class="no-children icon icon-square"></span>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan13533746-0">                        <a href="http://doc.prestashop.com/display/PS15/Setting+up+your+local+development+environment">Setting up your local development environment</a>
+        </span>            </div>
+
+        <div id="children13533746-0" class="plugin_pagetree_children_container">
+            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                    <span class="no-children icon icon-square"></span>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan9076773-0">                        <a href="http://doc.prestashop.com/display/PS15/Creating+a+PrestaShop+module">Creating a PrestaShop module</a>
+        </span>            </div>
+
+        <div id="children9076773-0" class="plugin_pagetree_children_container">
+            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                    <span class="no-children icon icon-square"></span>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan13533747-0">                        <a href="http://doc.prestashop.com/display/PS15/Diving+into+PrestaShop+Core+development">Diving into PrestaShop Core development</a>
+        </span>            </div>
+
+        <div id="children13533747-0" class="plugin_pagetree_children_container">
+            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                    <span class="no-children icon icon-square"></span>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan13533769-0">                        <a href="http://doc.prestashop.com/display/PS15/Creating+a+module+with+both+front-end+and+back-end+controllers">Creating a module with both front-end and back-end controllers</a>
+        </span>            </div>
+
+        <div id="children13533769-0" class="plugin_pagetree_children_container">
+            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                    <span class="no-children icon icon-square"></span>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span style="font-weight: bold;" class="plugin_pagetree_children_span" id="childrenspan11272205-0">                        <a href="http://doc.prestashop.com/display/PS15/Hooks+in+PrestaShop+1.5">Hooks in PrestaShop 1.5</a>
+        </span>            </div>
+
+        <div id="children11272205-0" class="plugin_pagetree_children_container">
+            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                    <span class="no-children icon icon-square"></span>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan13533724-0">                        <a href="http://doc.prestashop.com/display/PS15/Translations+in+PrestaShop+1.5">Translations in PrestaShop 1.5</a>
+        </span>            </div>
+
+        <div id="children13533724-0" class="plugin_pagetree_children_container">
+            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                                             <a id="plusminus10977291-0" class="plugin_pagetree_childtoggle icon icon-plus" href="#">
+            </a>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan10977291-0">                        <a href="http://doc.prestashop.com/display/PS15/Developer+tutorials">Developer tutorials</a>
+        </span>            </div>
+
+        <div id="children10977291-0" class="plugin_pagetree_children_container">
+                                                            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                    <span class="no-children icon icon-square"></span>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan12124169-0">                        <a href="http://doc.prestashop.com/display/PS15/How+to+use+the+forge+to+contribute+to+PrestaShop">How to use the forge to contribute to PrestaShop</a>
+        </span>            </div>
+
+        <div id="children12124169-0" class="plugin_pagetree_children_container">
+            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                    <span class="no-children icon icon-square"></span>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan12943407-0">                        <a href="http://doc.prestashop.com/display/PS15/How+to+write+a+commit+message">How to write a commit message</a>
+        </span>            </div>
+
+        <div id="children12943407-0" class="plugin_pagetree_children_container">
+            </div>
+    </li>
+                                        </ul>
+                                        </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                                             <a id="plusminus14123012-0" class="plugin_pagetree_childtoggle icon icon-plus" href="#">
+            </a>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan14123012-0">                        <a href="http://doc.prestashop.com/display/PS15/Designer+guide">Designer guide</a>
+        </span>            </div>
+
+        <div id="children14123012-0" class="plugin_pagetree_children_container">
+                                                            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                    <span class="no-children icon icon-square"></span>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan12943369-0">                        <a href="http://doc.prestashop.com/display/PS15/System+Administrator+Guide">System Administrator Guide</a>
+        </span>            </div>
+
+        <div id="children12943369-0" class="plugin_pagetree_children_container">
+            </div>
+    </li>
+                                            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                    <span class="no-children icon icon-square"></span>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan13238294-0">                        <a href="http://doc.prestashop.com/display/PS15/Merchant%27s+Guide">Merchant's Guide</a>
+        </span>            </div>
+
+        <div id="children13238294-0" class="plugin_pagetree_children_container">
+            </div>
+    </li>
+                                        </ul>
+                                        </div>
+    </li>
+            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                                             <a id="plusminus11272318-0" class="plugin_pagetree_childtoggle icon icon-plus" href="#">
+            </a>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan11272318-0">                        <a href="http://doc.prestashop.com/pages/viewpage.action?pageId=11272318">Documentation française</a>
+        </span>            </div>
+
+        <div id="children11272318-0" class="plugin_pagetree_children_container">
+                                                            </div>
+    </li>
+            <li>
+    <div class="plugin_pagetree_childtoggle_container">
+                    <span class="no-children icon icon-square"></span>
+            </div>
+    <div class="plugin_pagetree_children_content">
+                    <span class="plugin_pagetree_children_span" id="childrenspan13533693-0">                        <a href="http://doc.prestashop.com/display/PS15/Contributing+to+the+documentation">Contributing to the documentation</a>
+        </span>            </div>
+
+        <div id="children13533693-0" class="plugin_pagetree_children_container">
+            </div>
+    </li>
+    </ul>
+</div>
+    </ul>
+
+    <fieldset class="hidden">
+        <input name="treeId" value="" type="hidden">
+        <input name="treeRequestId" value="/plugins/pagetree/naturalchildren.action?decorator=none&amp;excerpt=false&amp;sort=position&amp;reverse=false&amp;disableLinks=false" type="hidden">
+        <input name="treePageId" value="11272205" type="hidden">
+
+        <input name="noRoot" value="false" type="hidden">
+        <input name="rootPageId" value="5373996" type="hidden">
+
+        <input name="rootPage" value="" type="hidden">
+        <input name="startDepth" value="0" type="hidden">
+        <input name="spaceKey" value="PS15" type="hidden">
+
+        <input name="i18n-pagetree.loading" value="Loading..." type="hidden">
+        <input name="i18n-pagetree.error.permission" value="Unable to load page tree. It seems that you do not have permission to view the root page." type="hidden">
+        <input name="i18n-pagetree.eeror.general" value="There was a problem retrieving the page tree. Please check the server log file for more information." type="hidden">
+        <input name="loginUrl" value="/login.action?os_destination=%2Fdisplay%2FPS15%2FHooks%2Bin%2BPrestaShop%2B1.5" type="hidden">
+
+                <fieldset class="hidden">
+                                                <input name="ancestorId" value="9076768" type="hidden">
+                                    <input name="ancestorId" value="5374130" type="hidden">
+                                    <input name="ancestorId" value="5373996" type="hidden">
+                                    </fieldset>
+    </fieldset>
+</div>
+
+
+
+            </div><div unselectable="on" class="vsplitbar" style="z-index: 4; position: absolute; -moz-user-select: none; cursor: ew-resize; left: 300px; height: 837px;"><a title="vsplitbar" tabindex="0" accesskey="L" href="javascript:void(0)"></a></div>
+    <div style="position: absolute; left: 305px; width: 1581px; height: 837px;" id="splitter-content">
+
+                    <script type="text/javascript" src="Hooks%20in%20PrestaShop%201.5%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/doc-theme.js"></script>
+    
+                        
+            
+<div id="main">
+    <div id="main-header">
+        
+        
+    <div id="navigation" class="content-navigation view">
+                    <ul class="ajs-menu-bar">
+                                
+                        
+            <li class="normal ajs-menu-item">
+        <a id="action-menu-link" class="action trigger ajs-menu-title" href="#"><span><span>Tools</span></span></a>         <div class="ajs-drop-down most-right-menu-item assistive" hidden="">
+                        <ul id="action-menu-link-primary" class="section-primary first">
+                                        <li>
+    
+        
+    
+    <a id="view-attachments-link" href="http://doc.prestashop.com/pages/viewpageattachments.action?pageId=11272205" class="action-view-attachments" accesskey="a" title="View Attachments ( Type 't' )">
+                   <span><u>A</u>ttachments (0)</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="action-view-history-link" href="http://doc.prestashop.com/pages/viewpreviousversions.action?pageId=11272205" class="action-view-history" title="">
+                   <span>Page History</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="action-page-permissions-link" href="http://doc.prestashop.com/pages/viewinfo.action?pageId=11272205" class="action-page-permissions" title="Edit restrictions">
+                   <span>Restrictions</span></a>        </li>
+                            </ul>
+                        <ul id="action-menu-link-secondary" class="section-secondary">
+                                        <li>
+    
+        
+    
+    <a id="view-page-info-link" href="http://doc.prestashop.com/pages/viewinfo.action?pageId=11272205" class="action-view-info" title="">
+                   <span>Info</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="link-to-page-link" href="http://doc.prestashop.com/pages/viewinfo.action?pageId=11272205" class="" title="Link to this Page ( Type 'k' )">
+                   <span>Link to this Page…</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="view-in-hierarchy-link" href="http://doc.prestashop.com/pages/listpages-dirview.action?key=PS15&amp;openId=11272205#selectedPageInHierarchy" class="" title="">
+                   <span>View in Hierarchy</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a id="action-view-source-link" href="http://doc.prestashop.com/plugins/viewsource/viewpagesrc.action?pageId=11272205" class="action-view-source popup-link" title="">
+                   <span>View Source</span></a>        </li>
+                            </ul>
+                    </div>
+    </li>
+            </ul>
+    </div>
+
+        
+        <h1 id="title-heading" class="pagetitle">
+                            <a href="http://doc.prestashop.com/display/PS15"><img class="logo global custom" src="Hooks%20in%20PrestaShop%201.5%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/global.png" alt=""></a>                
+            <span id="title-text">
+                                        <a href="http://doc.prestashop.com/display/PS15/Hooks+in+PrestaShop+1.5">Hooks in PrestaShop 1.5</a>
+                            </span>
+        </h1>
+    </div>
+
+    
+
+    
+    
+    
+    
+    
+
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                      
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+        
+    
+    
+                    
+    
+
+    
+
+
+<div id="content" class="page view">
+    
+
+<div id="action-messages">
+                        </div>
+
+
+
+    
+<script type="text/x-template" title="movePageDialog">
+    <div class="row information">
+        <div class="inner">
+            <div class="element">
+                Specify the new parent page for this page and its children by space and title.
+            </div>
+        </div>
+    </div>
+    <div class="form">
+        <fieldset>
+                
+
+    <legend class="assistive"><span>Change the Parent Page to a Known Page</span></legend>
+            <div class="row">
+                <label for="new-space">New space:</label>
+                <div class="value new-space-value">
+                    <input id="new-space-key" name="new-space-key" type="hidden" value="PS15">
+                                            <span class="space-input">
+                            <input id="new-space" name="new-space" value="PrestaShop 1.5" disabled="disabled">
+                        </span>
+                        <span class="description warning">You cannot move this page to another space because you do not have permission to remove it from this space.</span>
+                                        <div class="new-space-dropdown aui-dd-parent autocomplete"></div>
+                </div>
+            </div>
+            <div class="row">
+                <label for="new-parent-page">New parent page:</label>
+                <div class="value new-parent-page-value">
+                    <span class="page-input">
+                        <input id="new-parent-page" name="new-parent-page" value="Developer Guide">
+                    </span>
+                    <span class="description">Start typing a page title to see a list of suggestions.</span>
+                    <div class="new-parent-page-dropdown aui-dd-parent autocomplete"></div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="location-info">
+        <div class="row">
+            <label>Current location:</label>
+            <div class="value breadcrumbs-container">
+                <div class="breadcrumbs-line">
+                    <ul id="current-parent-breadcrumbs" class="breadcrumbs">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <label>New location:</label>
+            <div class="value breadcrumbs-container">
+                <div class="breadcrumbs-line">
+                    <ul id="new-parent-breadcrumbs" class="breadcrumbs">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/x-template" title="movePageSearchPanel">
+    <div class="row information">
+        <div class="inner">
+            <div class="element">
+                Search for and select the new parent page for this page and its children.
+            </div>
+        </div>
+    </div>
+    <div id="move-page-search-container" class="row">
+        <div class="search-form">
+            <fieldset>
+                    
+
+    <legend class="assistive"><span>Search for a New Parent Page</span></legend>
+                    
+
+    <label  for="move-page-search-query" class="assistive">Search keywords</label>
+                <input class="search-query" id="move-page-search-query">
+                    
+
+    <label  for="move-page-search-space" class="assistive">Search in space</label>
+                                    <select id="move-page-search-space" class="search-space" disabled="disabled">
+                        <option value="PS15" selected="selected">PrestaShop 1.5</option>
+                    </select>
+                                <input type="button" value="Search">
+                                    <div class="description warning">You cannot move this page to another space because you do not have permission to remove it from this space.</div>
+                            </fieldset>
+        </div>
+        <div class="search-results">
+        </div>
+    </div>
+</script>
+<script type="text/x-template" title="searchResultsGrid">
+    <table>
+        <thead>
+            <tr class="header">
+                <th class="search-result-title">Page Title</th>
+                <th class="search-result-space">Space</th>
+                <th class="search-result-date">Updated</th>
+            </tr>
+        </thead>
+    </table>
+</script>
+<script type="text/x-template" title="searchResultsGridCount">
+    <p class="search-result-count">{0}</p>
+</script>
+<script type="text/x-template" title="searchResultsGridRow">
+    <tr class="search-result">
+        <th class="search-result-title"><a href="{1}" class="content-type-{2}"><span>{0}</span></a></th>
+        <td class="search-result-space"><a class="space" href="/display/{4}/" title="{3}">{3}</a></td>
+        <td class="search-result-date"><span class="date" title="{6}">{5}</span></td>
+    </tr>
+</script><!-- Start restrictions section -->
+<script type="text/x-template" title="page-permissions-div">
+<div id="page-permissions-div">
+    <div id="page-permissions-editor-form">
+
+                <div id="page-permissions-error-div" class="hidden">
+            <a href="#" id="permissions-error-div-close">Ok</a>
+            <div></div>
+        </div>
+
+                <div id="page-permissions-type-radios" class="page-permissions-label-rows">
+            <div>
+                <input id="restrictViewRadio" type="radio" checked="checked" name="pagePermissionTypeRadio" value="view"/>
+                <label for="restrictViewRadio">Restrict viewing of this page</label>
+                <input id="restrictEditRadio" type="radio" name="pagePermissionTypeRadio" value="edit"/>
+                <label for="restrictEditRadio">Restrict editing of this page</label>
+            </div>
+        </div>
+        <div id="page-permissions-input" class="page-permissions-label-rows">
+            <div class="page-permissions-label">To:</div>
+            <div id="page-permissions-chooser-box">
+                                <span id="page-permissions-choose-user" class="ajs-button">
+                    
+
+
+
+    
+
+
+
+<a href="#" id='userpicker-popup-link-image' onClick="var picker = window.open('/spaces/openuserpicker.action?key=PS15&amp;startIndex=0&amp;onPopupSubmit=AJS.PagePermissions.addUserPermissions', 'EntitiesPicker', 'status=yes,resizable=yes,top=100,left=200,width=700,height=680,scrollbars=yes'); picker.focus(); return false;"><img src="/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/_/images/icons/user_16.gif" height=16 width=16 border=0 align="absmiddle"  title="Choose users" /></a>
+<a href="#" id='userpicker-popup-link-text' onClick="var picker = window.open('/spaces/openuserpicker.action?key=PS15&amp;startIndex=0&amp;onPopupSubmit=AJS.PagePermissions.addUserPermissions', 'EntitiesPicker', 'status=yes,resizable=yes,top=100,left=200,width=700,height=680,scrollbars=yes'); picker.focus(); return false;">Person...</a>
+
+
+                </span>
+                <span id="page-permissions-choose-group" class="ajs-button">
+                    
+
+
+
+    
+
+ 
+
+<a href="#" id='grouppicker-popup-link-image' onClick="var picker = window.open('/spaces/opengrouppicker.action?key=PS15&amp;startIndex=0&amp;actionName=dosearchgroups.action&amp;onPopupSubmit=AJS.PagePermissions.addGroupPermissions', 'EntitiesPicker', 'status=yes,resizable=yes,top=100,left=200,width=580,height=550,scrollbars=yes'); picker.focus(); return false;"><img src="/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/_/images/icons/group_16.gif" height=16 width=16 border=0 align="absmiddle"  title="Choose groups" /></a>
+<a href="#" id='grouppicker-popup-link-text' onClick="var picker = window.open('/spaces/opengrouppicker.action?key=PS15&amp;startIndex=0&amp;actionName=dosearchgroups.action&amp;onPopupSubmit=AJS.PagePermissions.addGroupPermissions', 'EntitiesPicker', 'status=yes,resizable=yes,top=100,left=200,width=580,height=550,scrollbars=yes'); picker.focus(); return false;">Group...</a>
+
+
+                </span>
+            </div>
+            <div id="page-permissions-input-box">
+                <input type="text" id="page-permissions-names-input" name="permissionNames"
+                    placeholder="Enter user or group name" class="autocomplete-user"
+                    data-max="10" data-none-message="No matches"
+                    data-target="#page-permissions-names-hidden" data-template="{username}"
+                    data-dropdown-target="#page-perms-name-dropdown-wrapper" data-resize-to-input="true"
+                    size="30"/>
+                <input
+    type="hidden"
+                            id="page-permissions-names-hidden"           />                <img height="16px" width="1px" src="/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/_/images/border/spacer.gif"/>
+                <input type="button" id="add-typed-names" value="Restrict">
+                <div id="page-perms-name-dropdown-wrapper" class="aui-dd-parent autocomplete"></div>
+            </div>
+        </div>
+    </div>
+    <div id="page-permissions-tables">
+        <div id="page-permissions-table-div">
+                        <table id="page-permissions-table" class="page-permissions-table">
+                <tr id="page-permissions-no-views" class="marker-row">
+                    <td colspan="3" class="page-permissions-marker-cell"><span>No view restrictions are defined for this page</span></td>
+                </tr>
+                <tr id="page-permissions-no-edits" class="marker-row">
+                    <td colspan="3" class="page-permissions-marker-cell"><span>No edit restrictions are defined for this page</span></td>
+                </tr>
+            </table>
+        </div>
+        <div id="page-inherited-permissions-table-div" class="hidden">
+            <span id="page-inherited-permissions-table-desc">
+                <a class="icon twisty-closed">Show/Hide</a>
+                <a id="toggle-inherited-permissions" title="Click to see inherited restrictions">This page has restricted parent pages. It can only be seen by users who can see those parent pages.</a>
+            </span>
+            <div id="page-inherited-permissions-tables" class="hidden page-inheritance-togglable"></div>
+        </div>
+    </div>
+</div>
+</script>
+
+<!-- End restrictions section -->
+
+        
+    
+    
+        <fieldset class="hidden parameters">
+            <input title="parentPageId" value="9076768" type="hidden">
+        </fieldset>
+
+        
+                            
+    
+
+                    
+
+        
+        <a href="#page-metadata-end" class="assistive">Skip to end of metadata</a>
+<div id="page-metadata-start" class="assistive"></div>
+
+    <div class="page-metadata">
+        <ul>
+                            <li class="page-metadata-item noprint">
+    
+            
+    
+    <a id="content-metadata-page-restrictions" href="#" class="page-metadata-icon page-restrictions hidden" title="Page restrictions apply. Click the lock icon to view or edit the restriction.">
+                   <span>Page restrictions apply</span></a>        </li>
+                        <li class="page-metadata-modification-info">
+                                    Added by <a href="http://doc.prestashop.com/display/%7Eprestaforge" class="url fn">Documentation Team</a>, last edited by <a href="http://doc.prestashop.com/display/%7Eprestaforge" class="url fn">Documentation Team</a> on Jan 21, 2013
+                                                                <span class="noprint">&nbsp;(<a id="view-change-link" href="http://doc.prestashop.com/pages/diffpages.action?pageId=11272205&amp;originalId=14418104">view change</a>)</span>
+                                                </li>
+                            <li class="show-hide-comment-link">
+                    <a id="show-version-comment" class="inline-control-link" href="#">show comment</a>
+                    <a id="hide-version-comment" class="inline-control-link" style="display:none;" href="#">hide comment</a>
+                </li>
+                    </ul>
+                <div style="display: none;" id="version-comment" class="noteMacro">
+        <strong>Comment:</strong>
+        Reverted from v. 8<br>
+    </div>
+        </div>
+
+
+<a href="#page-metadata-start" class="assistive">Go to start of metadata</a>
+<div id="page-metadata-end" class="assistive"></div>
+        
+        <fieldset class="hidden parameters">
+                        <input title="browsePageTreeMode" value="view" type="hidden">
+        </fieldset>
+
+        <div class="wiki-content">
+                           <p><strong>Table of content</strong></p><p></p><div>
+<ul>
+    <li><a href="#HooksinPrestaShop1.5-HooksinPrestaShop1.5">Hooks in PrestaShop 1.5</a></li>
+<ul>
+    <li><a href="#HooksinPrestaShop1.5-New&amp;updatedhooks">New &amp; updated hooks</a></li>
+<ul>
+    <li><a href="#HooksinPrestaShop1.5-Newhooks">New hooks</a></li>
+    <li><a href="#HooksinPrestaShop1.5-Updatedhooks">Updated hooks</a></li>
+</ul>
+    <li><a href="#HooksinPrestaShop1.5-Front-officeandback-office">Front-office and back-office</a></li>
+<ul>
+    <li><a href="#HooksinPrestaShop1.5-Existingfront-officehooks">Existing front-office hooks</a></li>
+    <li><a href="#HooksinPrestaShop1.5-Existingback-officehooks">Existing back-office hooks</a></li>
+</ul>
+</ul>
+</ul></div><p></p><h1 id="HooksinPrestaShop1.5-HooksinPrestaShop1.5">Hooks in PrestaShop 1.5</h1><p>Hooks in PrestaShop 1.5 have a new naming scheme, with a situation specific prefix:</p><ul><li><strong>action</strong>. These hooks are triggered by specific events that take place in PrestaShop.</li><li><strong>display</strong>. These hooks result in something being displayed, either in the front-end or the back-end.</li></ul><p>This way, you will know right away what type of hook you are dealing with. Older hooks have been renamed to match this scheme.</p><h2 id="HooksinPrestaShop1.5-New&amp;updatedhooks">New &amp; updated hooks</h2><p>All hooks in PrestaShop have been updated for version 1.5, and several new ones were added.</p><div class="panelMacro"><table class="noteMacro"><colgroup><col width="24"><col></colgroup><tbody><tr><td valign="top"><img src="Hooks%20in%20PrestaShop%201.5%20-%20PrestaShop%201.5%20-%20PrestaShop%20documentation_files/warning.png" alt="" border="0" height="16" width="16" align="absmiddle"></td><td><p>The
+ following "new hooks" and "updated hooks" lists were automatically 
+generated by a script. Hook descriptions appear as they are in the 
+PrestaShop database, and can sometimes be missing.</p></td></tr></tbody></table></div><h3 id="HooksinPrestaShop1.5-Newhooks">New hooks</h3><div class="table-wrap"><table class="confluenceTable tablesorter"><thead><tr class="sortableHeader"><th data-column="0" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner"><p>Hook name</p></div></th><th data-column="1" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner"><p>Hook description</p></div></th></tr></thead><tbody><tr><td class="confluenceTd"><p>actionAdminMetaControllerUpdate_optionsBefore</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionAdminMetaSave</p></td><td class="confluenceTd"><p>After saving configuration in AdminMeta</p></td></tr><tr><td class="confluenceTd"><p>actionAttributeDelete</p></td><td class="confluenceTd"><p>On deleting attribute feature value</p></td></tr><tr><td class="confluenceTd"><p>actionAttributeGroupDelete</p></td><td class="confluenceTd"><p>On deleting attribute group</p></td></tr><tr><td class="confluenceTd"><p>actionAttributeGroupSave</p></td><td class="confluenceTd"><p>On saving attribute group</p></td></tr><tr><td class="confluenceTd"><p>actionAttributePostProcess</p></td><td class="confluenceTd"><p>On post-process in admin feature value</p></td></tr><tr><td class="confluenceTd"><p>actionAttributeSave</p></td><td class="confluenceTd"><p>On saving attribute feature value</p></td></tr><tr><td class="confluenceTd"><p>actionAuthentication</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionBeforeAuthentication</p></td><td class="confluenceTd"><p>Before authentication</p></td></tr><tr><td class="confluenceTd"><p>actionCarrierProcess</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionCarrierUpdate</p></td><td class="confluenceTd"><p>This hook is called when a carrier is updated</p></td></tr><tr><td class="confluenceTd"><p>actionCartSave</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionCategoryAdd</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionCategoryDelete</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionCategoryUpdate</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionCustomerAccountAdd</p></td><td class="confluenceTd"><p>Called when a new customer&nbsp;successfully creates account</p></td></tr><tr><td class="confluenceTd"><p>actionFeatureDelete</p></td><td class="confluenceTd"><p>On deleting attribute feature</p></td></tr><tr><td class="confluenceTd"><p>actionFeatureSave</p></td><td class="confluenceTd"><p>On saving attribute feature</p></td></tr><tr><td class="confluenceTd"><p>actionFeatureValueDelete</p></td><td class="confluenceTd"><p>On deleting attribute feature value</p></td></tr><tr><td class="confluenceTd"><p>actionFeatureValueSave</p></td><td class="confluenceTd"><p>On saving attribute feature value</p></td></tr><tr><td class="confluenceTd"><p>actionHtaccessCreate</p></td><td class="confluenceTd"><p>After <code>.htaccess</code> creation</p></td></tr><tr><td class="confluenceTd"><p>actionObjectCategoryDeleteAfter</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionObjectCategoryUpdateAfter</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionObjectCmsDeleteAfter</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionObjectCmsUpdateAfter</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionObjectManufacturerDeleteAfter</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionObjectManufacturerUpdateAfter</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionObjectProductDeleteAfter</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionObjectProductUpdateAfter</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionObjectSupplierDeleteAfter</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionObjectSupplierUpdateAfter</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionOrderDetail</p></td><td class="confluenceTd"><p>To set the follow-up in Smarty when order detail is called.</p></td></tr><tr><td class="confluenceTd"><p>actionOrderReturn</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionOrderSlipAdd</p></td><td class="confluenceTd"><p>Called when a quantity of one product change in an order.</p></td></tr><tr><td class="confluenceTd"><p>actionOrderStatusPostUpdate</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionOrderStatusUpdate</p></td><td class="confluenceTd"><p>Launch modules when the order's status changes.</p></td></tr><tr><td class="confluenceTd"><p>actionPaymentCCAdd</p></td><td class="confluenceTd"><p>Payment CC added</p></td></tr><tr><td class="confluenceTd"><p>actionPaymentConfirmation</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionProductAdd</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionProductAttributeDelete</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionProductAttributeUpdate</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionProductCancel</p></td><td class="confluenceTd"><p>This hook is called when you cancel a product in an order</p></td></tr><tr><td class="confluenceTd"><p>actionProductDelete</p></td><td class="confluenceTd"><p>This hook is called when a product is deleted</p></td></tr><tr><td class="confluenceTd"><p>actionProductListOverride</p></td><td class="confluenceTd"><p>Assign product list to a category</p></td></tr><tr><td class="confluenceTd"><p>actionProductOutOfStock</p></td><td class="confluenceTd"><p>Make action while product is out of stock</p></td></tr><tr><td class="confluenceTd"><p>actionProductSave</p></td><td class="confluenceTd"><p>On saving products</p></td></tr><tr><td class="confluenceTd"><p>actionProductUpdate</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionSearch</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionShopDataDuplication</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionTaxManager</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionUpdateQuantity</p></td><td class="confluenceTd"><p>Quantity is updated only when the customer effectively place his order.</p></td></tr><tr><td class="confluenceTd"><p>actionValidateOrder</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>actionWatermark</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>displayAdminCustomers</p></td><td class="confluenceTd"><p>Launch modules when the tab AdminCustomers is displayed on back-office.</p></td></tr><tr><td class="confluenceTd"><p>displayAdminOrder</p></td><td class="confluenceTd"><p>Launch modules when the tab AdminOrder is displayed on back-office.</p></td></tr><tr><td class="confluenceTd"><p>displayAdminStatsGraphEngine</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>displayAdminStatsGridEngine</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>displayAdminStatsModules</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>displayAttributeForm</p></td><td class="confluenceTd"><p>Add fields to the form "attribute value"</p></td></tr><tr><td class="confluenceTd"><p>displayAttributeGroupForm</p></td><td class="confluenceTd"><p>Add fields to the form "attribute group"</p></td></tr><tr><td class="confluenceTd"><p>displayAttributeGroupPostProcess</p></td><td class="confluenceTd"><p>On post-process in admin attribute group</p></td></tr><tr><td class="confluenceTd"><p>displayBackOfficeFooter</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>displayBackOfficeHeader</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>displayBackOfficeHome</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>displayBackOfficeTop</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>displayBeforeCarrier</p></td><td class="confluenceTd"><p>This hook is display before the carrier list on Front office</p></td></tr><tr><td class="confluenceTd"><p>displayBeforePayment</p></td><td class="confluenceTd"><p>Redirect user to the module instead of displaying payment modules</p></td></tr><tr><td class="confluenceTd"><p>displayCarrierList</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>displayCustomerAccount</p></td><td class="confluenceTd"><p>Display on page account of the customer</p></td></tr><tr><td class="confluenceTd"><p>displayCustomerAccountForm</p></td><td class="confluenceTd"><p>Display some information on the form to create a customer account</p></td></tr><tr><td class="confluenceTd"><p>displayCustomerAccountFormTop</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>displayFeatureForm</p></td><td class="confluenceTd"><p>Add fields to the form "feature"</p></td></tr><tr><td class="confluenceTd"><p>displayFeaturePostProcess</p></td><td class="confluenceTd"><p>On post-process in admin feature</p></td></tr><tr><td class="confluenceTd"><p>displayFeatureValueForm</p></td><td class="confluenceTd"><p>Add fields to the form "feature value"</p></td></tr><tr><td class="confluenceTd"><p>displayFeatureValuePostProcess</p></td><td class="confluenceTd"><p>On post-process in admin feature value</p></td></tr><tr><td class="confluenceTd"><p>displayFooter</p></td><td class="confluenceTd"><p>Add block in footer</p></td></tr><tr><td class="confluenceTd"><p>displayFooterProduct</p></td><td class="confluenceTd"><p>Add new blocks under the product description</p></td></tr><tr><td class="confluenceTd"><p>displayHeader</p></td><td class="confluenceTd"><p>A hook which allow you to do things in the header of each pages</p></td></tr><tr><td class="confluenceTd"><p>displayHome</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>displayInvoice</p></td><td class="confluenceTd"><p>Add blocks to invoice (order)</p></td></tr><tr><td class="confluenceTd"><p>displayLeftColumn</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>displayLeftColumnProduct</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>displayMyAccountBlock</p></td><td class="confluenceTd"><p>Display extra information inside the "my account" block</p></td></tr><tr><td class="confluenceTd"><p>displayMyAccountBlockfooter</p></td><td class="confluenceTd"><p>Display extra information inside the "my account" block</p></td></tr><tr><td class="confluenceTd"><p>displayOrderConfirmation</p></td><td class="confluenceTd"><p>Called on order confirmation page</p></td></tr><tr><td class="confluenceTd"><p>displayOrderDetail</p></td><td class="confluenceTd"><p>Displayed on order detail on front office</p></td></tr><tr><td class="confluenceTd"><p>displayPDFInvoice</p></td><td class="confluenceTd"><p>Allow the display of extra information into the PDF invoice</p></td></tr><tr><td class="confluenceTd"><p>displayPayment</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>displayPaymentReturn</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>displayPaymentTop</p></td><td class="confluenceTd"><p>Top of payment page</p></td></tr><tr><td class="confluenceTd"><p>displayProductButtons</p></td><td class="confluenceTd"><p>Put new action buttons on product page</p></td></tr><tr><td class="confluenceTd"><p>displayProductComparison</p></td><td class="confluenceTd"><p>Extra Product Comparison</p></td></tr><tr><td class="confluenceTd"><p>displayProductTab</p></td><td class="confluenceTd"><p>Called on order product page tabs</p></td></tr><tr><td class="confluenceTd"><p>displayProductTabContent</p></td><td class="confluenceTd"><p>Called on order product page tabs</p></td></tr><tr><td class="confluenceTd"><p>displayRightColumn</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>displayRightColumnProduct</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>displayShoppingCart</p></td><td class="confluenceTd"><p>Display some specific information</p></td></tr><tr><td class="confluenceTd"><p>displayShoppingCartFooter</p></td><td class="confluenceTd"><p>Display some specific information on the shopping cart page</p></td></tr><tr><td class="confluenceTd"><p>displayTop</p></td><td class="confluenceTd"><p>A hook which enables you to do things at the top of each page.</p></td></tr></tbody></table></div><h3 id="HooksinPrestaShop1.5-Updatedhooks">Updated hooks</h3><p>Most
+ of these hooks are the same as they were in version 1.4 of PrestaShop, 
+but have been renamed with either an "action" or "display" prefix in 
+order to be compatible with the new 1.5 naming scheme.</p><div class="table-wrap"><table class="confluenceTable tablesorter"><thead><tr class="sortableHeader"><th data-column="0" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner"><p>Old hook name</p></div></th><th data-column="1" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner"><p>New hook name</p></div></th><th data-column="2" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner"><p>Hook description</p></div></th></tr></thead><tbody><tr><td class="confluenceTd"><p>AdminStatsModules</p></td><td class="confluenceTd"><p>displayAdminStatsModules</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>GraphEngine</p></td><td class="confluenceTd"><p>displayAdminStatsGraphEngine</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>GridEngine</p></td><td class="confluenceTd"><p>displayAdminStatsGridEngine</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>PDFInvoice</p></td><td class="confluenceTd"><p>displayPDFInvoice</p></td><td class="confluenceTd"><p>Allow the display of extra information into the PDF invoice</p></td></tr><tr><td class="confluenceTd"><p>addproduct</p></td><td class="confluenceTd"><p>actionProductAdd</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>adminCustomers</p></td><td class="confluenceTd"><p>displayAdminCustomers</p></td><td class="confluenceTd"><p>Launch modules when the tab AdminCustomers is displayed on back-office.</p></td></tr><tr><td class="confluenceTd"><p>adminOrder</p></td><td class="confluenceTd"><p>displayAdminOrder</p></td><td class="confluenceTd"><p>Launch modules when the tab AdminOrder is displayed on back-office.</p></td></tr><tr><td class="confluenceTd"><p>afterCreateHtaccess</p></td><td class="confluenceTd"><p>actionHtaccessCreate</p></td><td class="confluenceTd"><p>After <code>.htaccess</code> creation</p></td></tr><tr><td class="confluenceTd"><p>afterDeleteAttribute</p></td><td class="confluenceTd"><p>actionAttributeDelete</p></td><td class="confluenceTd"><p>On deleting attribute feature value</p></td></tr><tr><td class="confluenceTd"><p>afterDeleteAttributeGroup</p></td><td class="confluenceTd"><p>actionAttributeGroupDelete</p></td><td class="confluenceTd"><p>On deleting attribute group</p></td></tr><tr><td class="confluenceTd"><p>afterDeleteFeature</p></td><td class="confluenceTd"><p>actionFeatureDelete</p></td><td class="confluenceTd"><p>On deleting attribute feature</p></td></tr><tr><td class="confluenceTd"><p>afterDeleteFeatureValue</p></td><td class="confluenceTd"><p>actionFeatureValueDelete</p></td><td class="confluenceTd"><p>On deleting attribute feature value</p></td></tr><tr><td class="confluenceTd"><p>afterSaveAdminMeta</p></td><td class="confluenceTd"><p>actionAdminMetaSave</p></td><td class="confluenceTd"><p>After save configuration in AdminMeta</p></td></tr><tr><td class="confluenceTd"><p>afterSaveAttribute</p></td><td class="confluenceTd"><p>actionAttributeSave</p></td><td class="confluenceTd"><p>On saving attribute feature value</p></td></tr><tr><td class="confluenceTd"><p>afterSaveAttributeGroup</p></td><td class="confluenceTd"><p>actionAttributeGroupSave</p></td><td class="confluenceTd"><p>On saving attribute group</p></td></tr><tr><td class="confluenceTd"><p>afterSaveFeature</p></td><td class="confluenceTd"><p>actionFeatureSave</p></td><td class="confluenceTd"><p>On saving attribute feature</p></td></tr><tr><td class="confluenceTd"><p>afterSaveFeatureValue</p></td><td class="confluenceTd"><p>actionFeatureValueSave</p></td><td class="confluenceTd"><p>On saving attribute feature value</p></td></tr><tr><td class="confluenceTd"><p>afterSaveProduct</p></td><td class="confluenceTd"><p>actionProductSave</p></td><td class="confluenceTd"><p>On saving products</p></td></tr><tr><td class="confluenceTd"><p>attributeForm</p></td><td class="confluenceTd"><p>displayAttributeForm</p></td><td class="confluenceTd"><p>Add fields to the form "attribute value"</p></td></tr><tr><td class="confluenceTd"><p>attributeGroupForm</p></td><td class="confluenceTd"><p>displayAttributeGroupForm</p></td><td class="confluenceTd"><p>Add fields to the form "attribute group"</p></td></tr><tr><td class="confluenceTd"><p>authentication</p></td><td class="confluenceTd"><p>actionAuthentication</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>backBeforePayment</p></td><td class="confluenceTd"><p>displayBeforePayment</p></td><td class="confluenceTd"><p>Redirect user to the module instead of displaying payment modules</p></td></tr><tr><td class="confluenceTd"><p>backOfficeFooter</p></td><td class="confluenceTd"><p>displayBackOfficeFooter</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>backOfficeHeader</p></td><td class="confluenceTd"><p>displayBackOfficeHeader</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>backOfficeHome</p></td><td class="confluenceTd"><p>displayBackOfficeHome</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>backOfficeTop</p></td><td class="confluenceTd"><p>displayBackOfficeTop</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>beforeAuthentication</p></td><td class="confluenceTd"><p>actionBeforeAuthentication</p></td><td class="confluenceTd"><p>Before authentication</p></td></tr><tr><td class="confluenceTd"><p>beforeCarrier</p></td><td class="confluenceTd"><p>displayBeforeCarrier</p></td><td class="confluenceTd"><p>This hook is display before the carrier list on Front office</p></td></tr><tr><td class="confluenceTd"><p>cancelProduct</p></td><td class="confluenceTd"><p>actionProductCancel</p></td><td class="confluenceTd"><p>This hook is called when you cancel a product in an order</p></td></tr><tr><td class="confluenceTd"><p>cart</p></td><td class="confluenceTd"><p>actionCartSave</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>categoryAddition</p></td><td class="confluenceTd"><p>actionCategoryAdd</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>categoryDeletion</p></td><td class="confluenceTd"><p>actionCategoryDelete</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>categoryUpdate</p></td><td class="confluenceTd"><p>actionCategoryUpdate</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>createAccount</p></td><td class="confluenceTd"><p>actionCustomerAccountAdd</p></td><td class="confluenceTd"><p>Called when a new customer successfully creates an account</p></td></tr><tr><td class="confluenceTd"><p>createAccountForm</p></td><td class="confluenceTd"><p>displayCustomerAccountForm</p></td><td class="confluenceTd"><p>Display some information on the form to create a customer account</p></td></tr><tr><td class="confluenceTd"><p>createAccountTop</p></td><td class="confluenceTd"><p>displayCustomerAccountFormTop</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>customerAccount</p></td><td class="confluenceTd"><p>displayCustomerAccount</p></td><td class="confluenceTd"><p>Display on page account of the customer</p></td></tr><tr><td class="confluenceTd"><p>deleteProductAttribute</p></td><td class="confluenceTd"><p>actionProductAttributeDelete</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>deleteproduct</p></td><td class="confluenceTd"><p>actionProductDelete</p></td><td class="confluenceTd"><p>This hook is called when a product is deleted</p></td></tr><tr><td class="confluenceTd"><p>extraCarrier</p></td><td class="confluenceTd"><p>displayCarrierList</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>extraLeft</p></td><td class="confluenceTd"><p>displayLeftColumnProduct</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>extraProductComparison</p></td><td class="confluenceTd"><p>displayProductComparison</p></td><td class="confluenceTd"><p>Extra Product Comparison</p></td></tr><tr><td class="confluenceTd"><p>extraRight</p></td><td class="confluenceTd"><p>displayRightColumnProduct</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>featureForm</p></td><td class="confluenceTd"><p>displayFeatureForm</p></td><td class="confluenceTd"><p>Add fields to the form "feature"</p></td></tr><tr><td class="confluenceTd"><p>featureValueForm</p></td><td class="confluenceTd"><p>displayFeatureValueForm</p></td><td class="confluenceTd"><p>Add fields to the form "feature value"</p></td></tr><tr><td class="confluenceTd"><p>footer</p></td><td class="confluenceTd"><p>displayFooter</p></td><td class="confluenceTd"><p>Add block in footer</p></td></tr><tr><td class="confluenceTd"><p>header</p></td><td class="confluenceTd"><p>displayHeader</p></td><td class="confluenceTd"><p>A hook which allow you to do things in the header of each pages</p></td></tr><tr><td class="confluenceTd"><p>home</p></td><td class="confluenceTd"><p>displayHome</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>invoice</p></td><td class="confluenceTd"><p>displayInvoice</p></td><td class="confluenceTd"><p>Add blocks to invoice (order)</p></td></tr><tr><td class="confluenceTd"><p>leftColumn</p></td><td class="confluenceTd"><p>displayLeftColumn</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>myAccountBlock</p></td><td class="confluenceTd"><p>displayMyAccountBlock</p></td><td class="confluenceTd"><p>Display extra information inside the "my account" block</p></td></tr><tr><td class="confluenceTd"><p>newOrder</p></td><td class="confluenceTd"><p>actionValidateOrder</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>orderConfirmation</p></td><td class="confluenceTd"><p>displayOrderConfirmation</p></td><td class="confluenceTd"><p>Called on order confirmation page</p></td></tr><tr><td class="confluenceTd"><p>orderDetail</p></td><td class="confluenceTd"><p>actionOrderDetail</p></td><td class="confluenceTd"><p>To set the follow-up in Smarty when order detail is called</p></td></tr><tr><td class="confluenceTd"><p>orderDetailDisplayed</p></td><td class="confluenceTd"><p>displayOrderDetail</p></td><td class="confluenceTd"><p>Displayed on order detail on front office</p></td></tr><tr><td class="confluenceTd"><p>orderReturn</p></td><td class="confluenceTd"><p>actionOrderReturn</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>orderSlip</p></td><td class="confluenceTd"><p>actionOrderSlipAdd</p></td><td class="confluenceTd"><p>Called when a quantity of one product change in an order.</p></td></tr><tr><td class="confluenceTd"><p>payment</p></td><td class="confluenceTd"><p>displayPayment</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>paymentCCAdded</p></td><td class="confluenceTd"><p>actionPaymentCCAdd</p></td><td class="confluenceTd"><p>Payment CC added</p></td></tr><tr><td class="confluenceTd"><p>paymentConfirm</p></td><td class="confluenceTd"><p>actionPaymentConfirmation</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>paymentReturn</p></td><td class="confluenceTd"><p>displayPaymentReturn</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>paymentTop</p></td><td class="confluenceTd"><p>displayPaymentTop</p></td><td class="confluenceTd"><p>Top of payment page</p></td></tr><tr><td class="confluenceTd"><p>postProcessAttribute</p></td><td class="confluenceTd"><p>actionAttributePostProcess</p></td><td class="confluenceTd"><p>On post-process in admin feature value</p></td></tr><tr><td class="confluenceTd"><p>postProcessAttributeGroup</p></td><td class="confluenceTd"><p>displayAttributeGroupPostProcess</p></td><td class="confluenceTd"><p>On post-process in admin attribute group</p></td></tr><tr><td class="confluenceTd"><p>postProcessFeature</p></td><td class="confluenceTd"><p>displayFeaturePostProcess</p></td><td class="confluenceTd"><p>On post-process in admin feature</p></td></tr><tr><td class="confluenceTd"><p>postProcessFeatureValue</p></td><td class="confluenceTd"><p>displayFeatureValuePostProcess</p></td><td class="confluenceTd"><p>On post-process in admin feature value</p></td></tr><tr><td class="confluenceTd"><p>postUpdateOrderStatus</p></td><td class="confluenceTd"><p>actionOrderStatusPostUpdate</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>processCarrier</p></td><td class="confluenceTd"><p>actionCarrierProcess</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>productActions</p></td><td class="confluenceTd"><p>displayProductButtons</p></td><td class="confluenceTd"><p>Put new action buttons on product page</p></td></tr><tr><td class="confluenceTd"><p>productListAssign</p></td><td class="confluenceTd"><p>actionProductListOverride</p></td><td class="confluenceTd"><p>Assign product list to a category</p></td></tr><tr><td class="confluenceTd"><p>productOutOfStock</p></td><td class="confluenceTd"><p>actionProductOutOfStock</p></td><td class="confluenceTd"><p>Make action while product is out of stock</p></td></tr><tr><td class="confluenceTd"><p>productTab</p></td><td class="confluenceTd"><p>displayProductTab</p></td><td class="confluenceTd"><p>Called on order product page tabs</p></td></tr><tr><td class="confluenceTd"><p>productTabContent</p></td><td class="confluenceTd"><p>displayProductTabContent</p></td><td class="confluenceTd"><p>Called on order product page tabs</p></td></tr><tr><td class="confluenceTd"><p>productfooter</p></td><td class="confluenceTd"><p>displayFooterProduct</p></td><td class="confluenceTd"><p>Add new blocks under the product description</p></td></tr><tr><td class="confluenceTd"><p>rightColumn</p></td><td class="confluenceTd"><p>displayRightColumn</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>search</p></td><td class="confluenceTd"><p>actionSearch</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>shoppingCart</p></td><td class="confluenceTd"><p>displayShoppingCartFooter</p></td><td class="confluenceTd"><p>Display some specific information on the shopping cart page</p></td></tr><tr><td class="confluenceTd"><p>shoppingCartExtra</p></td><td class="confluenceTd"><p>displayShoppingCart</p></td><td class="confluenceTd"><p>Display some specific information</p></td></tr><tr><td class="confluenceTd"><p>taxManager</p></td><td class="confluenceTd"><p>actionTaxManager</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>top</p></td><td class="confluenceTd"><p>displayTop</p></td><td class="confluenceTd"><p>A hook which allow you to do things at the top of each pages.</p></td></tr><tr><td class="confluenceTd"><p>updateCarrier</p></td><td class="confluenceTd"><p>actionCarrierUpdate</p></td><td class="confluenceTd"><p>This hook is called when a carrier is updated</p></td></tr><tr><td class="confluenceTd"><p>updateOrderStatus</p></td><td class="confluenceTd"><p>actionOrderStatusUpdate</p></td><td class="confluenceTd"><p>Launch modules when the order's status changes.</p></td></tr><tr><td class="confluenceTd"><p>updateProductAttribute</p></td><td class="confluenceTd"><p>actionProductAttributeUpdate</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>updateQuantity</p></td><td class="confluenceTd"><p>actionUpdateQuantity</p></td><td class="confluenceTd"><p>Quantity is updated only when the customer effectively place his order.</p></td></tr><tr><td class="confluenceTd"><p>updateproduct</p></td><td class="confluenceTd"><p>actionProductUpdate</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr><tr><td class="confluenceTd"><p>watermark</p></td><td class="confluenceTd"><p>actionWatermark</p></td><td class="confluenceTd"><p>&nbsp;</p></td></tr></tbody></table></div><h2 id="HooksinPrestaShop1.5-Front-officeandback-office">Front-office and back-office</h2><h3 id="HooksinPrestaShop1.5-Existingfront-officehooks">Existing front-office hooks</h3><h4 id="HooksinPrestaShop1.5-Homepageandgeneralsitepages">Home page and general site pages</h4><div class="table-wrap"><table class="confluenceTable tablesorter"><thead><tr class="sortableHeader"><th data-column="0" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner">Hook name</div></th><th data-column="1" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner">Description</div></th></tr></thead><tbody><tr><td class="confluenceTd"><span>displayHeader</span></td><td class="confluenceTd"><span>Called within the HTML &lt;head&gt; tags. Ideal location for adding JavaScript and CSS files.</span></td></tr><tr><td class="confluenceTd"><span>displayTop</span></td><td class="confluenceTd"><span>Called in the page's header.</span></td></tr><tr><td class="confluenceTd"><span>displayLeftColumn</span></td><td class="confluenceTd"><span>Called when loading the left column.</span></td></tr><tr><td class="confluenceTd"><span>displayRightColumn</span></td><td class="confluenceTd"><span>Called when loading the right column.</span></td></tr><tr><td class="confluenceTd"><span>displayFooter</span></td><td class="confluenceTd"><span>Called in the page's footer.</span></td></tr><tr><td class="confluenceTd"><span>displayHome</span></td><td class="confluenceTd"><span>Called at the center of the homepage.</span></td></tr></tbody></table></div><h4 id="HooksinPrestaShop1.5-Productpage">Product page</h4><div class="table-wrap"><table class="confluenceTable tablesorter"><thead><tr class="sortableHeader"><th data-column="0" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner">Hook name</div></th><th data-column="1" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner">Description</div></th></tr></thead><tbody><tr><td class="confluenceTd">displayLeftColumnProduct</td><td class="confluenceTd">Called right before the "Print" link, under the picture.</td></tr><tr><td class="confluenceTd">displayRightColumnProduct</td><td class="confluenceTd">Called right after the block for the "Add to Cart" button.</td></tr><tr><td class="confluenceTd">displayProductButtons</td><td class="confluenceTd">Called inside the block for the "Add to Cart" button, right after that button.</td></tr><tr><td class="confluenceTd">actionProductOutOfStock</td><td class="confluenceTd">Called inside the block for the "Add to Cart" button, right after the "Availability" information.</td></tr><tr><td class="confluenceTd">displayFooterProduct</td><td class="confluenceTd">Called right before the tabs.</td></tr><tr><td class="confluenceTd">displayProductTab</td><td class="confluenceTd">Called in tabs list, such as "More info", "Data sheet", "Accessories", etc.</td></tr><tr><td class="confluenceTd">displayProductTabContent</td><td class="confluenceTd">Called when a tab is clicked.</td></tr></tbody></table></div><h4 id="HooksinPrestaShop1.5-Cartpage">Cart page</h4><div class="table-wrap"><table class="confluenceTable tablesorter"><thead><tr class="sortableHeader"><th data-column="0" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner">Hook name</div></th><th data-column="1" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner">Description</div></th></tr></thead><tbody><tr><td class="confluenceTd">actionCartSave</td><td class="confluenceTd">Called right after a cart creation or update.</td></tr><tr><td class="confluenceTd">displayShoppingCartFooter</td><td class="confluenceTd">Called right below the cart items table.</td></tr><tr><td class="confluenceTd">displayShoppingCart</td><td class="confluenceTd">Called after the cart's table of items, right above the navigation buttons.</td></tr><tr><td class="confluenceTd">displayCustomerAccountFormTop</td><td class="confluenceTd">Called within the client account creation form, right above the "Your personal information" block.</td></tr><tr><td class="confluenceTd">displayCustomerAccountForm</td><td class="confluenceTd">Called within the client account creation form, right before the "Register" button.</td></tr><tr><td class="confluenceTd">actionCustomerAccountAdd</td><td class="confluenceTd">Called right after the client account creation.</td></tr><tr><td class="confluenceTd">displayCustomerAccount</td><td class="confluenceTd">Called on the client account homepage, after the list of available links. Ideal location to add a link to this list.</td></tr><tr><td class="confluenceTd">displayMyAccountBlock</td><td class="confluenceTd">Called
+ within the "My account" block, in the left column, below the list of 
+available links. This is the ideal location to add a link to this list.</td></tr><tr><td class="confluenceTd">displayMyAccountBlockfooter</td><td class="confluenceTd">Displays extra information inside the "My account" block.</td></tr><tr><td class="confluenceTd">actionAuthentication</td><td class="confluenceTd">Called right after the client identification, only if the authentication is valid (e-mail address and password are both OK).</td></tr><tr><td class="confluenceTd">actionBeforeAuthentication</td><td class="confluenceTd">Called right before authentication.</td></tr></tbody></table></div><h4 id="HooksinPrestaShop1.5-Searchpage">Search page</h4><div class="table-wrap"><table class="confluenceTable tablesorter"><thead><tr class="sortableHeader"><th data-column="0" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner">Hook name</div></th><th data-column="1" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner">Description</div></th></tr></thead><tbody><tr><td class="confluenceTd"><span>actionSearch</span></td><td class="confluenceTd"><span>Called after a search is performed. Ideal location to parse and/or handle the search query and results.</span></td></tr></tbody></table></div><h4 id="HooksinPrestaShop1.5-Carrierchoicepage">Carrier choice page</h4><div class="table-wrap"><table class="confluenceTable tablesorter"><thead><tr class="sortableHeader"><th data-column="0" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner">Hook name</div></th><th data-column="1" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner"><p>Description</p></div></th></tr></thead><tbody><tr><td class="confluenceTd"><span>displayBeforeCarrier</span></td><td class="confluenceTd"><span>Displayed before the carrier list on front-office.</span></td></tr><tr><td class="confluenceTd"><span>displayCarrierList</span></td><td class="confluenceTd"><span>Called after the list of available carriers, during the order process. Ideal location to add a carrier, as added by a module.</span></td></tr></tbody></table></div><h4 id="HooksinPrestaShop1.5-Paymentpage">Payment page</h4><div class="table-wrap"><table class="confluenceTable tablesorter"><thead><tr class="sortableHeader"><th data-column="0" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner">Hook name</div></th><th data-column="1" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner">Description</div></th></tr></thead><tbody><tr><td class="confluenceTd">displayPaymentTop</td><td class="confluenceTd">Top of payment page.</td></tr><tr><td class="confluenceTd">displayPayment</td><td class="confluenceTd">Called
+ when needing to build a list of the available payment solutions, during
+ the order process. Ideal location to enable the choice of a payment 
+module that you have developed.</td></tr><tr><td class="confluenceTd">displayPaymentReturn</td><td class="confluenceTd">Called
+ when the user is sent back to the store after having paid on the 
+3rd-party website. Ideal location to display a confirmation message or 
+to give some details on the payment.</td></tr><tr><td class="confluenceTd">displayOrderConfirmation</td><td class="confluenceTd">A duplicate of paymentReturn.</td></tr><tr><td class="confluenceTd">displayBeforePayment</td><td class="confluenceTd">Called
+ when displaying the list of available payment solutions. Ideal location
+ to redirect the user instead of displaying said list (i.e., 1-click 
+PayPal checkout).</td></tr></tbody></table></div><h4 id="HooksinPrestaShop1.5-Orderpage">Order page</h4><div class="table-wrap"><table class="confluenceTable tablesorter"><thead><tr class="sortableHeader"><th data-column="0" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner">Hook name</div></th><th data-column="1" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner">Description</div></th></tr></thead><tbody><tr><td class="confluenceTd"><span>actionOrderReturn</span></td><td class="confluenceTd"><span>Called when the customer request to send his merchandise back to the store, and if now error occurs.</span></td></tr><tr><td class="confluenceTd"><span>displayPDFInvoice</span></td><td class="confluenceTd"><span>Called when displaying the invoice in PDF format. Ideal location to display content within the invoice.</span></td></tr></tbody></table></div><h3 id="HooksinPrestaShop1.5-Existingback-officehooks">Existing back-office hooks</h3><h4 id="HooksinPrestaShop1.5-Generalhooks">General hooks</h4><div class="table-wrap"><table class="confluenceTable tablesorter"><thead><tr class="sortableHeader"><th data-column="0" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner">Hook name</div></th><th data-column="1" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner">Description</div></th></tr></thead><tbody><tr><td class="confluenceTd"><span>displayBackOfficeTop</span></td><td class="confluenceTd"><span>Called within the header, above the tabs.</span></td></tr><tr><td class="confluenceTd"><span>displayBackOfficeHeader</span></td><td class="confluenceTd"><span>Called between the HEAD tags. Ideal location for adding JavaScript and CSS files.</span></td></tr><tr><td class="confluenceTd"><span>displayBackOfficeFooter</span></td><td class="confluenceTd"><span>Called within the page footer, above the "Power By PrestaShop" line.</span></td></tr><tr><td class="confluenceTd"><span>displayBackOfficeHome</span></td><td class="confluenceTd"><span>Called at the center of the homepage.</span></td></tr></tbody></table></div><h4 id="HooksinPrestaShop1.5-Ordersandorderdetails">Orders and order details</h4><div class="table-wrap"><table class="confluenceTable tablesorter"><thead><tr class="sortableHeader"><th data-column="0" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner">Hook name</div></th><th data-column="1" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner">Description</div></th></tr></thead><tbody><tr><td class="confluenceTd">actionValidateOrder</td><td class="confluenceTd">Called during the new order creation process, right after it has been created.</td></tr><tr><td class="confluenceTd">actionPaymentConfirmation</td><td class="confluenceTd">Called when an order's status becomes "Payment accepted".</td></tr><tr><td class="confluenceTd">actionOrderStatusUpdate</td><td class="confluenceTd">Called when an order's status is changed, right before it is actually changed.</td></tr><tr><td class="confluenceTd">actionOrderStatusPostUpdate</td><td class="confluenceTd">Called when an order's status is changed, right after it is actually changed.</td></tr><tr><td class="confluenceTd">actionProductCancel</td><td class="confluenceTd">Called when an item is deleted from an order, right after the deletion.</td></tr><tr><td class="confluenceTd">displayInvoice</td><td class="confluenceTd">Called when the order's details are displayed, above the Client Information block.</td></tr><tr><td class="confluenceTd">displayAdminOrder</td><td class="confluenceTd">Called when the order's details are displayed, below the Client Information block.</td></tr><tr><td class="confluenceTd">actionOrderSlipAdd</td><td class="confluenceTd">Called during the creation of a credit note, right after it has been created.</td></tr></tbody></table></div><h4 id="HooksinPrestaShop1.5-Products">Products</h4><div class="table-wrap"><table class="confluenceTable tablesorter"><thead><tr class="sortableHeader"><th data-column="0" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner">Hook name</div></th><th data-column="1" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner">Description</div></th></tr></thead><tbody><tr><td class="confluenceTd">actionProductSave</td><td class="confluenceTd">Called when saving products.</td></tr><tr><td class="confluenceTd">actionUpdateQuantity</td><td class="confluenceTd">Called
+ during an the validation of an order, the status of which being 
+something other than "canceled" or "Payment error", for each of the 
+order's items.</td></tr><tr><td class="confluenceTd">actionProductAttributeUpdate</td><td class="confluenceTd">Called when a product declination is updated, right after said update.</td></tr><tr><td class="confluenceTd">actionProductAttributeDelete</td><td class="confluenceTd">Called when a product declination is deleted.</td></tr><tr><td class="confluenceTd">actionWatermark</td><td class="confluenceTd">Called when an image is added to a product, right after said addition.</td></tr><tr><td class="confluenceTd">displayAttributeForm</td><td class="confluenceTd">Add fields to the form "attribute value".</td></tr><tr><td class="confluenceTd">displayAttributeGroupForm</td><td class="confluenceTd">Add fields to the form "attribute group".</td></tr><tr><td class="confluenceTd">displayAttributeGroupPostProcess</td><td class="confluenceTd">Called when post-process in admin attribute group.</td></tr><tr><td class="confluenceTd">displayFeatureForm</td><td class="confluenceTd">Add fields to the form "feature".</td></tr><tr><td class="confluenceTd">displayFeaturePostProcess</td><td class="confluenceTd">Called when post-process in admin feature.</td></tr><tr><td class="confluenceTd">displayFeatureValueForm</td><td class="confluenceTd">Add fields to the form "feature value".</td></tr><tr><td class="confluenceTd">displayFeatureValuePostProcess</td><td class="confluenceTd">Called when post-process in admin feature value.</td></tr></tbody></table></div><h4 id="HooksinPrestaShop1.5-Statistics">Statistics</h4><div class="table-wrap"><table class="confluenceTable tablesorter"><thead><tr class="sortableHeader"><th data-column="0" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner">Hook name</div></th><th data-column="1" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner">Description</div></th></tr></thead><tbody><tr><td class="confluenceTd"><span>displayAdminStatsGraphEngine</span></td><td class="confluenceTd"><span>Called when a stats graph is displayed.</span></td></tr><tr><td class="confluenceTd"><span>displayAdminStatsGridEngine</span></td><td class="confluenceTd"><span>Called when the grid of stats is displayed.</span></td></tr><tr><td class="confluenceTd"><span>displayAdminStatsModules</span></td><td class="confluenceTd"><span>Called when the list of stats modules is displayed.</span></td></tr></tbody></table></div><h4 id="HooksinPrestaShop1.5-Clients">Clients</h4><div class="table-wrap"><table class="confluenceTable tablesorter"><thead><tr class="sortableHeader"><th data-column="0" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner">Hook name</div></th><th data-column="1" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner">Description</div></th></tr></thead><tbody><tr><td class="confluenceTd"><span>displayAdminCustomers</span></td><td class="confluenceTd"><span>Called when a client's details are displayed, right after the list of the clients groups the current client belongs to.</span></td></tr></tbody></table></div><h4 id="HooksinPrestaShop1.5-Carriers">Carriers</h4><div class="table-wrap"><table class="confluenceTable tablesorter"><thead><tr class="sortableHeader"><th data-column="0" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner">Hook name</div></th><th data-column="1" class="confluenceTh sortableHeader"><div class="tablesorter-header-inner">Description</div></th></tr></thead><tbody><tr><td class="confluenceTd"><span>actionCarrierUpdate</span></td><td class="confluenceTd"><span>Called during a carrier's update, right after said update.</span></td></tr></tbody></table></div>
+    
+        </div>
+
+        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+         <rdf:Description
+    rdf:about="http://doc.prestashop.com/display/PS15/Hooks+in+PrestaShop+1.5"
+    dc:identifier="http://doc.prestashop.com/display/PS15/Hooks+in+PrestaShop+1.5"
+    dc:title="Hooks in PrestaShop 1.5"
+    trackback:ping="http://doc.prestashop.com/rpc/trackback/11272205"/>
+</rdf:RDF>
+-->
+
+        <script type="text/x-template" title="labels-dialog-div">
+        <div id="labels-dialog">
+        <div class="labels-editor">
+            <form method="GET" action="" id="add-labels-form">
+                <div id="labelOperationErrorContainer">
+                    <span class="error"><span class="errorMessage" id="labelOperationErrorMessage"></span></span>
+                </div>
+    
+                <div id="label-input-fields">
+                    <input autocomplete="off" id="labelsString" name="labelsString" value="">
+                    <input id="add-labels-editor-button" type="submit" class="add-labels" value="Add">
+                </div>
+                <div id="labelsAutocompleteList" class="aui-dd-parent resize-to-input" style="width: 417px"></div>
+                <div id="dialog-label-list">
+                    <!-- DIV placeholder for labels list, is copied into in labels-dialog.js -->
+                </div>
+                <div id="waitImageAndStatus">
+                    <img class="waiting" alt="Please wait" src="/s/en_GB/3393/fbf97d65fc2202c1ad8db08fef99ff488e0d596b.105/_/images/icons/wait.gif">&nbsp;
+                    <span id="labelOperationStatus" class="smalltext"></span>
+                </div>
+                <div class="labels-tip"></div>
+            </form>
+        </div>
+        <div style="display: none;">
+            <div class="labels-section-content content-column"
+    	    		entityid="11272205" entitytype="Page"
+    		>
+	<div class="labels-content">
+		
+
+<ul class="label-list">
+    <li class="no-labels-message-container">
+        <span id="labels-section-title-none" class="no-labels-message">
+            None
+        </span>
+    </li>
+        </ul>
+    </div>
+</div>        </div>
+    </div>
+</script>
+            
+    
+
+
+<div id="likes-and-labels-container"><div style="display: none;" id="likes-section"><span class="like-summary"></span></div><div id="labels-section" class="pageSection group">
+    <div class="labels-editor">
+        <span id="labels-section-title" class="label-title">Labels</span>
+        <div class="labels-section-content content-column" entityid="11272205" entitytype="Page">
+	<div class="labels-content">
+		
+
+<ul class="label-list">
+    <li class="no-labels-message-container">
+        <span id="labels-section-title-none" class="no-labels-message">
+            None
+        </span>
+    </li>
+        </ul>
+    </div>
+</div>    </div>
+</div></div>
+
+            
+            
+
+
+
+
+            
+    
+
+
+
+
+
+
+
+
+                    
+    
+<div id="comments-section" class="pageSection group">
+    
+    
+    
+    
+            <div class="bottom-comment-panels comment-panels">
+                
+            </div>
+    
+    </div>
+
+
+            
+</div>
+
+
+    
+
+
+
+    
+    
+
+    
+    
+    
+
+
+            
+    
+
+
+    <br class="clear">
+</div>
+  
+    </div>
+</div>
+
+
+        
+            <div id="footer">
+                                                <p class="license license-opensource">
+                  Powered by a free <b>Atlassian Confluence Open Source Project License</b> granted to Prestashop SA. <a href="http://www.atlassian.com/c/conf/11461">Evaluate Confluence today</a>.<br>
+                </p>
+                        
+    <ul id="poweredby">
+        <li class="noprint">Powered by <a href="http://www.atlassian.com/software/confluence" class="hover-footer-link">Atlassian Confluence</a> <span id="footer-build-information">4.3.3</span>, the <a href="http://www.atlassian.com/software/confluence/tour/enterprise-wiki.jsp" class="hover-footer-link">Enterprise Wiki</a></li>
+        <li class="print-only">Printed by Atlassian Confluence 4.3.3, the Enterprise Wiki.</li>        
+        <li class="noprint"> &nbsp;·&nbsp; <a href="http://jira.atlassian.com/secure/BrowseProject.jspa?id=10470" class="hover-footer-link">Report a bug</a></li>
+        <li class="noprint"> &nbsp;·&nbsp; <a href="http://www.atlassian.com/about/connected.jsp?s_kwcid=Confluence-stayintouch" class="hover-footer-link">Atlassian News</a></li>
+    </ul>
+
+            
+    </div>
+    </div>
+
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><div style="display: none;" id="content-hover-shadow"><div class="tl"></div><div class="tr"></div><div class="l"></div><div class="r"></div><div class="bl"></div><div class="br"></div><div class="b"></div></div><div style="position: relative; z-index: 0;" id="fileuploadShim"></div><div class="plupload html5" style="position: absolute; background: none repeat scroll 0% 0% transparent; width: 1871px; height: 0px; overflow: hidden; z-index: -1; opacity: 0; top: 897px; left: 0px;" id="p17hosidne1eq3aul1uic1dbc1r920_html5_container"><input id="p17hosidne1eq3aul1uic1dbc1r920_html5" style="font-size: 999px; position: absolute; width: 100%; height: 100%;" accept="" multiple="multiple" type="file"></div></body></html>
