@@ -1,0 +1,98 @@
+/*HACER ITEM DISPONIBLE PARA MANEJO AVANZADO DE STOCK*/
+UPDATE `ps_stock_available` SET `quantity` = '0', `depends_on_stock` = '1' WHERE id_product = 14 AND id_product_attribute = 0 AND id_shop = 1 
+/*FIN HACER ITEM DISPONIBLE PARA MANEJO AVANZADO DE STOCK
+
+/*crear manejo avanzado*/
+INSERT INTO `ps_stock` (`id_warehouse`, `id_product`, `id_product_attribute`, `reference`, `ean13`, `upc`, `physical_quantity`, `usable_quantity`, `price_te`) VALUES ('1', '13',
+ '0', 'EUQ10258', '676755', '', '43', '43', '34000');
+
+INSERT INTO `ps_stock_mvt` (`id_employee`, `employee_firstname`, `employee_lastname`, `id_stock`, `physical_quantity`, `id_stock_mvt_reason`, `id_order`, `id_supply_order`, `sig
+n`, `last_wa`, `current_wa`, `price_te`, `referer`, `date_add`) VALUES ('1', 'Oscar Mauricio', 'Borja Niño', '3', '43', '1', '0', '0', '1', '0', '34000', '34000', '0', '2013-02-04 17:09:20');
+
+
+/*fin crear manejo avanzado*/
+
+
+/*asociar categorias*/
+INSERT INTO `ps_category_product` (`id_category`, `id_product`, `position`) VALUES ('991', '10', '6'), ('17', '10', '3'), ('19', '10', '0')
+
+/*fin asociar categorias*/
+
+
+/*LOCACION DEL PRODUCTO*/
+
+INSERT INTO `ps_warehouse_product_location` (`location`, `id_product`, `id_product_attribute`, `id_warehouse`) VALUES ('tetsts de almacen', '10', '0', '1')
+UPDATE `ps_stock_available` SET `quantity` = '45' WHERE id_product = 10 AND id_product_attribute = 0 AND id_shop = 1
+/*FIN LOCACION DEL PRODUCTO*/
+
+
+-------------------
+
+
+/*AUMENTAR STOCK*/
+UPDATE `ps_stock` SET `physical_quantity` = '80',
+`usable_quantity` = '80',
+`price_te` = '9999' --precio de inventario
+WHERE 
+`id_warehouse` = '1'
+and `id_product` = '8' 
+and `id_product_attribute` = '0'
+;
+
+
+INSERT INTO `ps_stock_mvt` (`id_employee`, `employee_firstname`, `employee_lastname`, `id_stock`, 
+`physical_quantity`, `id_stock_mvt_reason`, `id_order`, `id_supply_order`, `sign`, 
+`last_wa`, `current_wa`, `price_te`, `referer`, `date_add`) VALUES (
+'1', 'Oscar Mauricio', 'Borja Niño', '1', '11', '1', '0', '0', '1', '52.066667', '804.970149', 
+'2345', '0', '2013-02-04 15:42:36');
+
+
+UPDATE `ps_stock_available` SET `quantity` = '80' 
+WHERE id_product = 8
+AND id_product_attribute = 0 
+AND id_shop = 1;
+
+
+/*FIN AUMENTAR STOCK*/
+
+
+
+
+/*REDUCIR STOCK*/
+UPDATE `ps_stock` SET `physical_quantity` = '68',`usable_quantity` = '68',`price_te` = '9999' WHERE `id_warehouse` = '1'
+and `id_product` = '8' 
+and `id_product_attribute` = '0';
+
+
+INSERT INTO `ps_stock_mvt` (`id_employee`, `employee_firstname`, `employee_lastname`, `id_stock`,
+`physical_quantity`, `id_stock_mvt_reason`, `id_order`, `id_supply_order`, `sign`, 
+`last_wa`, `current_wa`, `price_te`, `referer`, `date_add`) VALUES (
+'1', 'Oscar Mauricio', 'Borja Niño', '1', '12', '2', '0', '0', '-1', '9999', '9999', 
+'9999', '0', '2013-02-04 16:06:53')
+
+
+UPDATE `ps_stock_available` SET `quantity` = '68' 
+WHERE id_product = 8
+AND id_product_attribute = 0 
+AND id_shop = 1;
+
+/*FIN REDUCIR STOCK*/
+
+
+/*INSERTAR IMAGEN*/
+
+INSERT INTO `ps_image` (`id_product`, `position`, `cover`) VALUES ('9', '1', '1');
+INSERT INTO `ps_image_shop` (`id_image`, `cover`, `id_shop`) VALUES ('28', '1', '1');
+INSERT INTO `ps_image_lang` (`id_image`, `id_lang`) VALUES ('28', '1');
+INSERT INTO `ps_image_lang` (`id_image`, `id_lang`) VALUES ('28', '2');
+INSERT INTO `ps_image_lang` (`id_image`, `id_lang`) VALUES ('28', '3');
+INSERT INTO `ps_image_lang` (`id_image`, `id_lang`) VALUES ('28', '4');
+INSERT INTO `ps_image_lang` (`id_image`, `id_lang`) VALUES ('28', '5');
+INSERT INTO `ps_image_lang` (`id_image`, `id_lang`) VALUES ('28', '6');
+
+
+
+/*FIN INSERTAR IMAGEN*/
+
+http://localhost/~oborja/gitSHEWEB/prestashopweb/webservicesiglo/indexwebservice.php?clase=productos&stock_available=0&advanced_stock_management=1&visibility=both&show_price=1&id_manufacturer=3&id_supplier=0&id_category_default=991&available_for_order=1&id_tax_rules_group=0&id_shop_default=1&reference=titts1&width=222&height=111&depth=22&weight=21&ean13=676755&is_virtual=0&minimal_quantity=1&price=44000&on_sale=1&active=1&link_rewrite=cuaderno-de-la-noche-Memorias-de-un-soldado&name=Cuaderno%20de%20la%20noche%20%28Memorias%20de%20un%20soldado%29&description=&new=1&active=1&condition=new&visibility=both&description=Este%20libro%20narra%20las%20experiencias%20por%20las%20que%20atraviesa%20un%20muchacho%20pobre%20durante%20el%20tiempo%20de%20su%20servicio%20militar%20y%20los%20meses%20que%20siguen%20luego%20de%20su%20regreso%20al%20hogar.%20El%20lector%20es%20testigo%20del%20modo%20como%20la%20dureza%20de%20la%20cotidianeidad%20de%20la%20vida%20militar%20da,%20poco%20a%20poco,%20forma%20al%20alma%20del%20joven%20Milton%20Rodr%C3%ADguez,%20quien%20nunca%20ser%C3%A1%20un%20h%C3%A9roe%20o%20un%20malvado,%20sino%20solo%20el%20prototipo%20cre%C3%ADble%20del%20soldado%20raso
+

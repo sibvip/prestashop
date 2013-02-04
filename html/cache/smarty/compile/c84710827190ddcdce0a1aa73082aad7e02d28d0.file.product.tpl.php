@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2013-01-28 17:20:23
+<?php /* Smarty version Smarty-3.1.8, created on 2013-02-04 18:00:09
          compiled from "/home/oborja/public_html/gitSHEWEB/prestashopweb/html/themes/default/product.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:15898744165106f9a73b1b07-37854774%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:84026927151103d79590467-29851118%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '15898744165106f9a73b1b07-37854774',
+  'nocache_hash' => '84026927151103d79590467-29851118',
   'function' => 
   array (
   ),
@@ -112,9 +112,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_5106f9a7da2e66_10162296',
+  'unifunc' => 'content_51103d7a006746_59523323',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5106f9a7da2e66_10162296')) {function content_5106f9a7da2e66_10162296($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_escape')) include '/home/oborja/public_html/gitSHEWEB/prestashopweb/html/tools/smarty/plugins/modifier.escape.php';
+<?php if ($_valid && !is_callable('content_51103d7a006746_59523323')) {function content_51103d7a006746_59523323($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_escape')) include '/home/oborja/public_html/gitSHEWEB/prestashopweb/html/tools/smarty/plugins/modifier.escape.php';
 if (!is_callable('smarty_modifier_date_format')) include '/home/oborja/public_html/gitSHEWEB/prestashopweb/html/tools/smarty/plugins/modifier.date_format.php';
 if (!is_callable('smarty_function_math')) include '/home/oborja/public_html/gitSHEWEB/prestashopweb/html/tools/smarty/plugins/function.math.php';
 if (!is_callable('smarty_function_counter')) include '/home/oborja/public_html/gitSHEWEB/prestashopweb/html/tools/smarty/plugins/function.counter.php';
